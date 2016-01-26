@@ -205,6 +205,7 @@ extern byte ReceiveData(byte *rxBuffer);
 
 extern void setSyncWord(uint8_t syncH, uint8_t syncL, bool save);
 extern void setDevAddress(byte addr, bool save);
+extern void setcarrierFreq(byte freq);
 
 #endif
 

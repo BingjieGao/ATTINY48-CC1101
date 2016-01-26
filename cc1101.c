@@ -6,12 +6,12 @@
 #include <avr/EEPROM.h>
 
 //---------------------------------------
-#define SCK_PIN			PORTB5			//
-#define MISO_PIN		PORTB4			//
-#define MOSI_PIN		PORTB3			//
-#define SS_PIN			PORTB2			//
-#define GDO0			PORTD5			//
-#define GDO2			PORTD6			//
+#define SCK_PIN			5			//
+#define MISO_PIN		4			//
+#define MOSI_PIN		3			//
+#define SS_PIN			2			//
+#define GDO0			5			//
+#define GDO2			6			//
 //----------------------------------------
 
 //----------------------------------------
@@ -53,12 +53,13 @@ void Reset(void)
 void Init(void)
 {
     GDO_Set();
-//    PORTB = 1<<SS_PIN;
-//    PORTB = 1<<SCK_PIN;
-//    PORTB = 0<<MOSI_PIN;
     SpiInit();
+    PORTB = 1<<SS_PIN;
+    PORTB = 1<<SCK_PIN;
+    PORTB = 0<<MOSI_PIN;
+    
     Reset();
-    RegConfigSettings();
+    //RegConfigSettings();
     //SpiWriteBurstReg(CC1101_PATABLE, PaTable,8);
 }
 
@@ -235,64 +236,85 @@ byte ReceiveData(byte *rxBuffer)
     }
 }
 
-void setDefaultRegs(void)
-{
-    SpiWriteReg(CC1101_IOCFG2,  CC1101_DEFVAL_IOCFG2);
-    SpiWriteReg(CC1101_IOCFG1,  CC1101_DEFVAL_IOCFG1);
-    SpiWriteReg(CC1101_IOCFG0,  CC1101_DEFVAL_IOCFG0);
-    SpiWriteReg(CC1101_FIFOTHR,  CC1101_DEFVAL_FIFOTHR);
-    SpiWriteReg(CC1101_PKTLEN,  CC1101_DEFVAL_PKTLEN);
-    SpiWriteReg(CC1101_PKTCTRL1,  CC1101_DEFVAL_PKTCTRL1);
-    SpiWriteReg(CC1101_PKTCTRL0,  CC1101_DEFVAL_PKTCTRL0);
-    
-    // Set default synchronization word
-    setSyncWord(CC1101_DEFVAL_SYNC1, CC1101_DEFVAL_SYNC0, false);
-    
-    // Set default device address
-//    setDevAddress(CC1101_DEFVAL_ADDR, false);
-    // Set default frequency channel
-    setChannel(CC1101_DEFVAL_CHANNR, false);
-    
-    SpiWriteReg(CC1101_FSCTRL1,  CC1101_DEFVAL_FSCTRL1);
-    SpiWriteReg(CC1101_FSCTRL0,  CC1101_DEFVAL_FSCTRL0);
-    
-    // Set default carrier frequency = 868 MHz
-    setCarrierFreq(CFREQ_868);
-    
-    SpiWriteReg(CC1101_MDMCFG4,  CC1101_DEFVAL_MDMCFG4);
-    SpiWriteReg(CC1101_MDMCFG3,  CC1101_DEFVAL_MDMCFG3);
-    SpiWriteReg(CC1101_MDMCFG2,  CC1101_DEFVAL_MDMCFG2);
-    SpiWriteReg(CC1101_MDMCFG1,  CC1101_DEFVAL_MDMCFG1);
-    SpiWriteReg(CC1101_MDMCFG0,  CC1101_DEFVAL_MDMCFG0);
-    SpiWriteReg(CC1101_DEVIATN,  CC1101_DEFVAL_DEVIATN);
-    SpiWriteReg(CC1101_MCSM2,  CC1101_DEFVAL_MCSM2);
-    SpiWriteReg(CC1101_MCSM1,  CC1101_DEFVAL_MCSM1);
-    SpiWriteReg(CC1101_MCSM0,  CC1101_DEFVAL_MCSM0);
-    SpiWriteReg(CC1101_FOCCFG,  CC1101_DEFVAL_FOCCFG);
-    SpiWriteReg(CC1101_BSCFG,  CC1101_DEFVAL_BSCFG);
-    SpiWriteReg(CC1101_AGCCTRL2,  CC1101_DEFVAL_AGCCTRL2);
-    SpiWriteReg(CC1101_AGCCTRL1,  CC1101_DEFVAL_AGCCTRL1);
-    SpiWriteReg(CC1101_AGCCTRL0,  CC1101_DEFVAL_AGCCTRL0);
-    SpiWriteReg(CC1101_WOREVT1,  CC1101_DEFVAL_WOREVT1);
-    SpiWriteReg(CC1101_WOREVT0,  CC1101_DEFVAL_WOREVT0);
-    SpiWriteReg(CC1101_WORCTRL,  CC1101_DEFVAL_WORCTRL);
-    SpiWriteReg(CC1101_FREND1,  CC1101_DEFVAL_FREND1);
-    SpiWriteReg(CC1101_FREND0,  CC1101_DEFVAL_FREND0);
-    SpiWriteReg(CC1101_FSCAL3,  CC1101_DEFVAL_FSCAL3);
-    SpiWriteReg(CC1101_FSCAL2,  CC1101_DEFVAL_FSCAL2);
-    SpiWriteReg(CC1101_FSCAL1,  CC1101_DEFVAL_FSCAL1);
-    SpiWriteReg(CC1101_FSCAL0,  CC1101_DEFVAL_FSCAL0);
-    SpiWriteReg(CC1101_RCCTRL1,  CC1101_DEFVAL_RCCTRL1);
-    SpiWriteReg(CC1101_RCCTRL0,  CC1101_DEFVAL_RCCTRL0);
-    SpiWriteReg(CC1101_FSTEST,  CC1101_DEFVAL_FSTEST);
-    SpiWriteReg(CC1101_PTEST,  CC1101_DEFVAL_PTEST);
-    SpiWriteReg(CC1101_AGCTEST,  CC1101_DEFVAL_AGCTEST);
-    SpiWriteReg(CC1101_TEST2,  CC1101_DEFVAL_TEST2);
-    SpiWriteReg(CC1101_TEST1,  CC1101_DEFVAL_TEST1);
-    SpiWriteReg(CC1101_TEST0,  CC1101_DEFVAL_TEST0);
-}
-
-
+//void setDefaultRegs(void)
+//{
+//    SpiWriteReg(CC1101_IOCFG2,  CC1101_DEFVAL_IOCFG2);
+//    SpiWriteReg(CC1101_IOCFG1,  CC1101_DEFVAL_IOCFG1);
+//    SpiWriteReg(CC1101_IOCFG0,  CC1101_DEFVAL_IOCFG0);
+//    SpiWriteReg(CC1101_FIFOTHR,  CC1101_DEFVAL_FIFOTHR);
+//    SpiWriteReg(CC1101_PKTLEN,  CC1101_DEFVAL_PKTLEN);
+//    SpiWriteReg(CC1101_PKTCTRL1,  CC1101_DEFVAL_PKTCTRL1);
+//    SpiWriteReg(CC1101_PKTCTRL0,  CC1101_DEFVAL_PKTCTRL0);
+//    
+//    // Set default synchronization word
+//    setSyncWord(CC1101_DEFVAL_SYNC1, CC1101_DEFVAL_SYNC0, false);
+//    
+//    // Set default device address
+////    setDevAddress(CC1101_DEFVAL_ADDR, false);
+//    // Set default frequency channel
+////    setChannel(CC1101_DEFVAL_CHANNR, false);
+//    
+//    SpiWriteReg(CC1101_FSCTRL1,  CC1101_DEFVAL_FSCTRL1);
+//    SpiWriteReg(CC1101_FSCTRL0,  CC1101_DEFVAL_FSCTRL0);
+//    
+//    // Set default carrier frequency = 868 MHz
+////    setCarrierFreq(CFREQ_868);
+//    
+//    SpiWriteReg(CC1101_MDMCFG4,  CC1101_DEFVAL_MDMCFG4);
+//    SpiWriteReg(CC1101_MDMCFG3,  CC1101_DEFVAL_MDMCFG3);
+//    SpiWriteReg(CC1101_MDMCFG2,  CC1101_DEFVAL_MDMCFG2);
+//    SpiWriteReg(CC1101_MDMCFG1,  CC1101_DEFVAL_MDMCFG1);
+//    SpiWriteReg(CC1101_MDMCFG0,  CC1101_DEFVAL_MDMCFG0);
+//    SpiWriteReg(CC1101_DEVIATN,  CC1101_DEFVAL_DEVIATN);
+//    SpiWriteReg(CC1101_MCSM2,  CC1101_DEFVAL_MCSM2);
+//    SpiWriteReg(CC1101_MCSM1,  CC1101_DEFVAL_MCSM1);
+//    SpiWriteReg(CC1101_MCSM0,  CC1101_DEFVAL_MCSM0);
+//    SpiWriteReg(CC1101_FOCCFG,  CC1101_DEFVAL_FOCCFG);
+//    SpiWriteReg(CC1101_BSCFG,  CC1101_DEFVAL_BSCFG);
+//    SpiWriteReg(CC1101_AGCCTRL2,  CC1101_DEFVAL_AGCCTRL2);
+//    SpiWriteReg(CC1101_AGCCTRL1,  CC1101_DEFVAL_AGCCTRL1);
+//    SpiWriteReg(CC1101_AGCCTRL0,  CC1101_DEFVAL_AGCCTRL0);
+//    SpiWriteReg(CC1101_WOREVT1,  CC1101_DEFVAL_WOREVT1);
+//    SpiWriteReg(CC1101_WOREVT0,  CC1101_DEFVAL_WOREVT0);
+//    SpiWriteReg(CC1101_WORCTRL,  CC1101_DEFVAL_WORCTRL);
+//    SpiWriteReg(CC1101_FREND1,  CC1101_DEFVAL_FREND1);
+//    SpiWriteReg(CC1101_FREND0,  CC1101_DEFVAL_FREND0);
+//    SpiWriteReg(CC1101_FSCAL3,  CC1101_DEFVAL_FSCAL3);
+//    SpiWriteReg(CC1101_FSCAL2,  CC1101_DEFVAL_FSCAL2);
+//    SpiWriteReg(CC1101_FSCAL1,  CC1101_DEFVAL_FSCAL1);
+//    SpiWriteReg(CC1101_FSCAL0,  CC1101_DEFVAL_FSCAL0);
+//    SpiWriteReg(CC1101_RCCTRL1,  CC1101_DEFVAL_RCCTRL1);
+//    SpiWriteReg(CC1101_RCCTRL0,  CC1101_DEFVAL_RCCTRL0);
+//    SpiWriteReg(CC1101_FSTEST,  CC1101_DEFVAL_FSTEST);
+//    SpiWriteReg(CC1101_PTEST,  CC1101_DEFVAL_PTEST);
+//    SpiWriteReg(CC1101_AGCTEST,  CC1101_DEFVAL_AGCTEST);
+//    SpiWriteReg(CC1101_TEST2,  CC1101_DEFVAL_TEST2);
+//    SpiWriteReg(CC1101_TEST1,  CC1101_DEFVAL_TEST1);
+//    SpiWriteReg(CC1101_TEST0,  CC1101_DEFVAL_TEST0);
+//}
+//
+//void setCarrierFreq(byte freq)
+//{
+//    switch(freq)
+//    {
+//        case CFREQ_915:
+//            SpiWriteReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_915);
+//            SpiWriteReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_915);
+//            SpiWriteReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_915);
+//            break;
+//        case CFREQ_433:
+//            SpiWriteReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_433);
+//            SpiWriteReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_433);
+//            SpiWriteReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_433);
+//            break;
+//        default:
+//            SpiWriteReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_868);
+//            SpiWriteReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_868);
+//            SpiWriteReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_868);
+//            break;
+//    }
+//    carrierFreq = freq;
+//}
 
 
 

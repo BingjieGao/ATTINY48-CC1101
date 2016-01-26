@@ -1,0 +1,669 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+                              Builds/TWI_Master.o (__udivmodsi4)
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+                              /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o (exit)
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+                              Builds/cc1101.o (__do_copy_data)
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+                              Builds/cc1101.o (__do_clear_bss)
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+                              Builds/cc1101q1.o (__eerd_byte_tn48)
+/usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+                              Builds/cc1101q1.o (__eewr_byte_tn48)
+
+Allocating common symbols
+Common symbol       size              file
+
+syncWord            0x2               Builds/cc1101.o
+paTableByte         0x1               Builds/cc1101q1.o
+CCPACKET            0x41              Builds/cc1101q1.o
+rfState             0x1               Builds/cc1101q1.o
+channel             0x1               Builds/cc1101q1.o
+devAddress          0x1               Builds/cc1101q1.o
+carrierFreq         0x1               Builds/cc1101.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000002000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+LOAD Builds/TWI_Master.o
+LOAD Builds/cc1101.o
+LOAD Builds/cc1101q1.o
+LOAD Builds/main.o
+LOAD /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libm.a
+START GROUP
+LOAD /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a
+LOAD /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libm.a
+LOAD /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a
+END GROUP
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000      0x778
+ *(.vectors)
+ .vectors       0x0000000000000000       0x28 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x0000000000000028                . = ALIGN (0x2)
+                0x0000000000000028                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000000000000028        0x0 linker stubs
+ *(.trampolines*)
+                0x0000000000000028                __trampolines_end = .
+ *(.progmem*)
+                0x0000000000000028                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000000000000028                __ctors_start = .
+ *(.ctors)
+                0x0000000000000028                __ctors_end = .
+                0x0000000000000028                __dtors_start = .
+ *(.dtors)
+                0x0000000000000028                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000000000000028        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+                0x0000000000000028                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000000000000028        0xc /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000000000000034       0x16 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+                0x0000000000000034                __do_copy_data
+ .init4         0x000000000000004a       0x10 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+                0x000000000000004a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000000000005a        0x4 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+ *(.init9)
+ *(.text)
+ .text          0x000000000000005e        0x2 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+                0x000000000000005e                __vector_18
+                0x000000000000005e                __vector_12
+                0x000000000000005e                __bad_interrupt
+                0x000000000000005e                __vector_6
+                0x000000000000005e                __vector_3
+                0x000000000000005e                __vector_11
+                0x000000000000005e                __vector_13
+                0x000000000000005e                __vector_17
+                0x000000000000005e                __vector_19
+                0x000000000000005e                __vector_7
+                0x000000000000005e                __vector_5
+                0x000000000000005e                __vector_4
+                0x000000000000005e                __vector_9
+                0x000000000000005e                __vector_2
+                0x000000000000005e                __vector_15
+                0x000000000000005e                __vector_8
+                0x000000000000005e                __vector_14
+                0x000000000000005e                __vector_10
+                0x000000000000005e                __vector_16
+                0x000000000000005e                __vector_1
+ .text          0x0000000000000060       0xd4 Builds/TWI_Master.o
+                0x0000000000000060                TWIM_Init
+                0x0000000000000092                TWIM_Start
+                0x00000000000000da                TWIM_Stop
+                0x00000000000000ea                TWIM_Write
+                0x000000000000010c                TWIM_ReadAck
+                0x0000000000000120                TWIM_ReadNack
+ .text          0x0000000000000134       0x8e Builds/cc1101.o
+                0x0000000000000134                SpiInit
+                0x000000000000013e                GDO_Set
+                0x0000000000000142                RegConfigSettings
+                0x0000000000000146                SpiTransfer
+                0x0000000000000152                Reset
+                0x000000000000018c                Init
+                0x000000000000019c                SpiWriteReg
+                0x00000000000001a0                SpiWriteBurstReg
+                0x00000000000001a4                SpiStrobe
+                0x00000000000001a8                SpiReadReg
+                0x00000000000001ac                SpiReadBurstReg
+                0x00000000000001b0                SpiReadStatus
+                0x00000000000001b4                SendData
+                0x00000000000001b8                SetReceive
+                0x00000000000001bc                CheckReceiveFlag
+                0x00000000000001be                ReceiveData
+ .text          0x00000000000001c2      0x4c0 Builds/cc1101q1.o
+                0x00000000000001c2                CC1101
+                0x00000000000001ca                wakeUp
+                0x00000000000001d4                spiinit
+                0x00000000000001de                spisend
+                0x00000000000001ea                writeReg
+                0x000000000000020e                setSyncWord
+                0x0000000000000260                setSyncWordbytes
+                0x000000000000026a                setDevAddress
+                0x000000000000029a                setChannel
+                0x00000000000002ca                setRegsFromEeprom
+                0x0000000000000314                setCarrierFreq
+                0x000000000000035a                setDefaultRegs
+                0x000000000000044e                writeBurstReg
+                0x00000000000004a0                cmdStrobe
+                0x00000000000004ac                setPowerDownState
+                0x00000000000004b4                readReg
+                0x00000000000004c6                sendData
+                0x0000000000000578                readBurstReg
+                0x00000000000005ce                receiveData
+                0x0000000000000636                reset
+                0x0000000000000674                init
+ .text          0x0000000000000682        0x0 Builds/main.o
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+ .text          0x0000000000000682        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+                0x0000000000000682                . = ALIGN (0x2)
+ *(.text.*)
+ .text.startup  0x0000000000000682       0x82 Builds/main.o
+                0x0000000000000682                main
+ .text.libgcc.mul
+                0x0000000000000704        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x0000000000000704       0x44 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+                0x0000000000000704                __udivmodsi4
+ .text.libgcc   0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x0000000000000748        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x0000000000000748       0x10 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+                0x0000000000000748                __eerd_byte_tn48
+ .text.avr-libc
+                0x0000000000000758       0x1c /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+                0x0000000000000758                __eewr_byte_tn48
+                0x000000000000075a                __eewr_r18_tn48
+                0x0000000000000774                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000000000000774        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+                0x0000000000000774                exit
+                0x0000000000000774                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000000000000774        0x4 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000000000000778                _etext = .
+
+.data           0x0000000000800100        0x8 load address 0x0000000000000778
+                0x0000000000800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800100        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+ .data          0x0000000000800100        0x0 Builds/TWI_Master.o
+ .data          0x0000000000800100        0x8 Builds/cc1101.o
+                0x0000000000800100                PaTable
+ .data          0x0000000000800108        0x0 Builds/cc1101q1.o
+ .data          0x0000000000800108        0x0 Builds/main.o
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+ .data          0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0000000000800108                . = ALIGN (0x2)
+                0x0000000000800108                _edata = .
+                0x0000000000800108                PROVIDE (__data_end, .)
+
+.bss            0x0000000000800108       0x48
+                0x0000000000800108                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+ .bss           0x0000000000800108        0x0 Builds/TWI_Master.o
+ .bss           0x0000000000800108        0x0 Builds/cc1101.o
+ .bss           0x0000000000800108        0x0 Builds/cc1101q1.o
+ .bss           0x0000000000800108        0x0 Builds/main.o
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+ .bss           0x0000000000800108        0x0 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0000000000800108        0x3 Builds/cc1101.o
+                0x0000000000800108                syncWord
+                0x000000000080010a                carrierFreq
+ COMMON         0x000000000080010b       0x45 Builds/cc1101q1.o
+                0x000000000080010b                paTableByte
+                0x000000000080010c                CCPACKET
+                0x000000000080014d                rfState
+                0x000000000080014e                channel
+                0x000000000080014f                devAddress
+                0x0000000000800150                PROVIDE (__bss_end, .)
+                0x0000000000000778                __data_load_start = LOADADDR (.data)
+                0x0000000000000780                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000800150        0x0
+                0x0000000000800150                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0000000000800150                PROVIDE (__noinit_end, .)
+                0x0000000000800150                _end = .
+                0x0000000000800150                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x0000000000000000     0x2868
+ *(.stab)
+ .stab          0x0000000000000000      0x774 Builds/TWI_Master.o
+ .stab          0x0000000000000774      0x78c Builds/cc1101.o
+                                        0x9b4 (size before relaxing)
+ .stab          0x0000000000000f00     0x10d4 Builds/cc1101q1.o
+                                       0x132c (size before relaxing)
+ .stab          0x0000000000001fd4      0x474 Builds/main.o
+                                        0x6d8 (size before relaxing)
+ .stab          0x0000000000002448      0x228 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+                                        0x234 (size before relaxing)
+ .stab          0x0000000000002670       0x6c /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+                                         0x78 (size before relaxing)
+ .stab          0x00000000000026dc       0xd8 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+                                         0xe4 (size before relaxing)
+ .stab          0x00000000000027b4       0xb4 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+                                         0xc0 (size before relaxing)
+
+.stabstr        0x0000000000000000     0x1a78
+ *(.stabstr)
+ .stabstr       0x0000000000000000     0x1a78 Builds/TWI_Master.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 Builds/TWI_Master.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 Builds/cc1101.o
+ .comment       0x0000000000000011       0x12 Builds/cc1101q1.o
+ .comment       0x0000000000000011       0x12 Builds/main.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0x576
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x576 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+
+.debug_abbrev   0x0000000000000000      0x52b
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x52b /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+
+.debug_line     0x0000000000000000       0x1d
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000       0x1d /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000      0x1d9
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x1d9 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(Builds/main.elf elf32-avr)
+LOAD linker stubs
+
+Cross Reference Table
+
+Symbol                                            File
+CC1101                                            Builds/cc1101q1.o
+CCPACKET                                          Builds/main.o
+                                                  Builds/cc1101q1.o
+CheckReceiveFlag                                  Builds/cc1101.o
+GDO_Set                                           Builds/cc1101.o
+Init                                              Builds/cc1101.o
+PaTable                                           Builds/cc1101.o
+ReceiveData                                       Builds/cc1101.o
+RegConfigSettings                                 Builds/cc1101.o
+Reset                                             Builds/cc1101.o
+SendData                                          Builds/cc1101.o
+SetReceive                                        Builds/cc1101.o
+SpiInit                                           Builds/cc1101.o
+SpiReadBurstReg                                   Builds/cc1101.o
+SpiReadReg                                        Builds/cc1101.o
+SpiReadStatus                                     Builds/cc1101.o
+SpiStrobe                                         Builds/cc1101.o
+SpiTransfer                                       Builds/cc1101.o
+SpiWriteBurstReg                                  Builds/cc1101.o
+SpiWriteReg                                       Builds/cc1101.o
+TWIM_Init                                         Builds/TWI_Master.o
+                                                  Builds/main.o
+TWIM_ReadAck                                      Builds/TWI_Master.o
+TWIM_ReadNack                                     Builds/TWI_Master.o
+TWIM_Start                                        Builds/TWI_Master.o
+                                                  Builds/main.o
+TWIM_Stop                                         Builds/TWI_Master.o
+                                                  Builds/main.o
+TWIM_Write                                        Builds/TWI_Master.o
+                                                  Builds/main.o
+__bad_interrupt                                   /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__bss_end                                         /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+__bss_start                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+__data_end                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+__data_load_start                                 /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+__data_start                                      /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+__do_clear_bss                                    /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_clear_bss.o)
+                                                  Builds/main.o
+                                                  Builds/cc1101q1.o
+                                                  Builds/cc1101.o
+__do_copy_data                                    /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_copy_data.o)
+                                                  Builds/cc1101.o
+__eerd_byte_tn48                                  /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eerd_byte_attiny48.o)
+                                                  Builds/cc1101q1.o
+__eewr_byte_tn48                                  /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+                                                  Builds/cc1101q1.o
+__eewr_r18_tn48                                   /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/libc.a(eewr_byte_attiny48.o)
+__heap_end                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__init                                            /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__stack                                           /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__udivmodsi4                                      /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_udivmodsi4.o)
+                                                  Builds/TWI_Master.o
+__vector_1                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_10                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_11                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_12                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_13                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_14                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_15                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_16                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_17                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_18                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_19                                       /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_2                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_3                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_4                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_5                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_6                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_7                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_8                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_9                                        /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vector_default                                  /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+__vectors                                         /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+_exit                                             /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+carrierFreq                                       Builds/main.o
+                                                  Builds/cc1101q1.o
+                                                  Builds/cc1101.o
+channel                                           Builds/main.o
+                                                  Builds/cc1101q1.o
+cmdStrobe                                         Builds/cc1101q1.o
+devAddress                                        Builds/main.o
+                                                  Builds/cc1101q1.o
+exit                                              /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/avr25/libgcc.a(_exit.o)
+                                                  /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+init                                              Builds/cc1101q1.o
+                                                  Builds/main.o
+main                                              Builds/main.o
+                                                  /usr/local/Cellar/avr-gcc/4.9.3/lib/gcc/avr/4.9.3/../../../../avr/lib/avr25/crttn48.o
+paTableByte                                       Builds/main.o
+                                                  Builds/cc1101q1.o
+readBurstReg                                      Builds/cc1101q1.o
+readReg                                           Builds/cc1101q1.o
+                                                  Builds/main.o
+receiveData                                       Builds/cc1101q1.o
+reset                                             Builds/cc1101q1.o
+rfState                                           Builds/main.o
+                                                  Builds/cc1101q1.o
+sendData                                          Builds/cc1101q1.o
+setCarrierFreq                                    Builds/cc1101q1.o
+                                                  Builds/main.o
+setChannel                                        Builds/cc1101q1.o
+setDefaultRegs                                    Builds/cc1101q1.o
+setDevAddress                                     Builds/cc1101q1.o
+setPowerDownState                                 Builds/cc1101q1.o
+setRegsFromEeprom                                 Builds/cc1101q1.o
+setSyncWord                                       Builds/cc1101q1.o
+setSyncWordbytes                                  Builds/cc1101q1.o
+                                                  Builds/main.o
+spiinit                                           Builds/cc1101q1.o
+spisend                                           Builds/cc1101q1.o
+syncWord                                          Builds/main.o
+                                                  Builds/cc1101q1.o
+                                                  Builds/cc1101.o
+wakeUp                                            Builds/cc1101q1.o
+writeBurstReg                                     Builds/cc1101q1.o
+writeReg                                          Builds/cc1101q1.o
+                                                  Builds/main.o
