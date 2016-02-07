@@ -12,8 +12,12 @@
 #include <stdio.h>
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 #include <stdbool.h>
 #include "ccpacket.h"
+#include <inttypes.h>
+#include <avr/pgmspace.h>
+#include "external_interrupt.h"
 
 #define byte				uint8_t
 #define REPEATER_TABLE_DEPTH  20
@@ -43,13 +47,32 @@
 #define BIT_SPI_SS   2
 
 #define PORT_GDO0  PIND
-#define BIT_GDO0  2
+#define BIT_GDO0  5
 
 /**
  * Macros
  */
 // Wait until SPI operation is terminated
-#define wait_Spi()  while(!(SPSR & _BV(SPIF)))
+#define wait_Spi()  while(!(SPSR & (1<<SPIF)))
+
+/**
+ * Macros
+ */
+// Select (SPI) CC1101
+#define cc1101_Select()  bitClear(PORT_SPI_SS, BIT_SPI_SS)
+// Deselect (SPI) CC1101
+#define cc1101_Deselect()  bitSet(PORT_SPI_SS, BIT_SPI_SS)
+// Wait until SPI MISO line goes low
+#define wait_Miso()  while(bitRead(PORT_SPI_MISO, BIT_SPI_MISO))
+// Get GDO0 pin state
+#define getGDO1state()  bitRead(PORT_SPI_MISO, BIT_SPI_MISO)
+#define getGDO0state()  bitRead(PORT_GDO0, BIT_GDO0)
+#define wait_GDO1_high() while(!getGDO1state())
+#define wait_GDO1_low() while(getGDO1state())
+// Wait until GDO0 line goes high
+#define wait_GDO0_high()  while(!getGDO0state())
+// Wait until GDO0 line goes low
+#define wait_GDO0_low()  while(getGDO0state())
 //----------------------------------------------------------------------------------------------
 //nvolat.h
 //----------------------------------------------------------------------------------------------
@@ -327,6 +350,16 @@ enum RFSTATE
 // PATABLE values
 #define PA_LowPower               0x60
 #define PA_LongDistance           0xC0
+
+
+//interrupts--------------------------------------------------------------------------------------
+extern void attachInterrupt(uint8_t, void (*)(void), int mode);
+extern void Enable_Interrupt(uint8_t INT_NO);
+extern void Enable_Pcinterrupt(uint8_t PCINT_NO,void (*)(void));
+extern void Disable_Interrupt(uint8_t INT_NO);
+extern void Disable_Pcinterrupt(uint8_t PCINT_NO);
+//------------------------------------------------------------------------------------------------
+
 
 /**
  * Class: CC1101

@@ -24,23 +24,22 @@
 
 #include "cc.h"
 #include <avr/eeprom.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <inttypes.h>
+#include <avr/pgmspace.h>
+#include "external_interrupt.h"
 //#include "nvolat.h"
 
-/**
- * Macros
- */
-// Select (SPI) CC1101
-#define cc1101_Select()  bitClear(PORT_SPI_SS, BIT_SPI_SS)
-// Deselect (SPI) CC1101
-#define cc1101_Deselect()  bitSet(PORT_SPI_SS, BIT_SPI_SS)
-// Wait until SPI MISO line goes low
-#define wait_Miso()  while(bitRead(PORT_SPI_MISO, BIT_SPI_MISO))
-// Get GDO0 pin state
-#define getGDO0state()  bitRead(PORT_GDO0, BIT_GDO0)
-// Wait until GDO0 line goes high
-#define wait_GDO0_high()  while(!getGDO0state())
-// Wait until GDO0 line goes low
-#define wait_GDO0_low()  while(getGDO0state())
+//----------------------------------------------------------------------------------------
+#define EXTERNAL_NUM_INTERRUPTS 2
+typedef void (*voidFuncPtr)(void);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+static volatile voidFuncPtr intFunc[24];
+//-----------------------------------------------------------------------------------------
 
 /**
  * PATABLE
@@ -213,12 +212,12 @@ void setDefaultRegs(void)
     writeReg(CC1101_PKTCTRL0,  CC1101_DEFVAL_PKTCTRL0);
     
     // Set default synchronization word
-    // setSyncWord(CC1101_DEFVAL_SYNC1, CC1101_DEFVAL_SYNC0, false);
+     setSyncWord(CC1101_DEFVAL_SYNC1, CC1101_DEFVAL_SYNC0, false);
     
     // // Set default device address
-    // setDevAddress(CC1101_DEFVAL_ADDR, false);
+     setDevAddress(CC1101_DEFVAL_ADDR, false);
     // // Set default frequency channel
-    // setChannel(CC1101_DEFVAL_CHANNR, false);
+     setChannel(CC1101_DEFVAL_CHANNR, false);
     
     writeReg(CC1101_FSCTRL1,  CC1101_DEFVAL_FSCTRL1);
     writeReg(CC1101_FSCTRL0,  CC1101_DEFVAL_FSCTRL0);
@@ -454,6 +453,7 @@ bool sendData(struct CCPACKET packet)
     setRxState();
     
     // Check that the RX state has been entered
+    //check marcstate !=0x11
     while (((marcState = readStatusReg(CC1101_MARCSTATE)) & 0x1F) != 0x0D)
     {
         if (marcState == 0x11)        // RX_OVERFLOW
@@ -482,18 +482,19 @@ bool sendData(struct CCPACKET packet)
         rfState = RFSTATE_RX;
         return false;
     }
-    
+//
     // Wait for the sync word to be transmitted
     wait_GDO0_high();
     
     // Wait until the end of the packet transmission
     wait_GDO0_low();
-    
-    // Check that the TX FIFO is empty
+//
+//    // Check that the TX FIFO is empty
     if((readStatusReg(CC1101_TXBYTES) & 0x7F) == 0)
         res = true;
     
     setIdleState();       // Enter IDLE state
+    _delay_ms(2000);
     flushTxFifo();        // Flush Tx FIFO
     
     // Enter back into RX state
@@ -501,7 +502,7 @@ bool sendData(struct CCPACKET packet)
     
     // Declare to be in Rx state
     rfState = RFSTATE_RX;
-    
+//
     return res;
 }
 
@@ -520,8 +521,15 @@ byte receiveData(struct CCPACKET * packet)
     byte val;
     byte rxBytes = readStatusReg(CC1101_RXBYTES);
     
-    // Any byte waiting to be read and no overflow?
-    if (rxBytes & 0x7F && !(rxBytes & 0x80))
+    // Rx FIFO overflow?
+    if ((readStatusReg(CC1101_MARCSTATE) & 0x1F) == 0x11)
+    {
+        // Flush Rx FIFO
+        cmdStrobe(CC1101_SFRX);
+        packet->length = 0;
+    }
+    // Any byte waiting to be read?
+    else if (readStatusReg(CC1101_RXBYTES) & 0x7F)
     {
         // Read data length
         packet->length = readConfigReg(CC1101_RXFIFO);
@@ -543,6 +551,14 @@ byte receiveData(struct CCPACKET * packet)
     else
         packet->length = 0;
     
+    // Flush RX FIFO. Don't uncomment
+    //cmdStrobe(CC1101_SFRX);
+    
+    // Enter back into RX state
+    setRxState();
+    
+    return packet->length;
+    
     setIdleState();       // Enter IDLE state
     flushRxFifo();        // Flush Rx FIFO
     //cmdStrobe(CC1101_SCAL);
@@ -555,10 +571,14 @@ byte receiveData(struct CCPACKET * packet)
 
 void spiinit(void)
 {
-    DDRB = (1<<5)|(1<<3)|(1<<2);
+    volatile char IOReg;
+    DDRB = (1<<PB5)|(1<<PB3)|(1<<PB2);
     
     //Enable SPI master mode
-    SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
+    SPCR = (1<<SPE)|(1<<MSTR);
+    IOReg   = SPSR;                 	// clear SPIF bit in SPSR
+    IOReg   = SPDR;
+    
 }
 
 /**
@@ -575,6 +595,367 @@ byte spisend(byte value)
 {
     SPDR = value;                          // Transfer byte via SPI
     wait_Spi();                            // Wait until SPI operation is terminated
-    
     return SPDR;
 }
+byte spiread(void)
+{
+    byte data;
+    wait_Spi();
+    data = SPDR;
+    return data;
+}
+
+
+//attachinterrupts
+void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode) {
+    if(interruptNum < EXTERNAL_NUM_INTERRUPTS) {
+        intFunc[interruptNum] = userFunc;
+        
+        // Configure the interrupt mode (trigger on low input, any change, rising
+        // edge, or falling edge).  The mode constants were chosen to correspond
+        // to the configuration bits in the hardware register, so we simply shift
+        // the mode into place.
+        
+        // Enable the interrupt.
+        
+        switch (interruptNum) {
+#if defined(__AVR_ATmega32U4__)
+                // I hate doing this, but the register assignment differs between the 1280/2560
+                // and the 32U4.  Since avrlib defines registers PCMSK1 and PCMSK2 that aren't
+                // even present on the 32U4 this is the only way to distinguish between them.
+            case 0:
+                EICRA = (EICRA & ~((1<<ISC00) | (1<<ISC01))) | (mode << ISC00);
+                EIMSK |= (1<<INT0);
+                break;
+            case 1:
+                EICRA = (EICRA & ~((1<<ISC10) | (1<<ISC11))) | (mode << ISC10);
+                EIMSK |= (1<<INT1);
+                break;
+            case 2:
+                EICRA = (EICRA & ~((1<<ISC20) | (1<<ISC21))) | (mode << ISC20);
+                EIMSK |= (1<<INT2);
+                break;
+            case 3:
+                EICRA = (EICRA & ~((1<<ISC30) | (1<<ISC31))) | (mode << ISC30);
+                EIMSK |= (1<<INT3);
+                break;
+            case 4:
+                EICRB = (EICRB & ~((1<<ISC60) | (1<<ISC61))) | (mode << ISC60);
+                EIMSK |= (1<<INT6);
+                break;
+#elif defined(EICRA) && defined(EICRB) && defined(EIMSK)
+            case 2:
+                EICRA = (EICRA & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+                EIMSK |= (1 << INT0);
+                break;
+            case 3:
+                EICRA = (EICRA & ~((1 << ISC10) | (1 << ISC11))) | (mode << ISC10);
+                EIMSK |= (1 << INT1);
+                break;
+            case 4:
+                EICRA = (EICRA & ~((1 << ISC20) | (1 << ISC21))) | (mode << ISC20);
+                EIMSK |= (1 << INT2);
+                break;
+            case 5:
+                EICRA = (EICRA & ~((1 << ISC30) | (1 << ISC31))) | (mode << ISC30);
+                EIMSK |= (1 << INT3);
+                break;
+            case 0:
+                EICRB = (EICRB & ~((1 << ISC40) | (1 << ISC41))) | (mode << ISC40);
+                EIMSK |= (1 << INT4);
+                break;
+            case 1:
+                EICRB = (EICRB & ~((1 << ISC50) | (1 << ISC51))) | (mode << ISC50);
+                EIMSK |= (1 << INT5);
+                break;
+            case 6:
+                EICRB = (EICRB & ~((1 << ISC60) | (1 << ISC61))) | (mode << ISC60);
+                EIMSK |= (1 << INT6);
+                break;
+            case 7:
+                EICRB = (EICRB & ~((1 << ISC70) | (1 << ISC71))) | (mode << ISC70);
+                EIMSK |= (1 << INT7);
+                break;
+#else
+            case 0:
+#if defined(EICRA) && defined(ISC00) && defined(EIMSK)
+                EICRA = (EICRA & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+                EIMSK |= (1 << INT0);
+#elif defined(MCUCR) && defined(ISC00) && defined(GICR)
+                MCUCR = (MCUCR & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+                GICR |= (1 << INT0);
+#elif defined(MCUCR) && defined(ISC00) && defined(GIMSK)
+                MCUCR = (MCUCR & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+                GIMSK |= (1 << INT0);
+#else
+#error attachInterrupt not finished for this CPU (case 0)
+#endif
+                break;
+                
+            case 1:
+#if defined(EICRA) && defined(ISC10) && defined(ISC11) && defined(EIMSK)
+                EICRA = (EICRA & ~((1 << ISC10) | (1 << ISC11))) | (mode << ISC10);
+                EIMSK |= (1 << INT1);
+#elif defined(MCUCR) && defined(ISC10) && defined(ISC11) && defined(GICR)
+                MCUCR = (MCUCR & ~((1 << ISC10) | (1 << ISC11))) | (mode << ISC10);
+                GICR |= (1 << INT1);
+#elif defined(MCUCR) && defined(ISC10) && defined(GIMSK) && defined(GIMSK)
+                MCUCR = (MCUCR & ~((1 << ISC10) | (1 << ISC11))) | (mode << ISC10);
+                GIMSK |= (1 << INT1);
+#else
+#warning attachInterrupt may need some more work for this cpu (case 1)
+#endif
+                break;
+                
+            case 2:
+#if defined(EICRA) && defined(ISC20) && defined(ISC21) && defined(EIMSK)
+                EICRA = (EICRA & ~((1 << ISC20) | (1 << ISC21))) | (mode << ISC20);
+                EIMSK |= (1 << INT2);
+#elif defined(MCUCR) && defined(ISC20) && defined(ISC21) && defined(GICR)
+                MCUCR = (MCUCR & ~((1 << ISC20) | (1 << ISC21))) | (mode << ISC20);
+                GICR |= (1 << INT2);
+#elif defined(MCUCR) && defined(ISC20) && defined(GIMSK) && defined(GIMSK)
+                MCUCR = (MCUCR & ~((1 << ISC20) | (1 << ISC21))) | (mode << ISC20);
+                GIMSK |= (1 << INT2);
+#endif
+                break;
+#endif
+        }
+    }
+}
+
+
+
+void Enable_Interrupt(uint8_t INT_NO)
+{
+    switch(INT_NO)
+    {
+        case 0:EIMSK|=(1<<INT0);
+            break;
+        case 1:EIMSK|=(1<<INT1);
+            break;
+        default:break;
+    }
+}
+
+/*! \brief This function enables the external pin change interrupt.
+ *
+ *  \param PCINT_NO	The pin change interrupt which has to be enabled.
+ */
+void Enable_Pcinterrupt(uint8_t PCINT_NO,void (*userFunc)(void))
+{
+    intFunc[PCINT_NO] = userFunc;
+    if(PCINT_NO>=0 && PCINT_NO<=7)
+    {
+        PCICR=(PCICR&(~(1<<PCIE0)))|(1<<PCIE0);
+        
+        switch(PCINT_NO)
+        {
+            case 0:PCMSK0|=(1<<PCINT0);
+                break;
+            case 1:PCMSK0|=(1<<PCINT1);
+                break;
+            case 2:PCMSK0|=(1<<PCINT2);
+                break;
+            case 3:PCMSK0|=(1<<PCINT3);
+                break;
+            case 4:PCMSK0|=(1<<PCINT4);
+                break;
+            case 5:PCMSK0|=(1<<PCINT5);
+                break;
+            case 6:PCMSK0|=(1<<PCINT6);
+                break;
+            case 7:PCMSK0|=(1<<PCINT7);
+                break;
+            default:break;
+        }
+    }
+    else if(PCINT_NO>=8 && PCINT_NO<=15)
+    {
+        PCICR=(PCICR&(~(1<<PCIE1)))|(1<<PCIE1);
+        
+        switch(PCINT_NO)
+        {
+            case 8:PCMSK1|=(1<<PCINT8);
+                break;
+            case 9:PCMSK1|=(1<<PCINT9);
+                break;
+            case 10:PCMSK1|=(1<<PCINT10);
+                break;
+            case 11:PCMSK1|=(1<<PCINT11);
+                break;
+            case 12:PCMSK1|=(1<<PCINT12);
+                break;
+            case 13:PCMSK1|=(1<<PCINT13);
+                break;
+            case 14:PCMSK1|=(1<<PCINT14);
+                break;
+            case 15:PCMSK1|=(1<<PCINT15);
+                break;
+            default:break;
+        }
+    }
+    else if(PCINT_NO>=16 && PCINT_NO<=23)
+    {
+        PCICR=(PCICR&(~(1<<PCIE2)))|(1<<PCIE2);
+        
+        switch(PCINT_NO)
+        {
+            case 16:PCMSK2|=(1<<PCINT16);
+                break;
+            case 17:PCMSK2|=(1<<PCINT17);
+                break;
+            case 18:PCMSK2|=(1<<PCINT18);
+                break;
+            case 19:PCMSK2|=(1<<PCINT19);
+                break;
+            case 20:PCMSK2|=(1<<PCINT20);
+                break;
+            case 21:PCMSK2|=(1<<PCINT21);
+                break;
+            case 22:PCMSK2|=(1<<PCINT22);
+                break;
+            case 23:PCMSK2|=(1<<PCINT23);
+                break;
+            default:break;
+        }
+    }
+    else
+    {
+        PCICR=(PCICR&(~(1<<PCIE3)))|(1<<PCIE3);
+        
+        switch(PCINT_NO)
+        {
+            case 24:PCMSK3|=(1<<PCINT24);
+                break;
+            case 25:PCMSK3|=(1<<PCINT25);
+                break;
+            case 26:PCMSK3|=(1<<PCINT26);
+                break;
+            case 27:PCMSK3|=(1<<PCINT27);
+                break;
+            default:break;
+        }
+    }
+}
+
+/*! \brief This function disables the external interrupt.
+ *
+ *  \param INT_NO	The interrupt which has to be disabled.
+ */
+void Disable_Interrupt(uint8_t INT_NO)
+{
+    switch(INT_NO)
+    {
+        case 0:EIMSK=(EIMSK&(~(1<<INT0)));
+            break;
+        case 1:EIMSK=(EIMSK&(~(1<<INT1)));
+            break;
+        default:break;
+    }
+}
+
+/*! \brief This function disables the external pin change interrupt.
+ *
+ *  \param PCINT_NO	The pin change interrupt which has to be disabled.
+ */
+void Disable_Pcinterrupt(uint8_t PCINT_NO)
+{
+    switch(PCINT_NO)
+    {
+        case 0:PCMSK0=(PCMSK0&(~(1<<PCINT0)));
+            break;
+        case 1:PCMSK0=(PCMSK0&(~(1<<PCINT1)));
+            break;
+        case 2:PCMSK0=(PCMSK0&(~(1<<PCINT2)));
+            break;
+        case 3:PCMSK0=(PCMSK0&(~(1<<PCINT3)));
+            break;
+        case 4:PCMSK0=(PCMSK0&(~(1<<PCINT4)));
+            break;
+        case 5:PCMSK0=(PCMSK0&(~(1<<PCINT5)));
+            break;
+        case 6:PCMSK0=(PCMSK0&(~(1<<PCINT6)));
+            break;
+        case 7:PCMSK0=(PCMSK0&(~(1<<PCINT7)));
+            break;
+        case 8:PCMSK1=(PCMSK1&(~(1<<PCINT8)));
+            break;
+        case 9:PCMSK1=(PCMSK1&(~(1<<PCINT9)));
+            break;
+        case 10:PCMSK1=(PCMSK1&(~(1<<PCINT10)));
+            break;
+        case 11:PCMSK1=(PCMSK1&(~(1<<PCINT11)));
+            break;
+        case 12:PCMSK1=(PCMSK1&(~(1<<PCINT12)));
+            break;
+        case 13:PCMSK1=(PCMSK1&(~(1<<PCINT13)));
+            break;
+        case 14:PCMSK1=(PCMSK1&(~(1<<PCINT14)));
+            break;
+        case 15:PCMSK1=(PCMSK1&(~(1<<PCINT15)));
+            break;
+        case 16:PCMSK2=(PCMSK2&(~(1<<PCINT16)));
+            break;
+        case 17:PCMSK2=(PCMSK2&(~(1<<PCINT17)));
+            break;
+        case 18:PCMSK2=(PCMSK2&(~(1<<PCINT18)));
+            break;
+        case 19:PCMSK2=(PCMSK2&(~(1<<PCINT19)));
+            break;
+        case 20:PCMSK2=(PCMSK2&(~(1<<PCINT20)));
+            break;
+        case 21:PCMSK2=(PCMSK2&(~(1<<PCINT21)));
+            break;
+        case 22:PCMSK2=(PCMSK2&(~(1<<PCINT22)));
+            break;
+        case 23:PCMSK2=(PCMSK2&(~(1<<PCINT23)));
+            break;
+        case 24:PCMSK3=(PCMSK3&(~(1<<PCINT24)));
+            break;
+        case 25:PCMSK3=(PCMSK3&(~(1<<PCINT25)));
+            break;
+        case 26:PCMSK3=(PCMSK3&(~(1<<PCINT26)));
+            break;
+        case 27:PCMSK3=(PCMSK3&(~(1<<PCINT27)));
+            break;
+        default:break;
+    }
+    
+    if(PCMSK0 == 0x00)
+    {
+        PCICR=(PCICR&(~(1<<PCIE0)));
+    }
+    else if(PCMSK1 == 0x00)
+    {
+        PCICR=(PCICR&(~(1<<PCIE1)));
+    }
+    else if(PCMSK2 == 0x00)
+    {
+        PCICR=(PCICR&(~(1<<PCIE2)));
+    }
+    else if(PCMSK3 == 0x00)
+    {
+        PCICR=(PCICR&(~(1<<PCIE3)));
+    }
+}
+
+//byte halSpiReadStatus(byte addr)
+//{
+//    unsigned char value;
+//    cc1101_Select();
+//    wait_GDO1_high();
+//    addr|=READ_BURST;
+//    SPI_write(addr);
+//    value = spiread();
+//    cc1101_Deselect();
+//    return value;
+//}
+
+
+
+
+
+
+
+

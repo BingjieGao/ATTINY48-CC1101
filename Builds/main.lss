@@ -3,1814 +3,2640 @@ Builds/main.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000008  00800100  00000778  0000080c  2**0
+  0 .data         0000000a  00800100  00000ba6  00000c3a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000778  00000000  00000000  00000094  2**1
+  1 .text         00000ba6  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000048  00800108  00800108  00000814  2**0
+  2 .bss          0000007a  0080010a  0080010a  00000c44  2**0
                   ALLOC
-  3 .stab         00002868  00000000  00000000  00000814  2**2
+  3 .stab         000032f4  00000000  00000000  00000c44  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00001a78  00000000  00000000  0000307c  2**0
+  4 .stabstr      00001c77  00000000  00000000  00003f38  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .comment      00000011  00000000  00000000  00004af4  2**0
+  5 .comment      00000011  00000000  00000000  00005baf  2**0
                   CONTENTS, READONLY
-  6 .debug_info   00000576  00000000  00000000  00004b05  2**0
+  6 .debug_info   00000576  00000000  00000000  00005bc0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000052b  00000000  00000000  0000507b  2**0
+  7 .debug_abbrev 0000052b  00000000  00000000  00006136  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000001d  00000000  00000000  000055a6  2**0
+  8 .debug_line   0000001d  00000000  00000000  00006661  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000001d9  00000000  00000000  000055c3  2**0
+  9 .debug_str    000001d9  00000000  00000000  0000667e  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	13 c0       	rjmp	.+38     	; 0x28 <__ctors_end>
-   2:	2d c0       	rjmp	.+90     	; 0x5e <__bad_interrupt>
-   4:	2c c0       	rjmp	.+88     	; 0x5e <__bad_interrupt>
-   6:	2b c0       	rjmp	.+86     	; 0x5e <__bad_interrupt>
-   8:	2a c0       	rjmp	.+84     	; 0x5e <__bad_interrupt>
-   a:	29 c0       	rjmp	.+82     	; 0x5e <__bad_interrupt>
-   c:	28 c0       	rjmp	.+80     	; 0x5e <__bad_interrupt>
-   e:	27 c0       	rjmp	.+78     	; 0x5e <__bad_interrupt>
-  10:	26 c0       	rjmp	.+76     	; 0x5e <__bad_interrupt>
-  12:	25 c0       	rjmp	.+74     	; 0x5e <__bad_interrupt>
-  14:	24 c0       	rjmp	.+72     	; 0x5e <__bad_interrupt>
-  16:	23 c0       	rjmp	.+70     	; 0x5e <__bad_interrupt>
-  18:	22 c0       	rjmp	.+68     	; 0x5e <__bad_interrupt>
-  1a:	21 c0       	rjmp	.+66     	; 0x5e <__bad_interrupt>
-  1c:	20 c0       	rjmp	.+64     	; 0x5e <__bad_interrupt>
-  1e:	1f c0       	rjmp	.+62     	; 0x5e <__bad_interrupt>
-  20:	1e c0       	rjmp	.+60     	; 0x5e <__bad_interrupt>
-  22:	1d c0       	rjmp	.+58     	; 0x5e <__bad_interrupt>
-  24:	1c c0       	rjmp	.+56     	; 0x5e <__bad_interrupt>
-  26:	1b c0       	rjmp	.+54     	; 0x5e <__bad_interrupt>
+   0:	44 c0       	rjmp	.+136    	; 0x8a <__ctors_end>
+   2:	5e c0       	rjmp	.+188    	; 0xc0 <__bad_interrupt>
+   4:	5d c0       	rjmp	.+186    	; 0xc0 <__bad_interrupt>
+   6:	5c c0       	rjmp	.+184    	; 0xc0 <__bad_interrupt>
+   8:	5b c0       	rjmp	.+182    	; 0xc0 <__bad_interrupt>
+   a:	5a c0       	rjmp	.+180    	; 0xc0 <__bad_interrupt>
+   c:	59 c0       	rjmp	.+178    	; 0xc0 <__bad_interrupt>
+   e:	58 c0       	rjmp	.+176    	; 0xc0 <__bad_interrupt>
+  10:	57 c0       	rjmp	.+174    	; 0xc0 <__bad_interrupt>
+  12:	56 c0       	rjmp	.+172    	; 0xc0 <__bad_interrupt>
+  14:	55 c0       	rjmp	.+170    	; 0xc0 <__bad_interrupt>
+  16:	54 c0       	rjmp	.+168    	; 0xc0 <__bad_interrupt>
+  18:	53 c0       	rjmp	.+166    	; 0xc0 <__bad_interrupt>
+  1a:	52 c0       	rjmp	.+164    	; 0xc0 <__bad_interrupt>
+  1c:	51 c0       	rjmp	.+162    	; 0xc0 <__bad_interrupt>
+  1e:	50 c0       	rjmp	.+160    	; 0xc0 <__bad_interrupt>
+  20:	4f c0       	rjmp	.+158    	; 0xc0 <__bad_interrupt>
+  22:	4e c0       	rjmp	.+156    	; 0xc0 <__bad_interrupt>
+  24:	4d c0       	rjmp	.+154    	; 0xc0 <__bad_interrupt>
+  26:	4c c0       	rjmp	.+152    	; 0xc0 <__bad_interrupt>
+  28:	d0 c3       	rjmp	.+1952   	; 0x7ca <Enable_Pcinterrupt+0x42>
+  2a:	d3 c3       	rjmp	.+1958   	; 0x7d2 <Enable_Pcinterrupt+0x4a>
+  2c:	d4 c3       	rjmp	.+1960   	; 0x7d6 <Enable_Pcinterrupt+0x4e>
+  2e:	d5 c3       	rjmp	.+1962   	; 0x7da <Enable_Pcinterrupt+0x52>
+  30:	d6 c3       	rjmp	.+1964   	; 0x7de <Enable_Pcinterrupt+0x56>
+  32:	d7 c3       	rjmp	.+1966   	; 0x7e2 <Enable_Pcinterrupt+0x5a>
+  34:	d8 c3       	rjmp	.+1968   	; 0x7e6 <Enable_Pcinterrupt+0x5e>
+  36:	f2 c3       	rjmp	.+2020   	; 0x81c <Enable_Pcinterrupt+0x94>
+  38:	f3 c3       	rjmp	.+2022   	; 0x820 <Enable_Pcinterrupt+0x98>
+  3a:	f4 c3       	rjmp	.+2024   	; 0x824 <Enable_Pcinterrupt+0x9c>
+  3c:	f5 c3       	rjmp	.+2026   	; 0x828 <Enable_Pcinterrupt+0xa0>
+  3e:	f6 c3       	rjmp	.+2028   	; 0x82c <Enable_Pcinterrupt+0xa4>
+  40:	f7 c3       	rjmp	.+2030   	; 0x830 <Enable_Pcinterrupt+0xa8>
+  42:	f8 c3       	rjmp	.+2032   	; 0x834 <Enable_Pcinterrupt+0xac>
+  44:	14 c4       	rjmp	.+2088   	; 0x86e <Enable_Pcinterrupt+0xe6>
+  46:	15 c4       	rjmp	.+2090   	; 0x872 <Enable_Pcinterrupt+0xea>
+  48:	16 c4       	rjmp	.+2092   	; 0x876 <Enable_Pcinterrupt+0xee>
+  4a:	17 c4       	rjmp	.+2094   	; 0x87a <Enable_Pcinterrupt+0xf2>
+  4c:	18 c4       	rjmp	.+2096   	; 0x87e <Enable_Pcinterrupt+0xf6>
+  4e:	19 c4       	rjmp	.+2098   	; 0x882 <Enable_Pcinterrupt+0xfa>
+  50:	1a c4       	rjmp	.+2100   	; 0x886 <Enable_Pcinterrupt+0xfe>
+  52:	51 c4       	rjmp	.+2210   	; 0x8f6 <Disable_Pcinterrupt+0x12>
+  54:	54 c4       	rjmp	.+2216   	; 0x8fe <Disable_Pcinterrupt+0x1a>
+  56:	59 c4       	rjmp	.+2226   	; 0x90a <Disable_Pcinterrupt+0x26>
+  58:	5c c4       	rjmp	.+2232   	; 0x912 <Disable_Pcinterrupt+0x2e>
+  5a:	5f c4       	rjmp	.+2238   	; 0x91a <Disable_Pcinterrupt+0x36>
+  5c:	62 c4       	rjmp	.+2244   	; 0x922 <Disable_Pcinterrupt+0x3e>
+  5e:	65 c4       	rjmp	.+2250   	; 0x92a <Disable_Pcinterrupt+0x46>
+  60:	68 c4       	rjmp	.+2256   	; 0x932 <Disable_Pcinterrupt+0x4e>
+  62:	6b c4       	rjmp	.+2262   	; 0x93a <Disable_Pcinterrupt+0x56>
+  64:	6e c4       	rjmp	.+2268   	; 0x942 <Disable_Pcinterrupt+0x5e>
+  66:	71 c4       	rjmp	.+2274   	; 0x94a <Disable_Pcinterrupt+0x66>
+  68:	74 c4       	rjmp	.+2280   	; 0x952 <Disable_Pcinterrupt+0x6e>
+  6a:	77 c4       	rjmp	.+2286   	; 0x95a <Disable_Pcinterrupt+0x76>
+  6c:	7a c4       	rjmp	.+2292   	; 0x962 <Disable_Pcinterrupt+0x7e>
+  6e:	7d c4       	rjmp	.+2298   	; 0x96a <Disable_Pcinterrupt+0x86>
+  70:	80 c4       	rjmp	.+2304   	; 0x972 <Disable_Pcinterrupt+0x8e>
+  72:	85 c4       	rjmp	.+2314   	; 0x97e <Disable_Pcinterrupt+0x9a>
+  74:	88 c4       	rjmp	.+2320   	; 0x986 <Disable_Pcinterrupt+0xa2>
+  76:	8b c4       	rjmp	.+2326   	; 0x98e <Disable_Pcinterrupt+0xaa>
+  78:	8e c4       	rjmp	.+2332   	; 0x996 <Disable_Pcinterrupt+0xb2>
+  7a:	91 c4       	rjmp	.+2338   	; 0x99e <Disable_Pcinterrupt+0xba>
+  7c:	94 c4       	rjmp	.+2344   	; 0x9a6 <Disable_Pcinterrupt+0xc2>
+  7e:	97 c4       	rjmp	.+2350   	; 0x9ae <Disable_Pcinterrupt+0xca>
+  80:	9a c4       	rjmp	.+2356   	; 0x9b6 <Disable_Pcinterrupt+0xd2>
+  82:	9f c4       	rjmp	.+2366   	; 0x9c2 <Disable_Pcinterrupt+0xde>
+  84:	a2 c4       	rjmp	.+2372   	; 0x9ca <Disable_Pcinterrupt+0xe6>
+  86:	a5 c4       	rjmp	.+2378   	; 0x9d2 <Disable_Pcinterrupt+0xee>
+  88:	a8 c4       	rjmp	.+2384   	; 0x9da <Disable_Pcinterrupt+0xf6>
 
-00000028 <__ctors_end>:
-  28:	11 24       	eor	r1, r1
-  2a:	1f be       	out	0x3f, r1	; 63
-  2c:	cf ef       	ldi	r28, 0xFF	; 255
-  2e:	d1 e0       	ldi	r29, 0x01	; 1
-  30:	de bf       	out	0x3e, r29	; 62
-  32:	cd bf       	out	0x3d, r28	; 61
+0000008a <__ctors_end>:
+  8a:	11 24       	eor	r1, r1
+  8c:	1f be       	out	0x3f, r1	; 63
+  8e:	cf ef       	ldi	r28, 0xFF	; 255
+  90:	d1 e0       	ldi	r29, 0x01	; 1
+  92:	de bf       	out	0x3e, r29	; 62
+  94:	cd bf       	out	0x3d, r28	; 61
 
-00000034 <__do_copy_data>:
-  34:	11 e0       	ldi	r17, 0x01	; 1
-  36:	a0 e0       	ldi	r26, 0x00	; 0
-  38:	b1 e0       	ldi	r27, 0x01	; 1
-  3a:	e8 e7       	ldi	r30, 0x78	; 120
-  3c:	f7 e0       	ldi	r31, 0x07	; 7
-  3e:	02 c0       	rjmp	.+4      	; 0x44 <__SREG__+0x5>
-  40:	05 90       	lpm	r0, Z+
-  42:	0d 92       	st	X+, r0
-  44:	a8 30       	cpi	r26, 0x08	; 8
-  46:	b1 07       	cpc	r27, r17
-  48:	d9 f7       	brne	.-10     	; 0x40 <__SREG__+0x1>
+00000096 <__do_copy_data>:
+  96:	11 e0       	ldi	r17, 0x01	; 1
+  98:	a0 e0       	ldi	r26, 0x00	; 0
+  9a:	b1 e0       	ldi	r27, 0x01	; 1
+  9c:	e6 ea       	ldi	r30, 0xA6	; 166
+  9e:	fb e0       	ldi	r31, 0x0B	; 11
+  a0:	02 c0       	rjmp	.+4      	; 0xa6 <__do_copy_data+0x10>
+  a2:	05 90       	lpm	r0, Z+
+  a4:	0d 92       	st	X+, r0
+  a6:	aa 30       	cpi	r26, 0x0A	; 10
+  a8:	b1 07       	cpc	r27, r17
+  aa:	d9 f7       	brne	.-10     	; 0xa2 <__do_copy_data+0xc>
 
-0000004a <__do_clear_bss>:
-  4a:	11 e0       	ldi	r17, 0x01	; 1
-  4c:	a8 e0       	ldi	r26, 0x08	; 8
-  4e:	b1 e0       	ldi	r27, 0x01	; 1
-  50:	01 c0       	rjmp	.+2      	; 0x54 <.do_clear_bss_start>
+000000ac <__do_clear_bss>:
+  ac:	11 e0       	ldi	r17, 0x01	; 1
+  ae:	aa e0       	ldi	r26, 0x0A	; 10
+  b0:	b1 e0       	ldi	r27, 0x01	; 1
+  b2:	01 c0       	rjmp	.+2      	; 0xb6 <.do_clear_bss_start>
 
-00000052 <.do_clear_bss_loop>:
-  52:	1d 92       	st	X+, r1
+000000b4 <.do_clear_bss_loop>:
+  b4:	1d 92       	st	X+, r1
 
-00000054 <.do_clear_bss_start>:
-  54:	a0 35       	cpi	r26, 0x50	; 80
-  56:	b1 07       	cpc	r27, r17
-  58:	e1 f7       	brne	.-8      	; 0x52 <.do_clear_bss_loop>
-  5a:	13 d3       	rcall	.+1574   	; 0x682 <main>
-  5c:	8b c3       	rjmp	.+1814   	; 0x774 <_exit>
+000000b6 <.do_clear_bss_start>:
+  b6:	a4 38       	cpi	r26, 0x84	; 132
+  b8:	b1 07       	cpc	r27, r17
+  ba:	e1 f7       	brne	.-8      	; 0xb4 <.do_clear_bss_loop>
+  bc:	cd d4       	rcall	.+2458   	; 0xa58 <main>
+  be:	71 c5       	rjmp	.+2786   	; 0xba2 <_exit>
 
-0000005e <__bad_interrupt>:
-  5e:	d0 cf       	rjmp	.-96     	; 0x0 <__vectors>
+000000c0 <__bad_interrupt>:
+  c0:	9f cf       	rjmp	.-194    	; 0x0 <__vectors>
 
-00000060 <TWIM_Init>:
+000000c2 <TWIM_Init>:
  - FALSE:	Bitrate too high
  - TRUE:		Bitrate OK
  
  *******************************************************/
 uint8_t TWIM_Init (uint32_t TWI_Bitrate)
 {
-  60:	9b 01       	movw	r18, r22
-  62:	ac 01       	movw	r20, r24
+  c2:	9b 01       	movw	r18, r22
+  c4:	ac 01       	movw	r20, r24
     /*
      ** Set TWI bitrate
      ** If bitrate is too high, then error return
      */
     TWBR = ((F_CPU/TWI_Bitrate)-16)/2;
-  64:	60 e0       	ldi	r22, 0x00	; 0
-  66:	79 e0       	ldi	r23, 0x09	; 9
-  68:	8d e3       	ldi	r24, 0x3D	; 61
-  6a:	90 e0       	ldi	r25, 0x00	; 0
-  6c:	4b d3       	rcall	.+1686   	; 0x704 <__udivmodsi4>
-  6e:	da 01       	movw	r26, r20
-  70:	c9 01       	movw	r24, r18
-  72:	40 97       	sbiw	r24, 0x10	; 16
-  74:	a1 09       	sbc	r26, r1
-  76:	b1 09       	sbc	r27, r1
-  78:	b6 95       	lsr	r27
-  7a:	a7 95       	ror	r26
-  7c:	97 95       	ror	r25
-  7e:	87 95       	ror	r24
-  80:	80 93 b8 00 	sts	0x00B8, r24
+  c6:	60 e0       	ldi	r22, 0x00	; 0
+  c8:	79 e0       	ldi	r23, 0x09	; 9
+  ca:	8d e3       	ldi	r24, 0x3D	; 61
+  cc:	90 e0       	ldi	r25, 0x00	; 0
+  ce:	31 d5       	rcall	.+2658   	; 0xb32 <__udivmodsi4>
+  d0:	da 01       	movw	r26, r20
+  d2:	c9 01       	movw	r24, r18
+  d4:	40 97       	sbiw	r24, 0x10	; 16
+  d6:	a1 09       	sbc	r26, r1
+  d8:	b1 09       	sbc	r27, r1
+  da:	b6 95       	lsr	r27
+  dc:	a7 95       	ror	r26
+  de:	97 95       	ror	r25
+  e0:	87 95       	ror	r24
+  e2:	80 93 b8 00 	sts	0x00B8, r24
     if (TWBR < 11) return FALSE;
-  84:	90 91 b8 00 	lds	r25, 0x00B8
-  88:	81 e0       	ldi	r24, 0x01	; 1
-  8a:	9b 30       	cpi	r25, 0x0B	; 11
-  8c:	08 f4       	brcc	.+2      	; 0x90 <TWIM_Init+0x30>
-  8e:	80 e0       	ldi	r24, 0x00	; 0
+  e6:	90 91 b8 00 	lds	r25, 0x00B8
+  ea:	81 e0       	ldi	r24, 0x01	; 1
+  ec:	9b 30       	cpi	r25, 0x0B	; 11
+  ee:	08 f4       	brcc	.+2      	; 0xf2 <TWIM_Init+0x30>
+  f0:	80 e0       	ldi	r24, 0x00	; 0
     
     return TRUE;
 }
-  90:	08 95       	ret
+  f2:	08 95       	ret
 
-00000092 <TWIM_Start>:
+000000f4 <TWIM_Start>:
 {
     uint8_t		twst;
     /*
      ** Send START condition
      */
     TWCR = (1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
-  92:	94 ea       	ldi	r25, 0xA4	; 164
-  94:	90 93 bc 00 	sts	0x00BC, r25
+  f4:	94 ea       	ldi	r25, 0xA4	; 164
+  f6:	90 93 bc 00 	sts	0x00BC, r25
     /*
      ** Wait until transmission completed
      */
     while (!(TWCR & (1<<TWINT)));
-  98:	90 91 bc 00 	lds	r25, 0x00BC
-  9c:	97 ff       	sbrs	r25, 7
-  9e:	fc cf       	rjmp	.-8      	; 0x98 <TWIM_Start+0x6>
+  fa:	90 91 bc 00 	lds	r25, 0x00BC
+  fe:	97 ff       	sbrs	r25, 7
+ 100:	fc cf       	rjmp	.-8      	; 0xfa <TWIM_Start+0x6>
     /*
      ** Check value of TWI Status Register. Mask prescaler bits.
      */
     twst = TWSR & 0xF8;
-  a0:	90 91 b9 00 	lds	r25, 0x00B9
-  a4:	98 7f       	andi	r25, 0xF8	; 248
+ 102:	90 91 b9 00 	lds	r25, 0x00B9
+ 106:	98 7f       	andi	r25, 0xF8	; 248
     if ((twst != TWI_START) && (twst != TWI_REP_START)) return FALSE;
-  a6:	98 30       	cpi	r25, 0x08	; 8
-  a8:	21 f0       	breq	.+8      	; 0xb2 <TWIM_Start+0x20>
-  aa:	90 31       	cpi	r25, 0x10	; 16
-  ac:	11 f0       	breq	.+4      	; 0xb2 <TWIM_Start+0x20>
-  ae:	80 e0       	ldi	r24, 0x00	; 0
-  b0:	08 95       	ret
+ 108:	98 30       	cpi	r25, 0x08	; 8
+ 10a:	21 f0       	breq	.+8      	; 0x114 <TWIM_Start+0x20>
+ 10c:	90 31       	cpi	r25, 0x10	; 16
+ 10e:	11 f0       	breq	.+4      	; 0x114 <TWIM_Start+0x20>
+ 110:	80 e0       	ldi	r24, 0x00	; 0
+ 112:	08 95       	ret
     /*
      ** Send device address
      */
     TWDR = (Address<<1) + TWIM_Type;
-  b2:	88 0f       	add	r24, r24
-  b4:	68 0f       	add	r22, r24
-  b6:	60 93 bb 00 	sts	0x00BB, r22
+ 114:	88 0f       	add	r24, r24
+ 116:	68 0f       	add	r22, r24
+ 118:	60 93 bb 00 	sts	0x00BB, r22
     TWCR = (1<<TWINT)|(1<<TWEN);
-  ba:	84 e8       	ldi	r24, 0x84	; 132
-  bc:	80 93 bc 00 	sts	0x00BC, r24
+ 11c:	84 e8       	ldi	r24, 0x84	; 132
+ 11e:	80 93 bc 00 	sts	0x00BC, r24
     /*
      ** Wait until transmission completed and ACK/NACK has been received
      */
     while (!(TWCR & (1<<TWINT)));
-  c0:	80 91 bc 00 	lds	r24, 0x00BC
-  c4:	87 ff       	sbrs	r24, 7
-  c6:	fc cf       	rjmp	.-8      	; 0xc0 <TWIM_Start+0x2e>
+ 122:	80 91 bc 00 	lds	r24, 0x00BC
+ 126:	87 ff       	sbrs	r24, 7
+ 128:	fc cf       	rjmp	.-8      	; 0x122 <TWIM_Start+0x2e>
     /*
      ** Check value of TWI Status Register. Mask prescaler bits.
      */
     twst = TWSR & 0xF8;
-  c8:	80 91 b9 00 	lds	r24, 0x00B9
-  cc:	88 7f       	andi	r24, 0xF8	; 248
+ 12a:	80 91 b9 00 	lds	r24, 0x00B9
+ 12e:	88 7f       	andi	r24, 0xF8	; 248
     if ((twst != TWI_MTX_ADR_ACK) && (twst != TWI_MRX_ADR_ACK)) return FALSE;
-  ce:	88 31       	cpi	r24, 0x18	; 24
-  d0:	11 f0       	breq	.+4      	; 0xd6 <TWIM_Start+0x44>
-  d2:	80 34       	cpi	r24, 0x40	; 64
-  d4:	61 f7       	brne	.-40     	; 0xae <TWIM_Start+0x1c>
+ 130:	88 31       	cpi	r24, 0x18	; 24
+ 132:	11 f0       	breq	.+4      	; 0x138 <TWIM_Start+0x44>
+ 134:	80 34       	cpi	r24, 0x40	; 64
+ 136:	61 f7       	brne	.-40     	; 0x110 <TWIM_Start+0x1c>
     
     return TRUE;
-  d6:	81 e0       	ldi	r24, 0x01	; 1
+ 138:	81 e0       	ldi	r24, 0x01	; 1
 }
-  d8:	08 95       	ret
+ 13a:	08 95       	ret
 
-000000da <TWIM_Stop>:
+0000013c <TWIM_Stop>:
 void TWIM_Stop (void)
 {
     /*
      ** Send stop condition
      */
     TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
-  da:	84 e9       	ldi	r24, 0x94	; 148
-  dc:	80 93 bc 00 	sts	0x00BC, r24
+ 13c:	84 e9       	ldi	r24, 0x94	; 148
+ 13e:	80 93 bc 00 	sts	0x00BC, r24
     /*
      ** Wait until stop condition is executed and bus released
      */
     while (TWCR & (1<<TWINT));
-  e0:	80 91 bc 00 	lds	r24, 0x00BC
-  e4:	87 fd       	sbrc	r24, 7
-  e6:	fc cf       	rjmp	.-8      	; 0xe0 <TWIM_Stop+0x6>
+ 142:	80 91 bc 00 	lds	r24, 0x00BC
+ 146:	87 fd       	sbrc	r24, 7
+ 148:	fc cf       	rjmp	.-8      	; 0x142 <TWIM_Stop+0x6>
 }
-  e8:	08 95       	ret
+ 14a:	08 95       	ret
 
-000000ea <TWIM_Write>:
+0000014c <TWIM_Write>:
 {
     uint8_t   twst;
     /*
      ** Send data to the previously addressed device
      */
     TWDR = byte;
-  ea:	80 93 bb 00 	sts	0x00BB, r24
+ 14c:	80 93 bb 00 	sts	0x00BB, r24
     TWCR = (1<<TWINT)|(1<<TWEN);
-  ee:	84 e8       	ldi	r24, 0x84	; 132
-  f0:	80 93 bc 00 	sts	0x00BC, r24
+ 150:	84 e8       	ldi	r24, 0x84	; 132
+ 152:	80 93 bc 00 	sts	0x00BC, r24
     /*
      ** Wait until transmission completed
      */
     while (!(TWCR & (1<<TWINT)));
-  f4:	80 91 bc 00 	lds	r24, 0x00BC
-  f8:	87 ff       	sbrs	r24, 7
-  fa:	fc cf       	rjmp	.-8      	; 0xf4 <TWIM_Write+0xa>
+ 156:	80 91 bc 00 	lds	r24, 0x00BC
+ 15a:	87 ff       	sbrs	r24, 7
+ 15c:	fc cf       	rjmp	.-8      	; 0x156 <TWIM_Write+0xa>
     /*
      ** Check value of TWI Status Register. Mask prescaler bits
      */
     twst = TWSR & 0xF8;
-  fc:	90 91 b9 00 	lds	r25, 0x00B9
- 100:	98 7f       	andi	r25, 0xF8	; 248
+ 15e:	90 91 b9 00 	lds	r25, 0x00B9
+ 162:	98 7f       	andi	r25, 0xF8	; 248
     if (twst != TWI_MTX_DATA_ACK) return 1;
- 102:	81 e0       	ldi	r24, 0x01	; 1
- 104:	98 32       	cpi	r25, 0x28	; 40
- 106:	09 f4       	brne	.+2      	; 0x10a <TWIM_Write+0x20>
- 108:	80 e0       	ldi	r24, 0x00	; 0
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+ 166:	98 32       	cpi	r25, 0x28	; 40
+ 168:	09 f4       	brne	.+2      	; 0x16c <TWIM_Write+0x20>
+ 16a:	80 e0       	ldi	r24, 0x00	; 0
     
     return 0;
 }
- 10a:	08 95       	ret
+ 16c:	08 95       	ret
 
-0000010c <TWIM_ReadAck>:
+0000016e <TWIM_ReadAck>:
  - uint8_t	Read byte
  
  *******************************************************/
 uint8_t TWIM_ReadAck (void)
 {
     TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWEA);
- 10c:	84 ec       	ldi	r24, 0xC4	; 196
- 10e:	80 93 bc 00 	sts	0x00BC, r24
+ 16e:	84 ec       	ldi	r24, 0xC4	; 196
+ 170:	80 93 bc 00 	sts	0x00BC, r24
     while (!(TWCR & (1<<TWINT)));
- 112:	80 91 bc 00 	lds	r24, 0x00BC
- 116:	87 ff       	sbrs	r24, 7
- 118:	fc cf       	rjmp	.-8      	; 0x112 <TWIM_ReadAck+0x6>
+ 174:	80 91 bc 00 	lds	r24, 0x00BC
+ 178:	87 ff       	sbrs	r24, 7
+ 17a:	fc cf       	rjmp	.-8      	; 0x174 <TWIM_ReadAck+0x6>
     
     return TWDR;
- 11a:	80 91 bb 00 	lds	r24, 0x00BB
+ 17c:	80 91 bb 00 	lds	r24, 0x00BB
 }
- 11e:	08 95       	ret
+ 180:	08 95       	ret
 
-00000120 <TWIM_ReadNack>:
+00000182 <TWIM_ReadNack>:
  - uint8_t	Read byte
  
  *******************************************************/
 uint8_t TWIM_ReadNack (void)
 {
     TWCR = (1<<TWINT)|(1<<TWEN);
- 120:	84 e8       	ldi	r24, 0x84	; 132
- 122:	80 93 bc 00 	sts	0x00BC, r24
+ 182:	84 e8       	ldi	r24, 0x84	; 132
+ 184:	80 93 bc 00 	sts	0x00BC, r24
     while(!(TWCR & (1<<TWINT)));
- 126:	80 91 bc 00 	lds	r24, 0x00BC
- 12a:	87 ff       	sbrs	r24, 7
- 12c:	fc cf       	rjmp	.-8      	; 0x126 <TWIM_ReadNack+0x6>
+ 188:	80 91 bc 00 	lds	r24, 0x00BC
+ 18c:	87 ff       	sbrs	r24, 7
+ 18e:	fc cf       	rjmp	.-8      	; 0x188 <TWIM_ReadNack+0x6>
     
     return TWDR;
- 12e:	80 91 bb 00 	lds	r24, 0x00BB
+ 190:	80 91 bb 00 	lds	r24, 0x00BB
 }
- 132:	08 95       	ret
+ 194:	08 95       	ret
 
-00000134 <SpiInit>:
+00000196 <SpiInit>:
 
 byte PaTable[8] = {0x60 ,0x60 ,0x60 ,0x60 ,0x60 ,0x60 ,0x60 ,0x60};
 
 void SpiInit(void)
 {
     DDRB = (1<<5)|(1<<3)|(1<<2);
- 134:	8c e2       	ldi	r24, 0x2C	; 44
- 136:	84 b9       	out	0x04, r24	; 4
+ 196:	8c e2       	ldi	r24, 0x2C	; 44
+ 198:	84 b9       	out	0x04, r24	; 4
     
     //Enable SPI master mode
     SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
- 138:	81 e5       	ldi	r24, 0x51	; 81
- 13a:	8c bd       	out	0x2c, r24	; 44
- 13c:	08 95       	ret
+ 19a:	81 e5       	ldi	r24, 0x51	; 81
+ 19c:	8c bd       	out	0x2c, r24	; 44
+ 19e:	08 95       	ret
 
-0000013e <GDO_Set>:
+000001a0 <GDO_Set>:
     
 }
 
 void GDO_Set(void)
 {
     DDRD = (0<<GDO0)|(0<<GDO2);
- 13e:	1a b8       	out	0x0a, r1	; 10
- 140:	08 95       	ret
+ 1a0:	1a b8       	out	0x0a, r1	; 10
+ 1a2:	08 95       	ret
 
-00000142 <RegConfigSettings>:
+000001a4 <RegConfigSettings>:
     return SPDR;
 }
 
 void SpiWriteReg(byte addr, byte data)
 {
     PORTB = 0<<SS_PIN;
- 142:	15 b8       	out	0x05, r1	; 5
- 144:	ff cf       	rjmp	.-2      	; 0x144 <RegConfigSettings+0x2>
+ 1a4:	15 b8       	out	0x05, r1	; 5
+ 1a6:	ff cf       	rjmp	.-2      	; 0x1a6 <RegConfigSettings+0x2>
 
-00000146 <SpiTransfer>:
+000001a8 <SpiTransfer>:
 }
 
 
 byte SpiTransfer(byte Data)
 {
     SPDR = Data;
- 146:	8e bd       	out	0x2e, r24	; 46
+ 1a8:	8e bd       	out	0x2e, r24	; 46
     while(!(SPSR & (1<<SPIF)));
- 148:	0d b4       	in	r0, 0x2d	; 45
- 14a:	07 fe       	sbrs	r0, 7
- 14c:	fd cf       	rjmp	.-6      	; 0x148 <SpiTransfer+0x2>
+ 1aa:	0d b4       	in	r0, 0x2d	; 45
+ 1ac:	07 fe       	sbrs	r0, 7
+ 1ae:	fd cf       	rjmp	.-6      	; 0x1aa <SpiTransfer+0x2>
     return SPDR;
- 14e:	8e b5       	in	r24, 0x2e	; 46
+ 1b0:	8e b5       	in	r24, 0x2e	; 46
 }
- 150:	08 95       	ret
+ 1b2:	08 95       	ret
 
-00000152 <Reset>:
+000001b4 <Reset>:
 {
     DDRD = (0<<GDO0)|(0<<GDO2);
 }
 void Reset(void)
 {
     PORTB = 0<<SS_PIN;
- 152:	15 b8       	out	0x05, r1	; 5
+ 1b4:	15 b8       	out	0x05, r1	; 5
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 154:	87 ee       	ldi	r24, 0xE7	; 231
- 156:	93 e0       	ldi	r25, 0x03	; 3
- 158:	01 97       	sbiw	r24, 0x01	; 1
- 15a:	f1 f7       	brne	.-4      	; 0x158 <Reset+0x6>
- 15c:	00 c0       	rjmp	.+0      	; 0x15e <Reset+0xc>
- 15e:	00 00       	nop
+ 1b6:	87 ee       	ldi	r24, 0xE7	; 231
+ 1b8:	93 e0       	ldi	r25, 0x03	; 3
+ 1ba:	01 97       	sbiw	r24, 0x01	; 1
+ 1bc:	f1 f7       	brne	.-4      	; 0x1ba <Reset+0x6>
+ 1be:	00 c0       	rjmp	.+0      	; 0x1c0 <Reset+0xc>
+ 1c0:	00 00       	nop
     _delay_ms(1);
     PORTB = 1<<SS_PIN;
- 160:	84 e0       	ldi	r24, 0x04	; 4
- 162:	85 b9       	out	0x05, r24	; 5
- 164:	87 ee       	ldi	r24, 0xE7	; 231
- 166:	93 e0       	ldi	r25, 0x03	; 3
- 168:	01 97       	sbiw	r24, 0x01	; 1
- 16a:	f1 f7       	brne	.-4      	; 0x168 <Reset+0x16>
- 16c:	00 c0       	rjmp	.+0      	; 0x16e <Reset+0x1c>
- 16e:	00 00       	nop
-    _delay_ms(1);
-    
-    PORTB = 0<<SS_PIN;
- 170:	15 b8       	out	0x05, r1	; 5
-    while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
- 172:	0d b4       	in	r0, 0x2d	; 45
- 174:	07 fc       	sbrc	r0, 7
- 176:	03 c0       	rjmp	.+6      	; 0x17e <Reset+0x2c>
-    SpiTransfer(CC1101_SRES);
- 178:	80 e3       	ldi	r24, 0x30	; 48
- 17a:	e5 df       	rcall	.-54     	; 0x146 <SpiTransfer>
- 17c:	fa cf       	rjmp	.-12     	; 0x172 <Reset+0x20>
-    while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
-    PORTB = 1<<SS_PIN;
- 17e:	84 e0       	ldi	r24, 0x04	; 4
+ 1c2:	84 e0       	ldi	r24, 0x04	; 4
+ 1c4:	85 b9       	out	0x05, r24	; 5
+ 1c6:	87 ee       	ldi	r24, 0xE7	; 231
+ 1c8:	93 e0       	ldi	r25, 0x03	; 3
+ 1ca:	01 97       	sbiw	r24, 0x01	; 1
+ 1cc:	f1 f7       	brne	.-4      	; 0x1ca <Reset+0x16>
+ 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <Reset+0x1c>
+ 1d0:	00 00       	nop
     _delay_ms(1);
     
     PORTB = 0<<SS_PIN;
+ 1d2:	15 b8       	out	0x05, r1	; 5
+    while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
+ 1d4:	0d b4       	in	r0, 0x2d	; 45
+ 1d6:	07 fc       	sbrc	r0, 7
+ 1d8:	03 c0       	rjmp	.+6      	; 0x1e0 <Reset+0x2c>
+    SpiTransfer(CC1101_SRES);
+ 1da:	80 e3       	ldi	r24, 0x30	; 48
+ 1dc:	e5 df       	rcall	.-54     	; 0x1a8 <SpiTransfer>
+ 1de:	fa cf       	rjmp	.-12     	; 0x1d4 <Reset+0x20>
+    while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
+    PORTB = 1<<SS_PIN;
+ 1e0:	84 e0       	ldi	r24, 0x04	; 4
+    _delay_ms(1);
+    
+    PORTB = 0<<SS_PIN;
     while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
     SpiTransfer(CC1101_SRES);
     while(!(SPSR & _BV(SPIF)))//while(MISO_PIN);
- 180:	0d b4       	in	r0, 0x2d	; 45
- 182:	07 fc       	sbrc	r0, 7
- 184:	02 c0       	rjmp	.+4      	; 0x18a <Reset+0x38>
+ 1e2:	0d b4       	in	r0, 0x2d	; 45
+ 1e4:	07 fc       	sbrc	r0, 7
+ 1e6:	02 c0       	rjmp	.+4      	; 0x1ec <Reset+0x38>
     PORTB = 1<<SS_PIN;
- 186:	85 b9       	out	0x05, r24	; 5
- 188:	fb cf       	rjmp	.-10     	; 0x180 <Reset+0x2e>
+ 1e8:	85 b9       	out	0x05, r24	; 5
+ 1ea:	fb cf       	rjmp	.-10     	; 0x1e2 <Reset+0x2e>
 }
- 18a:	08 95       	ret
+ 1ec:	08 95       	ret
 
-0000018c <Init>:
+000001ee <Init>:
     
 }
 
 void GDO_Set(void)
 {
     DDRD = (0<<GDO0)|(0<<GDO2);
- 18c:	1a b8       	out	0x0a, r1	; 10
+ 1ee:	1a b8       	out	0x0a, r1	; 10
 }
 
 void Init(void)
 {
     GDO_Set();
     SpiInit();
- 18e:	d2 df       	rcall	.-92     	; 0x134 <SpiInit>
+ 1f0:	d2 df       	rcall	.-92     	; 0x196 <SpiInit>
     PORTB = 1<<SS_PIN;
- 190:	84 e0       	ldi	r24, 0x04	; 4
- 192:	85 b9       	out	0x05, r24	; 5
+ 1f2:	84 e0       	ldi	r24, 0x04	; 4
+ 1f4:	85 b9       	out	0x05, r24	; 5
     PORTB = 1<<SCK_PIN;
- 194:	80 e2       	ldi	r24, 0x20	; 32
- 196:	85 b9       	out	0x05, r24	; 5
+ 1f6:	80 e2       	ldi	r24, 0x20	; 32
+ 1f8:	85 b9       	out	0x05, r24	; 5
     PORTB = 0<<MOSI_PIN;
- 198:	15 b8       	out	0x05, r1	; 5
+ 1fa:	15 b8       	out	0x05, r1	; 5
     
     Reset();
- 19a:	db cf       	rjmp	.-74     	; 0x152 <Reset>
+ 1fc:	db cf       	rjmp	.-74     	; 0x1b4 <Reset>
 
-0000019c <SpiWriteReg>:
+000001fe <SpiWriteReg>:
     return SPDR;
 }
 
 void SpiWriteReg(byte addr, byte data)
 {
     PORTB = 0<<SS_PIN;
- 19c:	15 b8       	out	0x05, r1	; 5
+ 1fe:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 19e:	ff cf       	rjmp	.-2      	; 0x19e <SpiWriteReg+0x2>
+ 200:	ff cf       	rjmp	.-2      	; 0x200 <__stack+0x1>
 
-000001a0 <SpiWriteBurstReg>:
+00000202 <SpiWriteBurstReg>:
 
 void SpiWriteBurstReg(byte addr,byte *buffer, byte size)
 {
     byte i, temp;
     temp = addr | WRITE_BURST;
     PORTB = 0<<SS_PIN;
- 1a0:	15 b8       	out	0x05, r1	; 5
+ 202:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 1a2:	ff cf       	rjmp	.-2      	; 0x1a2 <SpiWriteBurstReg+0x2>
+ 204:	ff cf       	rjmp	.-2      	; 0x204 <SpiWriteBurstReg+0x2>
 
-000001a4 <SpiStrobe>:
+00000206 <SpiStrobe>:
     }
     PORTB = 1<<SS_PIN;
 }
 void SpiStrobe(byte strobe)
 {
     PORTB = 0<<SS_PIN;
- 1a4:	15 b8       	out	0x05, r1	; 5
+ 206:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 1a6:	ff cf       	rjmp	.-2      	; 0x1a6 <SpiStrobe+0x2>
+ 208:	ff cf       	rjmp	.-2      	; 0x208 <SpiStrobe+0x2>
 
-000001a8 <SpiReadReg>:
+0000020a <SpiReadReg>:
 byte SpiReadReg(byte addr)
 {
     byte temp, data;
     //changed status_register
     temp = addr|0x40;
     PORTB = 0<<SS_PIN;
- 1a8:	15 b8       	out	0x05, r1	; 5
+ 20a:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 1aa:	ff cf       	rjmp	.-2      	; 0x1aa <SpiReadReg+0x2>
+ 20c:	ff cf       	rjmp	.-2      	; 0x20c <SpiReadReg+0x2>
 
-000001ac <SpiReadBurstReg>:
+0000020e <SpiReadBurstReg>:
 void SpiReadBurstReg(byte addr, byte *buffer, byte size)
 {
     byte i, temp;
     
     temp = addr|READ_BURST;
     PORTB = 0<<SS_PIN;
- 1ac:	15 b8       	out	0x05, r1	; 5
+ 20e:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 1ae:	ff cf       	rjmp	.-2      	; 0x1ae <SpiReadBurstReg+0x2>
+ 210:	ff cf       	rjmp	.-2      	; 0x210 <SpiReadBurstReg+0x2>
 
-000001b0 <SpiReadStatus>:
+00000212 <SpiReadStatus>:
 byte SpiReadStatus(byte addr)
 {
     byte data, temp;
     
     temp = addr|READ_BURST;
     PORTB = 0<<SS_PIN;
- 1b0:	15 b8       	out	0x05, r1	; 5
+ 212:	15 b8       	out	0x05, r1	; 5
     while(MISO_PIN);
- 1b2:	ff cf       	rjmp	.-2      	; 0x1b2 <SpiReadStatus+0x2>
+ 214:	ff cf       	rjmp	.-2      	; 0x214 <SpiReadStatus+0x2>
 
-000001b4 <SendData>:
+00000216 <SendData>:
     return SPDR;
 }
 
 void SpiWriteReg(byte addr, byte data)
 {
     PORTB = 0<<SS_PIN;
- 1b4:	15 b8       	out	0x05, r1	; 5
- 1b6:	ff cf       	rjmp	.-2      	; 0x1b6 <SendData+0x2>
+ 216:	15 b8       	out	0x05, r1	; 5
+ 218:	ff cf       	rjmp	.-2      	; 0x218 <SendData+0x2>
 
-000001b8 <SetReceive>:
+0000021a <SetReceive>:
     }
     PORTB = 1<<SS_PIN;
 }
 void SpiStrobe(byte strobe)
 {
     PORTB = 0<<SS_PIN;
- 1b8:	15 b8       	out	0x05, r1	; 5
- 1ba:	ff cf       	rjmp	.-2      	; 0x1ba <SetReceive+0x2>
+ 21a:	15 b8       	out	0x05, r1	; 5
+ 21c:	ff cf       	rjmp	.-2      	; 0x21c <SetReceive+0x2>
 
-000001bc <CheckReceiveFlag>:
+0000021e <CheckReceiveFlag>:
 
 byte CheckReceiveFlag(void)
 {
     if(GDO0)
     {
         while(GDO0);
- 1bc:	ff cf       	rjmp	.-2      	; 0x1bc <CheckReceiveFlag>
+ 21e:	ff cf       	rjmp	.-2      	; 0x21e <CheckReceiveFlag>
 
-000001be <ReceiveData>:
+00000220 <ReceiveData>:
 byte SpiReadStatus(byte addr)
 {
     byte data, temp;
     
     temp = addr|READ_BURST;
     PORTB = 0<<SS_PIN;
- 1be:	15 b8       	out	0x05, r1	; 5
- 1c0:	ff cf       	rjmp	.-2      	; 0x1c0 <ReceiveData+0x2>
+ 220:	15 b8       	out	0x05, r1	; 5
+ 222:	ff cf       	rjmp	.-2      	; 0x222 <ReceiveData+0x2>
 
-000001c2 <CC1101>:
+00000224 <CC1101>:
  *
  * Class constructor
  */
 void CC1101(void)
 {
     paTableByte = PA_LowPower;            // Priority = Low power
- 1c2:	80 e6       	ldi	r24, 0x60	; 96
- 1c4:	80 93 0b 01 	sts	0x010B, r24
- 1c8:	08 95       	ret
+ 224:	80 e6       	ldi	r24, 0x60	; 96
+ 226:	80 93 3d 01 	sts	0x013D, r24
+ 22a:	08 95       	ret
 
-000001ca <wakeUp>:
+0000022c <wakeUp>:
  *
  * Wake up CC1101 from Power Down state
  */
 void wakeUp(void)
 {
     cc1101_Select();                      // Select CC1101
- 1ca:	2a 98       	cbi	0x05, 2	; 5
+ 22c:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 1cc:	1c 99       	sbic	0x03, 4	; 3
- 1ce:	fe cf       	rjmp	.-4      	; 0x1cc <wakeUp+0x2>
+ 22e:	1c 99       	sbic	0x03, 4	; 3
+ 230:	fe cf       	rjmp	.-4      	; 0x22e <wakeUp+0x2>
     cc1101_Deselect();                    // Deselect CC1101
- 1d0:	2a 9a       	sbi	0x05, 2	; 5
- 1d2:	08 95       	ret
+ 232:	2a 9a       	sbi	0x05, 2	; 5
+ 234:	08 95       	ret
 
-000001d4 <spiinit>:
+00000236 <spiinit>:
+    
     return packet->length;
 }
 
 void spiinit(void)
 {
-    DDRB = (1<<5)|(1<<3)|(1<<2);
- 1d4:	8c e2       	ldi	r24, 0x2C	; 44
- 1d6:	84 b9       	out	0x04, r24	; 4
+ 236:	cf 93       	push	r28
+ 238:	df 93       	push	r29
+ 23a:	1f 92       	push	r1
+ 23c:	cd b7       	in	r28, 0x3d	; 61
+ 23e:	de b7       	in	r29, 0x3e	; 62
+    volatile char IOReg;
+    DDRB = (1<<PB5)|(1<<PB3)|(1<<PB2);
+ 240:	8c e2       	ldi	r24, 0x2C	; 44
+ 242:	84 b9       	out	0x04, r24	; 4
     
     //Enable SPI master mode
-    SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
- 1d8:	81 e5       	ldi	r24, 0x51	; 81
- 1da:	8c bd       	out	0x2c, r24	; 44
- 1dc:	08 95       	ret
+    SPCR = (1<<SPE)|(1<<MSTR);
+ 244:	80 e5       	ldi	r24, 0x50	; 80
+ 246:	8c bd       	out	0x2c, r24	; 44
+    IOReg   = SPSR;                 	// clear SPIF bit in SPSR
+ 248:	8d b5       	in	r24, 0x2d	; 45
+ 24a:	89 83       	std	Y+1, r24	; 0x01
+    IOReg   = SPDR;
+ 24c:	8e b5       	in	r24, 0x2e	; 46
+ 24e:	89 83       	std	Y+1, r24	; 0x01
+    
+}
+ 250:	0f 90       	pop	r0
+ 252:	df 91       	pop	r29
+ 254:	cf 91       	pop	r28
+ 256:	08 95       	ret
 
-000001de <spisend>:
+00000258 <spisend>:
  * Return:
  * 	Response received from SPI slave
  */
 byte spisend(byte value)
 {
     SPDR = value;                          // Transfer byte via SPI
- 1de:	8e bd       	out	0x2e, r24	; 46
+ 258:	8e bd       	out	0x2e, r24	; 46
     wait_Spi();                            // Wait until SPI operation is terminated
- 1e0:	0d b4       	in	r0, 0x2d	; 45
- 1e2:	07 fe       	sbrs	r0, 7
- 1e4:	fd cf       	rjmp	.-6      	; 0x1e0 <spisend+0x2>
-    
+ 25a:	0d b4       	in	r0, 0x2d	; 45
+ 25c:	07 fe       	sbrs	r0, 7
+ 25e:	fd cf       	rjmp	.-6      	; 0x25a <spisend+0x2>
     return SPDR;
- 1e6:	8e b5       	in	r24, 0x2e	; 46
+ 260:	8e b5       	in	r24, 0x2e	; 46
 }
- 1e8:	08 95       	ret
+ 262:	08 95       	ret
 
-000001ea <writeReg>:
+00000264 <writeReg>:
  *
  * 'regAddr'	Register address
  * 'value'	Value to be writen
  */
 void writeReg(byte regAddr, byte value)
 {
- 1ea:	cf 93       	push	r28
- 1ec:	df 93       	push	r29
- 1ee:	1f 92       	push	r1
- 1f0:	cd b7       	in	r28, 0x3d	; 61
- 1f2:	de b7       	in	r29, 0x3e	; 62
+ 264:	cf 93       	push	r28
+ 266:	df 93       	push	r29
+ 268:	1f 92       	push	r1
+ 26a:	cd b7       	in	r28, 0x3d	; 61
+ 26c:	de b7       	in	r29, 0x3e	; 62
     cc1101_Select();                      // Select CC1101
- 1f4:	2a 98       	cbi	0x05, 2	; 5
+ 26e:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 1f6:	1c 99       	sbic	0x03, 4	; 3
- 1f8:	fe cf       	rjmp	.-4      	; 0x1f6 <writeReg+0xc>
+ 270:	1c 99       	sbic	0x03, 4	; 3
+ 272:	fe cf       	rjmp	.-4      	; 0x270 <writeReg+0xc>
     spisend(regAddr);                    // Send register address
- 1fa:	69 83       	std	Y+1, r22	; 0x01
- 1fc:	f0 df       	rcall	.-32     	; 0x1de <spisend>
+ 274:	69 83       	std	Y+1, r22	; 0x01
+ 276:	f0 df       	rcall	.-32     	; 0x258 <spisend>
     spisend(value);                      // Send value
- 1fe:	69 81       	ldd	r22, Y+1	; 0x01
- 200:	86 2f       	mov	r24, r22
- 202:	ed df       	rcall	.-38     	; 0x1de <spisend>
+ 278:	69 81       	ldd	r22, Y+1	; 0x01
+ 27a:	86 2f       	mov	r24, r22
+ 27c:	ed df       	rcall	.-38     	; 0x258 <spisend>
     cc1101_Deselect();                    // Deselect CC1101
- 204:	2a 9a       	sbi	0x05, 2	; 5
+ 27e:	2a 9a       	sbi	0x05, 2	; 5
 }
- 206:	0f 90       	pop	r0
- 208:	df 91       	pop	r29
- 20a:	cf 91       	pop	r28
- 20c:	08 95       	ret
+ 280:	0f 90       	pop	r0
+ 282:	df 91       	pop	r29
+ 284:	cf 91       	pop	r28
+ 286:	08 95       	ret
 
-0000020e <setSyncWord>:
+00000288 <setSyncWord>:
  * 'syncH'	Synchronization word - High byte
  * 'syncL'	Synchronization word - Low byte
  * 'save' If TRUE, save parameter in EEPROM
  */
 void setSyncWord(uint8_t syncH, uint8_t syncL, bool save)
 {
- 20e:	1f 93       	push	r17
- 210:	cf 93       	push	r28
- 212:	df 93       	push	r29
+ 288:	1f 93       	push	r17
+ 28a:	cf 93       	push	r28
+ 28c:	df 93       	push	r29
     if ((syncWord[0] != syncH) || (syncWord[1] != syncL))
- 214:	90 91 08 01 	lds	r25, 0x0108
- 218:	98 13       	cpse	r25, r24
- 21a:	04 c0       	rjmp	.+8      	; 0x224 <setSyncWord+0x16>
- 21c:	90 91 09 01 	lds	r25, 0x0109
- 220:	96 17       	cp	r25, r22
- 222:	d1 f0       	breq	.+52     	; 0x258 <setSyncWord+0x4a>
- 224:	14 2f       	mov	r17, r20
- 226:	c6 2f       	mov	r28, r22
- 228:	d8 2f       	mov	r29, r24
+ 28e:	90 91 3a 01 	lds	r25, 0x013A
+ 292:	98 13       	cpse	r25, r24
+ 294:	04 c0       	rjmp	.+8      	; 0x29e <setSyncWord+0x16>
+ 296:	90 91 3b 01 	lds	r25, 0x013B
+ 29a:	96 17       	cp	r25, r22
+ 29c:	d1 f0       	breq	.+52     	; 0x2d2 <setSyncWord+0x4a>
+ 29e:	14 2f       	mov	r17, r20
+ 2a0:	c6 2f       	mov	r28, r22
+ 2a2:	d8 2f       	mov	r29, r24
     {
         writeReg(CC1101_SYNC1, syncH);
- 22a:	68 2f       	mov	r22, r24
- 22c:	84 e0       	ldi	r24, 0x04	; 4
- 22e:	dd df       	rcall	.-70     	; 0x1ea <writeReg>
+ 2a4:	68 2f       	mov	r22, r24
+ 2a6:	84 e0       	ldi	r24, 0x04	; 4
+ 2a8:	dd df       	rcall	.-70     	; 0x264 <writeReg>
         writeReg(CC1101_SYNC0, syncL);
- 230:	6c 2f       	mov	r22, r28
- 232:	85 e0       	ldi	r24, 0x05	; 5
- 234:	da df       	rcall	.-76     	; 0x1ea <writeReg>
+ 2aa:	6c 2f       	mov	r22, r28
+ 2ac:	85 e0       	ldi	r24, 0x05	; 5
+ 2ae:	da df       	rcall	.-76     	; 0x264 <writeReg>
         syncWord[0] = syncH;
- 236:	d0 93 08 01 	sts	0x0108, r29
+ 2b0:	d0 93 3a 01 	sts	0x013A, r29
         syncWord[1] = syncL;
- 23a:	c0 93 09 01 	sts	0x0109, r28
+ 2b4:	c0 93 3b 01 	sts	0x013B, r28
         // Save in EEPROM
         if (save)
- 23e:	11 23       	and	r17, r17
- 240:	59 f0       	breq	.+22     	; 0x258 <setSyncWord+0x4a>
+ 2b8:	11 23       	and	r17, r17
+ 2ba:	59 f0       	breq	.+22     	; 0x2d2 <setSyncWord+0x4a>
         {
             eeprom_write_byte(EEPROM_SYNC_WORD, syncH);
- 242:	6d 2f       	mov	r22, r29
- 244:	82 e0       	ldi	r24, 0x02	; 2
- 246:	90 e0       	ldi	r25, 0x00	; 0
- 248:	87 d2       	rcall	.+1294   	; 0x758 <__eewr_byte_tn48>
+ 2bc:	6d 2f       	mov	r22, r29
+ 2be:	82 e0       	ldi	r24, 0x02	; 2
+ 2c0:	90 e0       	ldi	r25, 0x00	; 0
+ 2c2:	61 d4       	rcall	.+2242   	; 0xb86 <__eewr_byte_tn48>
             eeprom_write_byte(EEPROM_SYNC_WORD + 1, syncL);
- 24a:	6c 2f       	mov	r22, r28
- 24c:	83 e0       	ldi	r24, 0x03	; 3
- 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 2c4:	6c 2f       	mov	r22, r28
+ 2c6:	83 e0       	ldi	r24, 0x03	; 3
+ 2c8:	90 e0       	ldi	r25, 0x00	; 0
         }
     }
 }
- 250:	df 91       	pop	r29
- 252:	cf 91       	pop	r28
- 254:	1f 91       	pop	r17
+ 2ca:	df 91       	pop	r29
+ 2cc:	cf 91       	pop	r28
+ 2ce:	1f 91       	pop	r17
         syncWord[1] = syncL;
         // Save in EEPROM
         if (save)
         {
             eeprom_write_byte(EEPROM_SYNC_WORD, syncH);
             eeprom_write_byte(EEPROM_SYNC_WORD + 1, syncL);
- 256:	80 c2       	rjmp	.+1280   	; 0x758 <__eewr_byte_tn48>
+ 2d0:	5a c4       	rjmp	.+2228   	; 0xb86 <__eewr_byte_tn48>
         }
     }
 }
- 258:	df 91       	pop	r29
- 25a:	cf 91       	pop	r28
- 25c:	1f 91       	pop	r17
- 25e:	08 95       	ret
+ 2d2:	df 91       	pop	r29
+ 2d4:	cf 91       	pop	r28
+ 2d6:	1f 91       	pop	r17
+ 2d8:	08 95       	ret
 
-00000260 <setSyncWordbytes>:
+000002da <setSyncWordbytes>:
  *
  * 'syncH'	Synchronization word - pointer to 2-byte array
  * 'save' If TRUE, save parameter in EEPROM
  */
 void setSyncWordbytes(byte *sync, bool save)
 {
- 260:	46 2f       	mov	r20, r22
+ 2da:	46 2f       	mov	r20, r22
     setSyncWord(sync[0], sync[1], save);
- 262:	fc 01       	movw	r30, r24
- 264:	61 81       	ldd	r22, Z+1	; 0x01
- 266:	80 81       	ld	r24, Z
- 268:	d2 cf       	rjmp	.-92     	; 0x20e <setSyncWord>
+ 2dc:	fc 01       	movw	r30, r24
+ 2de:	61 81       	ldd	r22, Z+1	; 0x01
+ 2e0:	80 81       	ld	r24, Z
+ 2e2:	d2 cf       	rjmp	.-92     	; 0x288 <setSyncWord>
 
-0000026a <setDevAddress>:
+000002e4 <setDevAddress>:
  *
  * 'addr'	Device address
  * 'save' If TRUE, save parameter in EEPROM
  */
 void setDevAddress(byte addr, bool save)
 {
- 26a:	cf 93       	push	r28
- 26c:	df 93       	push	r29
+ 2e4:	cf 93       	push	r28
+ 2e6:	df 93       	push	r29
     if (devAddress != addr)
- 26e:	90 91 4f 01 	lds	r25, 0x014F
- 272:	98 17       	cp	r25, r24
- 274:	79 f0       	breq	.+30     	; 0x294 <setDevAddress+0x2a>
- 276:	d6 2f       	mov	r29, r22
- 278:	c8 2f       	mov	r28, r24
+ 2e8:	90 91 81 01 	lds	r25, 0x0181
+ 2ec:	98 17       	cp	r25, r24
+ 2ee:	79 f0       	breq	.+30     	; 0x30e <setDevAddress+0x2a>
+ 2f0:	d6 2f       	mov	r29, r22
+ 2f2:	c8 2f       	mov	r28, r24
     {
         writeReg(CC1101_ADDR, addr);
- 27a:	68 2f       	mov	r22, r24
- 27c:	89 e0       	ldi	r24, 0x09	; 9
- 27e:	b5 df       	rcall	.-150    	; 0x1ea <writeReg>
+ 2f4:	68 2f       	mov	r22, r24
+ 2f6:	89 e0       	ldi	r24, 0x09	; 9
+ 2f8:	b5 df       	rcall	.-150    	; 0x264 <writeReg>
         devAddress = addr;
- 280:	c0 93 4f 01 	sts	0x014F, r28
+ 2fa:	c0 93 81 01 	sts	0x0181, r28
         // Save in EEPROM
         if (save)
- 284:	dd 23       	and	r29, r29
- 286:	31 f0       	breq	.+12     	; 0x294 <setDevAddress+0x2a>
+ 2fe:	dd 23       	and	r29, r29
+ 300:	31 f0       	breq	.+12     	; 0x30e <setDevAddress+0x2a>
             eeprom_write_byte(EEPROM_DEVICE_ADDR, addr);
- 288:	6c 2f       	mov	r22, r28
- 28a:	84 e0       	ldi	r24, 0x04	; 4
- 28c:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	6c 2f       	mov	r22, r28
+ 304:	84 e0       	ldi	r24, 0x04	; 4
+ 306:	90 e0       	ldi	r25, 0x00	; 0
     }
 }
- 28e:	df 91       	pop	r29
- 290:	cf 91       	pop	r28
+ 308:	df 91       	pop	r29
+ 30a:	cf 91       	pop	r28
     {
         writeReg(CC1101_ADDR, addr);
         devAddress = addr;
         // Save in EEPROM
         if (save)
             eeprom_write_byte(EEPROM_DEVICE_ADDR, addr);
- 292:	62 c2       	rjmp	.+1220   	; 0x758 <__eewr_byte_tn48>
+ 30c:	3c c4       	rjmp	.+2168   	; 0xb86 <__eewr_byte_tn48>
     }
 }
- 294:	df 91       	pop	r29
- 296:	cf 91       	pop	r28
- 298:	08 95       	ret
+ 30e:	df 91       	pop	r29
+ 310:	cf 91       	pop	r28
+ 312:	08 95       	ret
 
-0000029a <setChannel>:
+00000314 <setChannel>:
  *
  * 'chnl'	Frequency channel
  * 'save' If TRUE, save parameter in EEPROM
  */
 void setChannel(byte chnl, bool save)
 {
- 29a:	cf 93       	push	r28
- 29c:	df 93       	push	r29
+ 314:	cf 93       	push	r28
+ 316:	df 93       	push	r29
     if (channel != chnl)
- 29e:	90 91 4e 01 	lds	r25, 0x014E
- 2a2:	98 17       	cp	r25, r24
- 2a4:	79 f0       	breq	.+30     	; 0x2c4 <setChannel+0x2a>
- 2a6:	d6 2f       	mov	r29, r22
- 2a8:	c8 2f       	mov	r28, r24
+ 318:	90 91 80 01 	lds	r25, 0x0180
+ 31c:	98 17       	cp	r25, r24
+ 31e:	79 f0       	breq	.+30     	; 0x33e <setChannel+0x2a>
+ 320:	d6 2f       	mov	r29, r22
+ 322:	c8 2f       	mov	r28, r24
     {
         writeReg(CC1101_CHANNR,  chnl);
- 2aa:	68 2f       	mov	r22, r24
- 2ac:	8a e0       	ldi	r24, 0x0A	; 10
- 2ae:	9d df       	rcall	.-198    	; 0x1ea <writeReg>
+ 324:	68 2f       	mov	r22, r24
+ 326:	8a e0       	ldi	r24, 0x0A	; 10
+ 328:	9d df       	rcall	.-198    	; 0x264 <writeReg>
         channel = chnl;
- 2b0:	c0 93 4e 01 	sts	0x014E, r28
+ 32a:	c0 93 80 01 	sts	0x0180, r28
         // Save in EEPROM
         if (save)
- 2b4:	dd 23       	and	r29, r29
- 2b6:	31 f0       	breq	.+12     	; 0x2c4 <setChannel+0x2a>
+ 32e:	dd 23       	and	r29, r29
+ 330:	31 f0       	breq	.+12     	; 0x33e <setChannel+0x2a>
             eeprom_write_byte(EEPROM_FREQ_CHANNEL, chnl);
- 2b8:	6c 2f       	mov	r22, r28
- 2ba:	80 e0       	ldi	r24, 0x00	; 0
- 2bc:	90 e0       	ldi	r25, 0x00	; 0
+ 332:	6c 2f       	mov	r22, r28
+ 334:	80 e0       	ldi	r24, 0x00	; 0
+ 336:	90 e0       	ldi	r25, 0x00	; 0
     }
 }
- 2be:	df 91       	pop	r29
- 2c0:	cf 91       	pop	r28
+ 338:	df 91       	pop	r29
+ 33a:	cf 91       	pop	r28
     {
         writeReg(CC1101_CHANNR,  chnl);
         channel = chnl;
         // Save in EEPROM
         if (save)
             eeprom_write_byte(EEPROM_FREQ_CHANNEL, chnl);
- 2c2:	4a c2       	rjmp	.+1172   	; 0x758 <__eewr_byte_tn48>
+ 33c:	24 c4       	rjmp	.+2120   	; 0xb86 <__eewr_byte_tn48>
     }
 }
- 2c4:	df 91       	pop	r29
- 2c6:	cf 91       	pop	r28
- 2c8:	08 95       	ret
+ 33e:	df 91       	pop	r29
+ 340:	cf 91       	pop	r28
+ 342:	08 95       	ret
 
-000002ca <setRegsFromEeprom>:
+00000344 <setRegsFromEeprom>:
  * setRegsFromEeprom
  *
  * Set registers from EEPROM
  */
 void setRegsFromEeprom(void)
 {
- 2ca:	cf 93       	push	r28
+ 344:	cf 93       	push	r28
     byte bVal;
     byte arrV[2];
     
     // Read RF channel from EEPROM
     bVal = eeprom_read_byte(EEPROM_FREQ_CHANNEL);
- 2cc:	80 e0       	ldi	r24, 0x00	; 0
- 2ce:	90 e0       	ldi	r25, 0x00	; 0
- 2d0:	3b d2       	rcall	.+1142   	; 0x748 <__eerd_byte_tn48>
+ 346:	80 e0       	ldi	r24, 0x00	; 0
+ 348:	90 e0       	ldi	r25, 0x00	; 0
+ 34a:	15 d4       	rcall	.+2090   	; 0xb76 <__eerd_byte_tn48>
     // Set RF channel
     if (bVal < NUMBER_OF_FCHANNELS )
- 2d2:	8a 30       	cpi	r24, 0x0A	; 10
- 2d4:	10 f4       	brcc	.+4      	; 0x2da <setRegsFromEeprom+0x10>
+ 34c:	8a 30       	cpi	r24, 0x0A	; 10
+ 34e:	10 f4       	brcc	.+4      	; 0x354 <setRegsFromEeprom+0x10>
         setChannel(bVal, false);
- 2d6:	60 e0       	ldi	r22, 0x00	; 0
- 2d8:	e0 df       	rcall	.-64     	; 0x29a <setChannel>
+ 350:	60 e0       	ldi	r22, 0x00	; 0
+ 352:	e0 df       	rcall	.-64     	; 0x314 <setChannel>
     // Read Sync word from EEPROM
     arrV[0] = eeprom_read_byte(EEPROM_SYNC_WORD);
- 2da:	82 e0       	ldi	r24, 0x02	; 2
- 2dc:	90 e0       	ldi	r25, 0x00	; 0
- 2de:	34 d2       	rcall	.+1128   	; 0x748 <__eerd_byte_tn48>
- 2e0:	c8 2f       	mov	r28, r24
+ 354:	82 e0       	ldi	r24, 0x02	; 2
+ 356:	90 e0       	ldi	r25, 0x00	; 0
+ 358:	0e d4       	rcall	.+2076   	; 0xb76 <__eerd_byte_tn48>
+ 35a:	c8 2f       	mov	r28, r24
     arrV[1] = eeprom_read_byte(EEPROM_SYNC_WORD + 1);
- 2e2:	83 e0       	ldi	r24, 0x03	; 3
- 2e4:	90 e0       	ldi	r25, 0x00	; 0
- 2e6:	30 d2       	rcall	.+1120   	; 0x748 <__eerd_byte_tn48>
+ 35c:	83 e0       	ldi	r24, 0x03	; 3
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	0a d4       	rcall	.+2068   	; 0xb76 <__eerd_byte_tn48>
     // Set Sync word. 0x00 and 0xFF values are not allowed
     if (((arrV[0] != 0x00) && (arrV[0] != 0xFF)) || ((arrV[1] != 0x00) && (arrV[1] != 0xFF)))
- 2e8:	9f ef       	ldi	r25, 0xFF	; 255
- 2ea:	9c 0f       	add	r25, r28
- 2ec:	9e 3f       	cpi	r25, 0xFE	; 254
- 2ee:	20 f0       	brcs	.+8      	; 0x2f8 <setRegsFromEeprom+0x2e>
- 2f0:	9f ef       	ldi	r25, 0xFF	; 255
- 2f2:	98 0f       	add	r25, r24
- 2f4:	9e 3f       	cpi	r25, 0xFE	; 254
- 2f6:	20 f4       	brcc	.+8      	; 0x300 <setRegsFromEeprom+0x36>
+ 362:	9f ef       	ldi	r25, 0xFF	; 255
+ 364:	9c 0f       	add	r25, r28
+ 366:	9e 3f       	cpi	r25, 0xFE	; 254
+ 368:	20 f0       	brcs	.+8      	; 0x372 <setRegsFromEeprom+0x2e>
+ 36a:	9f ef       	ldi	r25, 0xFF	; 255
+ 36c:	98 0f       	add	r25, r24
+ 36e:	9e 3f       	cpi	r25, 0xFE	; 254
+ 370:	20 f4       	brcc	.+8      	; 0x37a <setRegsFromEeprom+0x36>
         setSyncWord(arrV[0], arrV[1], false);
- 2f8:	40 e0       	ldi	r20, 0x00	; 0
- 2fa:	68 2f       	mov	r22, r24
- 2fc:	8c 2f       	mov	r24, r28
- 2fe:	87 df       	rcall	.-242    	; 0x20e <setSyncWord>
+ 372:	40 e0       	ldi	r20, 0x00	; 0
+ 374:	68 2f       	mov	r22, r24
+ 376:	8c 2f       	mov	r24, r28
+ 378:	87 df       	rcall	.-242    	; 0x288 <setSyncWord>
     // Read device address from EEPROM
     bVal = eeprom_read_byte(EEPROM_DEVICE_ADDR);
- 300:	84 e0       	ldi	r24, 0x04	; 4
- 302:	90 e0       	ldi	r25, 0x00	; 0
- 304:	21 d2       	rcall	.+1090   	; 0x748 <__eerd_byte_tn48>
+ 37a:	84 e0       	ldi	r24, 0x04	; 4
+ 37c:	90 e0       	ldi	r25, 0x00	; 0
+ 37e:	fb d3       	rcall	.+2038   	; 0xb76 <__eerd_byte_tn48>
     // Set device address
     if (bVal > 0)
- 306:	88 23       	and	r24, r24
- 308:	19 f0       	breq	.+6      	; 0x310 <setRegsFromEeprom+0x46>
+ 380:	88 23       	and	r24, r24
+ 382:	19 f0       	breq	.+6      	; 0x38a <setRegsFromEeprom+0x46>
         setDevAddress(bVal, false);
- 30a:	60 e0       	ldi	r22, 0x00	; 0
+ 384:	60 e0       	ldi	r22, 0x00	; 0
 }
- 30c:	cf 91       	pop	r28
+ 386:	cf 91       	pop	r28
         setSyncWord(arrV[0], arrV[1], false);
     // Read device address from EEPROM
     bVal = eeprom_read_byte(EEPROM_DEVICE_ADDR);
     // Set device address
     if (bVal > 0)
         setDevAddress(bVal, false);
- 30e:	ad cf       	rjmp	.-166    	; 0x26a <setDevAddress>
+ 388:	ad cf       	rjmp	.-166    	; 0x2e4 <setDevAddress>
 }
- 310:	cf 91       	pop	r28
- 312:	08 95       	ret
+ 38a:	cf 91       	pop	r28
+ 38c:	08 95       	ret
 
-00000314 <setCarrierFreq>:
+0000038e <setCarrierFreq>:
  * Set carrier frequency
  *
  * 'freq'	New carrier frequency
  */
 void setCarrierFreq(byte freq)
 {
- 314:	cf 93       	push	r28
- 316:	c8 2f       	mov	r28, r24
+ 38e:	cf 93       	push	r28
+ 390:	c8 2f       	mov	r28, r24
     switch(freq)
- 318:	81 30       	cpi	r24, 0x01	; 1
- 31a:	51 f0       	breq	.+20     	; 0x330 <setCarrierFreq+0x1c>
- 31c:	82 30       	cpi	r24, 0x02	; 2
- 31e:	81 f4       	brne	.+32     	; 0x340 <setCarrierFreq+0x2c>
+ 392:	81 30       	cpi	r24, 0x01	; 1
+ 394:	51 f0       	breq	.+20     	; 0x3aa <setCarrierFreq+0x1c>
+ 396:	82 30       	cpi	r24, 0x02	; 2
+ 398:	81 f4       	brne	.+32     	; 0x3ba <setCarrierFreq+0x2c>
             writeReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_915);
             writeReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_915);
             writeReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_915);
             break;
         case CFREQ_433:
             writeReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_433);
- 320:	60 e1       	ldi	r22, 0x10	; 16
- 322:	8d e0       	ldi	r24, 0x0D	; 13
- 324:	62 df       	rcall	.-316    	; 0x1ea <writeReg>
+ 39a:	60 e1       	ldi	r22, 0x10	; 16
+ 39c:	8d e0       	ldi	r24, 0x0D	; 13
+ 39e:	62 df       	rcall	.-316    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_433);
- 326:	67 ea       	ldi	r22, 0xA7	; 167
- 328:	8e e0       	ldi	r24, 0x0E	; 14
- 32a:	5f df       	rcall	.-322    	; 0x1ea <writeReg>
+ 3a0:	67 ea       	ldi	r22, 0xA7	; 167
+ 3a2:	8e e0       	ldi	r24, 0x0E	; 14
+ 3a4:	5f df       	rcall	.-322    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_433);
- 32c:	62 e6       	ldi	r22, 0x62	; 98
- 32e:	0f c0       	rjmp	.+30     	; 0x34e <setCarrierFreq+0x3a>
+ 3a6:	62 e6       	ldi	r22, 0x62	; 98
+ 3a8:	0f c0       	rjmp	.+30     	; 0x3c8 <setCarrierFreq+0x3a>
 void setCarrierFreq(byte freq)
 {
     switch(freq)
     {
         case CFREQ_915:
             writeReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_915);
- 330:	62 e2       	ldi	r22, 0x22	; 34
- 332:	8d e0       	ldi	r24, 0x0D	; 13
- 334:	5a df       	rcall	.-332    	; 0x1ea <writeReg>
+ 3aa:	62 e2       	ldi	r22, 0x22	; 34
+ 3ac:	8d e0       	ldi	r24, 0x0D	; 13
+ 3ae:	5a df       	rcall	.-332    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_915);
- 336:	61 eb       	ldi	r22, 0xB1	; 177
- 338:	8e e0       	ldi	r24, 0x0E	; 14
- 33a:	57 df       	rcall	.-338    	; 0x1ea <writeReg>
+ 3b0:	61 eb       	ldi	r22, 0xB1	; 177
+ 3b2:	8e e0       	ldi	r24, 0x0E	; 14
+ 3b4:	57 df       	rcall	.-338    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_915);
- 33c:	6b e3       	ldi	r22, 0x3B	; 59
- 33e:	07 c0       	rjmp	.+14     	; 0x34e <setCarrierFreq+0x3a>
+ 3b6:	6b e3       	ldi	r22, 0x3B	; 59
+ 3b8:	07 c0       	rjmp	.+14     	; 0x3c8 <setCarrierFreq+0x3a>
             writeReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_433);
             writeReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_433);
             writeReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_433);
             break;
         default:
             writeReg(CC1101_FREQ2,  CC1101_DEFVAL_FREQ2_868);
- 340:	61 e2       	ldi	r22, 0x21	; 33
- 342:	8d e0       	ldi	r24, 0x0D	; 13
- 344:	52 df       	rcall	.-348    	; 0x1ea <writeReg>
+ 3ba:	61 e2       	ldi	r22, 0x21	; 33
+ 3bc:	8d e0       	ldi	r24, 0x0D	; 13
+ 3be:	52 df       	rcall	.-348    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ1,  CC1101_DEFVAL_FREQ1_868);
- 346:	62 e6       	ldi	r22, 0x62	; 98
- 348:	8e e0       	ldi	r24, 0x0E	; 14
- 34a:	4f df       	rcall	.-354    	; 0x1ea <writeReg>
+ 3c0:	62 e6       	ldi	r22, 0x62	; 98
+ 3c2:	8e e0       	ldi	r24, 0x0E	; 14
+ 3c4:	4f df       	rcall	.-354    	; 0x264 <writeReg>
             writeReg(CC1101_FREQ0,  CC1101_DEFVAL_FREQ0_868);
- 34c:	66 e7       	ldi	r22, 0x76	; 118
- 34e:	8f e0       	ldi	r24, 0x0F	; 15
- 350:	4c df       	rcall	.-360    	; 0x1ea <writeReg>
+ 3c6:	66 e7       	ldi	r22, 0x76	; 118
+ 3c8:	8f e0       	ldi	r24, 0x0F	; 15
+ 3ca:	4c df       	rcall	.-360    	; 0x264 <writeReg>
             break;
     }
     
     carrierFreq = freq;
- 352:	c0 93 0a 01 	sts	0x010A, r28
+ 3cc:	c0 93 3c 01 	sts	0x013C, r28
 }
- 356:	cf 91       	pop	r28
- 358:	08 95       	ret
+ 3d0:	cf 91       	pop	r28
+ 3d2:	08 95       	ret
 
-0000035a <setDefaultRegs>:
+000003d4 <setDefaultRegs>:
  *
  * Configure CC1101 registers
  */
 void setDefaultRegs(void)
 {
     writeReg(CC1101_IOCFG2,  CC1101_DEFVAL_IOCFG2);
- 35a:	6e e2       	ldi	r22, 0x2E	; 46
- 35c:	80 e0       	ldi	r24, 0x00	; 0
- 35e:	45 df       	rcall	.-374    	; 0x1ea <writeReg>
+ 3d4:	6e e2       	ldi	r22, 0x2E	; 46
+ 3d6:	80 e0       	ldi	r24, 0x00	; 0
+ 3d8:	45 df       	rcall	.-374    	; 0x264 <writeReg>
     writeReg(CC1101_IOCFG1,  CC1101_DEFVAL_IOCFG1);
- 360:	6e e2       	ldi	r22, 0x2E	; 46
- 362:	81 e0       	ldi	r24, 0x01	; 1
- 364:	42 df       	rcall	.-380    	; 0x1ea <writeReg>
+ 3da:	6e e2       	ldi	r22, 0x2E	; 46
+ 3dc:	81 e0       	ldi	r24, 0x01	; 1
+ 3de:	42 df       	rcall	.-380    	; 0x264 <writeReg>
     writeReg(CC1101_IOCFG0,  CC1101_DEFVAL_IOCFG0);
- 366:	66 e0       	ldi	r22, 0x06	; 6
- 368:	82 e0       	ldi	r24, 0x02	; 2
- 36a:	3f df       	rcall	.-386    	; 0x1ea <writeReg>
+ 3e0:	66 e0       	ldi	r22, 0x06	; 6
+ 3e2:	82 e0       	ldi	r24, 0x02	; 2
+ 3e4:	3f df       	rcall	.-386    	; 0x264 <writeReg>
     writeReg(CC1101_FIFOTHR,  CC1101_DEFVAL_FIFOTHR);
- 36c:	67 e0       	ldi	r22, 0x07	; 7
- 36e:	83 e0       	ldi	r24, 0x03	; 3
- 370:	3c df       	rcall	.-392    	; 0x1ea <writeReg>
+ 3e6:	67 e0       	ldi	r22, 0x07	; 7
+ 3e8:	83 e0       	ldi	r24, 0x03	; 3
+ 3ea:	3c df       	rcall	.-392    	; 0x264 <writeReg>
     writeReg(CC1101_PKTLEN,  CC1101_DEFVAL_PKTLEN);
- 372:	6d e3       	ldi	r22, 0x3D	; 61
- 374:	86 e0       	ldi	r24, 0x06	; 6
- 376:	39 df       	rcall	.-398    	; 0x1ea <writeReg>
+ 3ec:	6d e3       	ldi	r22, 0x3D	; 61
+ 3ee:	86 e0       	ldi	r24, 0x06	; 6
+ 3f0:	39 df       	rcall	.-398    	; 0x264 <writeReg>
     writeReg(CC1101_PKTCTRL1,  CC1101_DEFVAL_PKTCTRL1);
- 378:	66 e0       	ldi	r22, 0x06	; 6
- 37a:	87 e0       	ldi	r24, 0x07	; 7
- 37c:	36 df       	rcall	.-404    	; 0x1ea <writeReg>
+ 3f2:	66 e0       	ldi	r22, 0x06	; 6
+ 3f4:	87 e0       	ldi	r24, 0x07	; 7
+ 3f6:	36 df       	rcall	.-404    	; 0x264 <writeReg>
     writeReg(CC1101_PKTCTRL0,  CC1101_DEFVAL_PKTCTRL0);
- 37e:	65 e0       	ldi	r22, 0x05	; 5
- 380:	88 e0       	ldi	r24, 0x08	; 8
- 382:	33 df       	rcall	.-410    	; 0x1ea <writeReg>
+ 3f8:	65 e0       	ldi	r22, 0x05	; 5
+ 3fa:	88 e0       	ldi	r24, 0x08	; 8
+ 3fc:	33 df       	rcall	.-410    	; 0x264 <writeReg>
+    
+    // Set default synchronization word
+     setSyncWord(CC1101_DEFVAL_SYNC1, CC1101_DEFVAL_SYNC0, false);
+ 3fe:	40 e0       	ldi	r20, 0x00	; 0
+ 400:	67 e4       	ldi	r22, 0x47	; 71
+ 402:	85 eb       	ldi	r24, 0xB5	; 181
+ 404:	41 df       	rcall	.-382    	; 0x288 <setSyncWord>
+    
     // // Set default device address
-    // setDevAddress(CC1101_DEFVAL_ADDR, false);
+     setDevAddress(CC1101_DEFVAL_ADDR, false);
+ 406:	60 e0       	ldi	r22, 0x00	; 0
+ 408:	8f ef       	ldi	r24, 0xFF	; 255
+ 40a:	6c df       	rcall	.-296    	; 0x2e4 <setDevAddress>
     // // Set default frequency channel
-    // setChannel(CC1101_DEFVAL_CHANNR, false);
+     setChannel(CC1101_DEFVAL_CHANNR, false);
+ 40c:	60 e0       	ldi	r22, 0x00	; 0
+ 40e:	80 e0       	ldi	r24, 0x00	; 0
+ 410:	81 df       	rcall	.-254    	; 0x314 <setChannel>
     
     writeReg(CC1101_FSCTRL1,  CC1101_DEFVAL_FSCTRL1);
- 384:	68 e0       	ldi	r22, 0x08	; 8
- 386:	8b e0       	ldi	r24, 0x0B	; 11
- 388:	30 df       	rcall	.-416    	; 0x1ea <writeReg>
+ 412:	68 e0       	ldi	r22, 0x08	; 8
+ 414:	8b e0       	ldi	r24, 0x0B	; 11
+ 416:	26 df       	rcall	.-436    	; 0x264 <writeReg>
     writeReg(CC1101_FSCTRL0,  CC1101_DEFVAL_FSCTRL0);
- 38a:	60 e0       	ldi	r22, 0x00	; 0
- 38c:	8c e0       	ldi	r24, 0x0C	; 12
- 38e:	2d df       	rcall	.-422    	; 0x1ea <writeReg>
+ 418:	60 e0       	ldi	r22, 0x00	; 0
+ 41a:	8c e0       	ldi	r24, 0x0C	; 12
+ 41c:	23 df       	rcall	.-442    	; 0x264 <writeReg>
     
     // Set default carrier frequency = 868 MHz
     setCarrierFreq(CFREQ_868);
- 390:	80 e0       	ldi	r24, 0x00	; 0
- 392:	c0 df       	rcall	.-128    	; 0x314 <setCarrierFreq>
+ 41e:	80 e0       	ldi	r24, 0x00	; 0
+ 420:	b6 df       	rcall	.-148    	; 0x38e <setCarrierFreq>
     
     writeReg(CC1101_MDMCFG4,  CC1101_DEFVAL_MDMCFG4);
- 394:	6a ec       	ldi	r22, 0xCA	; 202
- 396:	80 e1       	ldi	r24, 0x10	; 16
- 398:	28 df       	rcall	.-432    	; 0x1ea <writeReg>
+ 422:	6a ec       	ldi	r22, 0xCA	; 202
+ 424:	80 e1       	ldi	r24, 0x10	; 16
+ 426:	1e df       	rcall	.-452    	; 0x264 <writeReg>
     writeReg(CC1101_MDMCFG3,  CC1101_DEFVAL_MDMCFG3);
- 39a:	63 e8       	ldi	r22, 0x83	; 131
- 39c:	81 e1       	ldi	r24, 0x11	; 17
- 39e:	25 df       	rcall	.-438    	; 0x1ea <writeReg>
+ 428:	63 e8       	ldi	r22, 0x83	; 131
+ 42a:	81 e1       	ldi	r24, 0x11	; 17
+ 42c:	1b df       	rcall	.-458    	; 0x264 <writeReg>
     writeReg(CC1101_MDMCFG2,  CC1101_DEFVAL_MDMCFG2);
- 3a0:	63 e9       	ldi	r22, 0x93	; 147
- 3a2:	82 e1       	ldi	r24, 0x12	; 18
- 3a4:	22 df       	rcall	.-444    	; 0x1ea <writeReg>
+ 42e:	63 e9       	ldi	r22, 0x93	; 147
+ 430:	82 e1       	ldi	r24, 0x12	; 18
+ 432:	18 df       	rcall	.-464    	; 0x264 <writeReg>
     writeReg(CC1101_MDMCFG1,  CC1101_DEFVAL_MDMCFG1);
- 3a6:	62 e2       	ldi	r22, 0x22	; 34
- 3a8:	83 e1       	ldi	r24, 0x13	; 19
- 3aa:	1f df       	rcall	.-450    	; 0x1ea <writeReg>
+ 434:	62 e2       	ldi	r22, 0x22	; 34
+ 436:	83 e1       	ldi	r24, 0x13	; 19
+ 438:	15 df       	rcall	.-470    	; 0x264 <writeReg>
     writeReg(CC1101_MDMCFG0,  CC1101_DEFVAL_MDMCFG0);
- 3ac:	68 ef       	ldi	r22, 0xF8	; 248
- 3ae:	84 e1       	ldi	r24, 0x14	; 20
- 3b0:	1c df       	rcall	.-456    	; 0x1ea <writeReg>
+ 43a:	68 ef       	ldi	r22, 0xF8	; 248
+ 43c:	84 e1       	ldi	r24, 0x14	; 20
+ 43e:	12 df       	rcall	.-476    	; 0x264 <writeReg>
     writeReg(CC1101_DEVIATN,  CC1101_DEFVAL_DEVIATN);
- 3b2:	65 e3       	ldi	r22, 0x35	; 53
- 3b4:	85 e1       	ldi	r24, 0x15	; 21
- 3b6:	19 df       	rcall	.-462    	; 0x1ea <writeReg>
+ 440:	65 e3       	ldi	r22, 0x35	; 53
+ 442:	85 e1       	ldi	r24, 0x15	; 21
+ 444:	0f df       	rcall	.-482    	; 0x264 <writeReg>
     writeReg(CC1101_MCSM2,  CC1101_DEFVAL_MCSM2);
- 3b8:	67 e0       	ldi	r22, 0x07	; 7
- 3ba:	86 e1       	ldi	r24, 0x16	; 22
- 3bc:	16 df       	rcall	.-468    	; 0x1ea <writeReg>
+ 446:	67 e0       	ldi	r22, 0x07	; 7
+ 448:	86 e1       	ldi	r24, 0x16	; 22
+ 44a:	0c df       	rcall	.-488    	; 0x264 <writeReg>
     writeReg(CC1101_MCSM1,  CC1101_DEFVAL_MCSM1);
- 3be:	60 e2       	ldi	r22, 0x20	; 32
- 3c0:	87 e1       	ldi	r24, 0x17	; 23
- 3c2:	13 df       	rcall	.-474    	; 0x1ea <writeReg>
+ 44c:	60 e2       	ldi	r22, 0x20	; 32
+ 44e:	87 e1       	ldi	r24, 0x17	; 23
+ 450:	09 df       	rcall	.-494    	; 0x264 <writeReg>
     writeReg(CC1101_MCSM0,  CC1101_DEFVAL_MCSM0);
- 3c4:	68 e1       	ldi	r22, 0x18	; 24
- 3c6:	88 e1       	ldi	r24, 0x18	; 24
- 3c8:	10 df       	rcall	.-480    	; 0x1ea <writeReg>
+ 452:	68 e1       	ldi	r22, 0x18	; 24
+ 454:	88 e1       	ldi	r24, 0x18	; 24
+ 456:	06 df       	rcall	.-500    	; 0x264 <writeReg>
     writeReg(CC1101_FOCCFG,  CC1101_DEFVAL_FOCCFG);
- 3ca:	66 e1       	ldi	r22, 0x16	; 22
- 3cc:	89 e1       	ldi	r24, 0x19	; 25
- 3ce:	0d df       	rcall	.-486    	; 0x1ea <writeReg>
+ 458:	66 e1       	ldi	r22, 0x16	; 22
+ 45a:	89 e1       	ldi	r24, 0x19	; 25
+ 45c:	03 df       	rcall	.-506    	; 0x264 <writeReg>
     writeReg(CC1101_BSCFG,  CC1101_DEFVAL_BSCFG);
- 3d0:	6c e6       	ldi	r22, 0x6C	; 108
- 3d2:	8a e1       	ldi	r24, 0x1A	; 26
- 3d4:	0a df       	rcall	.-492    	; 0x1ea <writeReg>
+ 45e:	6c e6       	ldi	r22, 0x6C	; 108
+ 460:	8a e1       	ldi	r24, 0x1A	; 26
+ 462:	00 df       	rcall	.-512    	; 0x264 <writeReg>
     writeReg(CC1101_AGCCTRL2,  CC1101_DEFVAL_AGCCTRL2);
- 3d6:	63 e4       	ldi	r22, 0x43	; 67
- 3d8:	8b e1       	ldi	r24, 0x1B	; 27
- 3da:	07 df       	rcall	.-498    	; 0x1ea <writeReg>
+ 464:	63 e4       	ldi	r22, 0x43	; 67
+ 466:	8b e1       	ldi	r24, 0x1B	; 27
+ 468:	fd de       	rcall	.-518    	; 0x264 <writeReg>
     writeReg(CC1101_AGCCTRL1,  CC1101_DEFVAL_AGCCTRL1);
- 3dc:	60 e4       	ldi	r22, 0x40	; 64
- 3de:	8c e1       	ldi	r24, 0x1C	; 28
- 3e0:	04 df       	rcall	.-504    	; 0x1ea <writeReg>
+ 46a:	60 e4       	ldi	r22, 0x40	; 64
+ 46c:	8c e1       	ldi	r24, 0x1C	; 28
+ 46e:	fa de       	rcall	.-524    	; 0x264 <writeReg>
     writeReg(CC1101_AGCCTRL0,  CC1101_DEFVAL_AGCCTRL0);
- 3e2:	61 e9       	ldi	r22, 0x91	; 145
- 3e4:	8d e1       	ldi	r24, 0x1D	; 29
- 3e6:	01 df       	rcall	.-510    	; 0x1ea <writeReg>
+ 470:	61 e9       	ldi	r22, 0x91	; 145
+ 472:	8d e1       	ldi	r24, 0x1D	; 29
+ 474:	f7 de       	rcall	.-530    	; 0x264 <writeReg>
     writeReg(CC1101_WOREVT1,  CC1101_DEFVAL_WOREVT1);
- 3e8:	67 e8       	ldi	r22, 0x87	; 135
- 3ea:	8e e1       	ldi	r24, 0x1E	; 30
- 3ec:	fe de       	rcall	.-516    	; 0x1ea <writeReg>
+ 476:	67 e8       	ldi	r22, 0x87	; 135
+ 478:	8e e1       	ldi	r24, 0x1E	; 30
+ 47a:	f4 de       	rcall	.-536    	; 0x264 <writeReg>
     writeReg(CC1101_WOREVT0,  CC1101_DEFVAL_WOREVT0);
- 3ee:	6b e6       	ldi	r22, 0x6B	; 107
- 3f0:	8f e1       	ldi	r24, 0x1F	; 31
- 3f2:	fb de       	rcall	.-522    	; 0x1ea <writeReg>
+ 47c:	6b e6       	ldi	r22, 0x6B	; 107
+ 47e:	8f e1       	ldi	r24, 0x1F	; 31
+ 480:	f1 de       	rcall	.-542    	; 0x264 <writeReg>
     writeReg(CC1101_WORCTRL,  CC1101_DEFVAL_WORCTRL);
- 3f4:	6b ef       	ldi	r22, 0xFB	; 251
- 3f6:	80 e2       	ldi	r24, 0x20	; 32
- 3f8:	f8 de       	rcall	.-528    	; 0x1ea <writeReg>
+ 482:	6b ef       	ldi	r22, 0xFB	; 251
+ 484:	80 e2       	ldi	r24, 0x20	; 32
+ 486:	ee de       	rcall	.-548    	; 0x264 <writeReg>
     writeReg(CC1101_FREND1,  CC1101_DEFVAL_FREND1);
- 3fa:	66 e5       	ldi	r22, 0x56	; 86
- 3fc:	81 e2       	ldi	r24, 0x21	; 33
- 3fe:	f5 de       	rcall	.-534    	; 0x1ea <writeReg>
+ 488:	66 e5       	ldi	r22, 0x56	; 86
+ 48a:	81 e2       	ldi	r24, 0x21	; 33
+ 48c:	eb de       	rcall	.-554    	; 0x264 <writeReg>
     writeReg(CC1101_FREND0,  CC1101_DEFVAL_FREND0);
- 400:	60 e1       	ldi	r22, 0x10	; 16
- 402:	82 e2       	ldi	r24, 0x22	; 34
- 404:	f2 de       	rcall	.-540    	; 0x1ea <writeReg>
+ 48e:	60 e1       	ldi	r22, 0x10	; 16
+ 490:	82 e2       	ldi	r24, 0x22	; 34
+ 492:	e8 de       	rcall	.-560    	; 0x264 <writeReg>
     writeReg(CC1101_FSCAL3,  CC1101_DEFVAL_FSCAL3);
- 406:	69 ee       	ldi	r22, 0xE9	; 233
- 408:	83 e2       	ldi	r24, 0x23	; 35
- 40a:	ef de       	rcall	.-546    	; 0x1ea <writeReg>
+ 494:	69 ee       	ldi	r22, 0xE9	; 233
+ 496:	83 e2       	ldi	r24, 0x23	; 35
+ 498:	e5 de       	rcall	.-566    	; 0x264 <writeReg>
     writeReg(CC1101_FSCAL2,  CC1101_DEFVAL_FSCAL2);
- 40c:	6a e2       	ldi	r22, 0x2A	; 42
- 40e:	84 e2       	ldi	r24, 0x24	; 36
- 410:	ec de       	rcall	.-552    	; 0x1ea <writeReg>
+ 49a:	6a e2       	ldi	r22, 0x2A	; 42
+ 49c:	84 e2       	ldi	r24, 0x24	; 36
+ 49e:	e2 de       	rcall	.-572    	; 0x264 <writeReg>
     writeReg(CC1101_FSCAL1,  CC1101_DEFVAL_FSCAL1);
- 412:	60 e0       	ldi	r22, 0x00	; 0
- 414:	85 e2       	ldi	r24, 0x25	; 37
- 416:	e9 de       	rcall	.-558    	; 0x1ea <writeReg>
+ 4a0:	60 e0       	ldi	r22, 0x00	; 0
+ 4a2:	85 e2       	ldi	r24, 0x25	; 37
+ 4a4:	df de       	rcall	.-578    	; 0x264 <writeReg>
     writeReg(CC1101_FSCAL0,  CC1101_DEFVAL_FSCAL0);
- 418:	6f e1       	ldi	r22, 0x1F	; 31
- 41a:	86 e2       	ldi	r24, 0x26	; 38
- 41c:	e6 de       	rcall	.-564    	; 0x1ea <writeReg>
+ 4a6:	6f e1       	ldi	r22, 0x1F	; 31
+ 4a8:	86 e2       	ldi	r24, 0x26	; 38
+ 4aa:	dc de       	rcall	.-584    	; 0x264 <writeReg>
     writeReg(CC1101_RCCTRL1,  CC1101_DEFVAL_RCCTRL1);
- 41e:	61 e4       	ldi	r22, 0x41	; 65
- 420:	87 e2       	ldi	r24, 0x27	; 39
- 422:	e3 de       	rcall	.-570    	; 0x1ea <writeReg>
+ 4ac:	61 e4       	ldi	r22, 0x41	; 65
+ 4ae:	87 e2       	ldi	r24, 0x27	; 39
+ 4b0:	d9 de       	rcall	.-590    	; 0x264 <writeReg>
     writeReg(CC1101_RCCTRL0,  CC1101_DEFVAL_RCCTRL0);
- 424:	60 e0       	ldi	r22, 0x00	; 0
- 426:	88 e2       	ldi	r24, 0x28	; 40
- 428:	e0 de       	rcall	.-576    	; 0x1ea <writeReg>
+ 4b2:	60 e0       	ldi	r22, 0x00	; 0
+ 4b4:	88 e2       	ldi	r24, 0x28	; 40
+ 4b6:	d6 de       	rcall	.-596    	; 0x264 <writeReg>
     writeReg(CC1101_FSTEST,  CC1101_DEFVAL_FSTEST);
- 42a:	69 e5       	ldi	r22, 0x59	; 89
- 42c:	89 e2       	ldi	r24, 0x29	; 41
- 42e:	dd de       	rcall	.-582    	; 0x1ea <writeReg>
+ 4b8:	69 e5       	ldi	r22, 0x59	; 89
+ 4ba:	89 e2       	ldi	r24, 0x29	; 41
+ 4bc:	d3 de       	rcall	.-602    	; 0x264 <writeReg>
     writeReg(CC1101_PTEST,  CC1101_DEFVAL_PTEST);
- 430:	6f e7       	ldi	r22, 0x7F	; 127
- 432:	8a e2       	ldi	r24, 0x2A	; 42
- 434:	da de       	rcall	.-588    	; 0x1ea <writeReg>
+ 4be:	6f e7       	ldi	r22, 0x7F	; 127
+ 4c0:	8a e2       	ldi	r24, 0x2A	; 42
+ 4c2:	d0 de       	rcall	.-608    	; 0x264 <writeReg>
     writeReg(CC1101_AGCTEST,  CC1101_DEFVAL_AGCTEST);
- 436:	6f e3       	ldi	r22, 0x3F	; 63
- 438:	8b e2       	ldi	r24, 0x2B	; 43
- 43a:	d7 de       	rcall	.-594    	; 0x1ea <writeReg>
+ 4c4:	6f e3       	ldi	r22, 0x3F	; 63
+ 4c6:	8b e2       	ldi	r24, 0x2B	; 43
+ 4c8:	cd de       	rcall	.-614    	; 0x264 <writeReg>
     writeReg(CC1101_TEST2,  CC1101_DEFVAL_TEST2);
- 43c:	61 e8       	ldi	r22, 0x81	; 129
- 43e:	8c e2       	ldi	r24, 0x2C	; 44
- 440:	d4 de       	rcall	.-600    	; 0x1ea <writeReg>
+ 4ca:	61 e8       	ldi	r22, 0x81	; 129
+ 4cc:	8c e2       	ldi	r24, 0x2C	; 44
+ 4ce:	ca de       	rcall	.-620    	; 0x264 <writeReg>
     writeReg(CC1101_TEST1,  CC1101_DEFVAL_TEST1);
- 442:	65 e3       	ldi	r22, 0x35	; 53
- 444:	8d e2       	ldi	r24, 0x2D	; 45
- 446:	d1 de       	rcall	.-606    	; 0x1ea <writeReg>
+ 4d0:	65 e3       	ldi	r22, 0x35	; 53
+ 4d2:	8d e2       	ldi	r24, 0x2D	; 45
+ 4d4:	c7 de       	rcall	.-626    	; 0x264 <writeReg>
     writeReg(CC1101_TEST0,  CC1101_DEFVAL_TEST0);
- 448:	69 e0       	ldi	r22, 0x09	; 9
- 44a:	8e e2       	ldi	r24, 0x2E	; 46
- 44c:	ce ce       	rjmp	.-612    	; 0x1ea <writeReg>
+ 4d6:	69 e0       	ldi	r22, 0x09	; 9
+ 4d8:	8e e2       	ldi	r24, 0x2E	; 46
+ 4da:	c4 ce       	rjmp	.-632    	; 0x264 <writeReg>
 
-0000044e <writeBurstReg>:
+000004dc <writeBurstReg>:
  * 'regAddr'	Register address
  * 'buffer'	Data to be writen
  * 'len'	Data length
  */
 void writeBurstReg(byte regAddr, byte* buffer, byte len)
 {
- 44e:	ef 92       	push	r14
- 450:	ff 92       	push	r15
- 452:	0f 93       	push	r16
- 454:	1f 93       	push	r17
- 456:	cf 93       	push	r28
- 458:	df 93       	push	r29
- 45a:	00 d0       	rcall	.+0      	; 0x45c <writeBurstReg+0xe>
- 45c:	cd b7       	in	r28, 0x3d	; 61
- 45e:	de b7       	in	r29, 0x3e	; 62
- 460:	14 2f       	mov	r17, r20
+ 4dc:	ef 92       	push	r14
+ 4de:	ff 92       	push	r15
+ 4e0:	0f 93       	push	r16
+ 4e2:	1f 93       	push	r17
+ 4e4:	cf 93       	push	r28
+ 4e6:	df 93       	push	r29
+ 4e8:	00 d0       	rcall	.+0      	; 0x4ea <writeBurstReg+0xe>
+ 4ea:	cd b7       	in	r28, 0x3d	; 61
+ 4ec:	de b7       	in	r29, 0x3e	; 62
+ 4ee:	14 2f       	mov	r17, r20
     byte addr, i;
     
     addr = regAddr | WRITE_BURST;         // Enable burst transfer
- 462:	80 64       	ori	r24, 0x40	; 64
+ 4f0:	80 64       	ori	r24, 0x40	; 64
     cc1101_Select();                      // Select CC1101
- 464:	2a 98       	cbi	0x05, 2	; 5
+ 4f2:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 466:	1c 99       	sbic	0x03, 4	; 3
- 468:	fe cf       	rjmp	.-4      	; 0x466 <writeBurstReg+0x18>
+ 4f4:	1c 99       	sbic	0x03, 4	; 3
+ 4f6:	fe cf       	rjmp	.-4      	; 0x4f4 <writeBurstReg+0x18>
     spisend(addr);                       // Send register address
- 46a:	69 83       	std	Y+1, r22	; 0x01
- 46c:	7a 83       	std	Y+2, r23	; 0x02
- 46e:	b7 de       	rcall	.-658    	; 0x1de <spisend>
- 470:	69 81       	ldd	r22, Y+1	; 0x01
- 472:	06 2f       	mov	r16, r22
+ 4f8:	69 83       	std	Y+1, r22	; 0x01
+ 4fa:	7a 83       	std	Y+2, r23	; 0x02
+ 4fc:	ad de       	rcall	.-678    	; 0x258 <spisend>
+ 4fe:	69 81       	ldd	r22, Y+1	; 0x01
+ 500:	06 2f       	mov	r16, r22
     
     for(i=0 ; i<len ; i++)
- 474:	e6 2e       	mov	r14, r22
- 476:	7a 81       	ldd	r23, Y+2	; 0x02
- 478:	f7 2e       	mov	r15, r23
- 47a:	8e 2d       	mov	r24, r14
- 47c:	80 1b       	sub	r24, r16
- 47e:	81 17       	cp	r24, r17
- 480:	28 f4       	brcc	.+10     	; 0x48c <writeBurstReg+0x3e>
+ 502:	e6 2e       	mov	r14, r22
+ 504:	7a 81       	ldd	r23, Y+2	; 0x02
+ 506:	f7 2e       	mov	r15, r23
+ 508:	8e 2d       	mov	r24, r14
+ 50a:	80 1b       	sub	r24, r16
+ 50c:	81 17       	cp	r24, r17
+ 50e:	28 f4       	brcc	.+10     	; 0x51a <writeBurstReg+0x3e>
         spisend(buffer[i]);                // Send value
- 482:	f7 01       	movw	r30, r14
- 484:	81 91       	ld	r24, Z+
- 486:	7f 01       	movw	r14, r30
- 488:	aa de       	rcall	.-684    	; 0x1de <spisend>
- 48a:	f7 cf       	rjmp	.-18     	; 0x47a <writeBurstReg+0x2c>
+ 510:	f7 01       	movw	r30, r14
+ 512:	81 91       	ld	r24, Z+
+ 514:	7f 01       	movw	r14, r30
+ 516:	a0 de       	rcall	.-704    	; 0x258 <spisend>
+ 518:	f7 cf       	rjmp	.-18     	; 0x508 <writeBurstReg+0x2c>
     
     cc1101_Deselect();                    // Deselect CC1101
- 48c:	2a 9a       	sbi	0x05, 2	; 5
+ 51a:	2a 9a       	sbi	0x05, 2	; 5
 }
- 48e:	0f 90       	pop	r0
- 490:	0f 90       	pop	r0
- 492:	df 91       	pop	r29
- 494:	cf 91       	pop	r28
- 496:	1f 91       	pop	r17
- 498:	0f 91       	pop	r16
- 49a:	ff 90       	pop	r15
- 49c:	ef 90       	pop	r14
- 49e:	08 95       	ret
+ 51c:	0f 90       	pop	r0
+ 51e:	0f 90       	pop	r0
+ 520:	df 91       	pop	r29
+ 522:	cf 91       	pop	r28
+ 524:	1f 91       	pop	r17
+ 526:	0f 91       	pop	r16
+ 528:	ff 90       	pop	r15
+ 52a:	ef 90       	pop	r14
+ 52c:	08 95       	ret
 
-000004a0 <cmdStrobe>:
+0000052e <cmdStrobe>:
  *
  * 'cmd'	Command strobe
  */
 void cmdStrobe(byte cmd)
 {
     cc1101_Select();                      // Select CC1101
- 4a0:	2a 98       	cbi	0x05, 2	; 5
+ 52e:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 4a2:	1c 99       	sbic	0x03, 4	; 3
- 4a4:	fe cf       	rjmp	.-4      	; 0x4a2 <cmdStrobe+0x2>
+ 530:	1c 99       	sbic	0x03, 4	; 3
+ 532:	fe cf       	rjmp	.-4      	; 0x530 <cmdStrobe+0x2>
     spisend(cmd);                        // Send strobe command
- 4a6:	9b de       	rcall	.-714    	; 0x1de <spisend>
+ 534:	91 de       	rcall	.-734    	; 0x258 <spisend>
     cc1101_Deselect();                    // Deselect CC1101
- 4a8:	2a 9a       	sbi	0x05, 2	; 5
- 4aa:	08 95       	ret
+ 536:	2a 9a       	sbi	0x05, 2	; 5
+ 538:	08 95       	ret
 
-000004ac <setPowerDownState>:
+0000053a <setPowerDownState>:
  * Put CC1101 into power-down state
  */
 void setPowerDownState(void)
 {
     // Comming from RX state, we need to enter the IDLE state first
     cmdStrobe(CC1101_SIDLE);
- 4ac:	86 e3       	ldi	r24, 0x36	; 54
- 4ae:	f8 df       	rcall	.-16     	; 0x4a0 <cmdStrobe>
+ 53a:	86 e3       	ldi	r24, 0x36	; 54
+ 53c:	f8 df       	rcall	.-16     	; 0x52e <cmdStrobe>
     // Enter Power-down state
     cmdStrobe(CC1101_SPWD);
- 4b0:	89 e3       	ldi	r24, 0x39	; 57
- 4b2:	f6 cf       	rjmp	.-20     	; 0x4a0 <cmdStrobe>
+ 53e:	89 e3       	ldi	r24, 0x39	; 57
+ 540:	f6 cf       	rjmp	.-20     	; 0x52e <cmdStrobe>
 
-000004b4 <readReg>:
+00000542 <readReg>:
  */
 byte readReg(byte regAddr, byte regType)
 {
     byte addr, val;
     
     addr = regAddr | regType;
- 4b4:	86 2b       	or	r24, r22
+ 542:	86 2b       	or	r24, r22
     cc1101_Select();                      // Select CC1101
- 4b6:	2a 98       	cbi	0x05, 2	; 5
+ 544:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 4b8:	1c 99       	sbic	0x03, 4	; 3
- 4ba:	fe cf       	rjmp	.-4      	; 0x4b8 <readReg+0x4>
+ 546:	1c 99       	sbic	0x03, 4	; 3
+ 548:	fe cf       	rjmp	.-4      	; 0x546 <readReg+0x4>
     spisend(addr);                       // Send register address
- 4bc:	90 de       	rcall	.-736    	; 0x1de <spisend>
+ 54a:	86 de       	rcall	.-756    	; 0x258 <spisend>
     val = spisend(0x00);                 // Read result
- 4be:	80 e0       	ldi	r24, 0x00	; 0
- 4c0:	8e de       	rcall	.-740    	; 0x1de <spisend>
+ 54c:	80 e0       	ldi	r24, 0x00	; 0
+ 54e:	84 de       	rcall	.-760    	; 0x258 <spisend>
     cc1101_Deselect();                    // Deselect CC1101
- 4c2:	2a 9a       	sbi	0x05, 2	; 5
+ 550:	2a 9a       	sbi	0x05, 2	; 5
     
     return val;
 }
- 4c4:	08 95       	ret
+ 552:	08 95       	ret
 
-000004c6 <sendData>:
+00000554 <sendData>:
  *  Return:
  *    True if the transmission succeeds
  *    False otherwise
  */
 bool sendData(struct CCPACKET packet)
 {
- 4c6:	0f 93       	push	r16
- 4c8:	1f 93       	push	r17
- 4ca:	cf 93       	push	r28
- 4cc:	df 93       	push	r29
- 4ce:	cd b7       	in	r28, 0x3d	; 61
- 4d0:	de b7       	in	r29, 0x3e	; 62
+ 554:	0f 93       	push	r16
+ 556:	1f 93       	push	r17
+ 558:	cf 93       	push	r28
+ 55a:	df 93       	push	r29
+ 55c:	cd b7       	in	r28, 0x3d	; 61
+ 55e:	de b7       	in	r29, 0x3e	; 62
     byte marcState;
     bool res = false;
     
     // Declare to be in Tx state. This will avoid receiving packets whilst
     // transmitting
     rfState = RFSTATE_TX;
- 4d2:	82 e0       	ldi	r24, 0x02	; 2
- 4d4:	80 93 4d 01 	sts	0x014D, r24
+ 560:	82 e0       	ldi	r24, 0x02	; 2
+ 562:	80 93 7f 01 	sts	0x017F, r24
     
     // Enter RX state
     setRxState();
- 4d8:	84 e3       	ldi	r24, 0x34	; 52
-    
+ 566:	84 e3       	ldi	r24, 0x34	; 52
     // Check that the RX state has been entered
+    //check marcstate !=0x11
     while (((marcState = readStatusReg(CC1101_MARCSTATE)) & 0x1F) != 0x0D)
     {
         if (marcState == 0x11)        // RX_OVERFLOW
             flushRxFifo();              // flush receive queue
- 4da:	e2 df       	rcall	.-60     	; 0x4a0 <cmdStrobe>
-    
+ 568:	e2 df       	rcall	.-60     	; 0x52e <cmdStrobe>
     // Enter RX state
     setRxState();
     
     // Check that the RX state has been entered
+    //check marcstate !=0x11
     while (((marcState = readStatusReg(CC1101_MARCSTATE)) & 0x1F) != 0x0D)
- 4dc:	60 ec       	ldi	r22, 0xC0	; 192
- 4de:	85 e3       	ldi	r24, 0x35	; 53
- 4e0:	e9 df       	rcall	.-46     	; 0x4b4 <readReg>
- 4e2:	98 2f       	mov	r25, r24
- 4e4:	9f 71       	andi	r25, 0x1F	; 31
- 4e6:	9d 30       	cpi	r25, 0x0D	; 13
- 4e8:	21 f0       	breq	.+8      	; 0x4f2 <sendData+0x2c>
+ 56a:	60 ec       	ldi	r22, 0xC0	; 192
+ 56c:	85 e3       	ldi	r24, 0x35	; 53
+ 56e:	e9 df       	rcall	.-46     	; 0x542 <readReg>
+ 570:	98 2f       	mov	r25, r24
+ 572:	9f 71       	andi	r25, 0x1F	; 31
+ 574:	9d 30       	cpi	r25, 0x0D	; 13
+ 576:	21 f0       	breq	.+8      	; 0x580 <sendData+0x2c>
     {
         if (marcState == 0x11)        // RX_OVERFLOW
- 4ea:	81 31       	cpi	r24, 0x11	; 17
- 4ec:	b9 f7       	brne	.-18     	; 0x4dc <sendData+0x16>
+ 578:	81 31       	cpi	r24, 0x11	; 17
+ 57a:	b9 f7       	brne	.-18     	; 0x56a <sendData+0x16>
             flushRxFifo();              // flush receive queue
- 4ee:	8a e3       	ldi	r24, 0x3A	; 58
- 4f0:	f4 cf       	rjmp	.-24     	; 0x4da <sendData+0x14>
- 4f2:	2f e7       	ldi	r18, 0x7F	; 127
- 4f4:	8a e1       	ldi	r24, 0x1A	; 26
- 4f6:	96 e0       	ldi	r25, 0x06	; 6
- 4f8:	21 50       	subi	r18, 0x01	; 1
- 4fa:	80 40       	sbci	r24, 0x00	; 0
- 4fc:	90 40       	sbci	r25, 0x00	; 0
- 4fe:	e1 f7       	brne	.-8      	; 0x4f8 <sendData+0x32>
- 500:	00 c0       	rjmp	.+0      	; 0x502 <sendData+0x3c>
- 502:	00 00       	nop
+ 57c:	8a e3       	ldi	r24, 0x3A	; 58
+ 57e:	f4 cf       	rjmp	.-24     	; 0x568 <sendData+0x14>
+ 580:	2f e7       	ldi	r18, 0x7F	; 127
+ 582:	8a e1       	ldi	r24, 0x1A	; 26
+ 584:	96 e0       	ldi	r25, 0x06	; 6
+ 586:	21 50       	subi	r18, 0x01	; 1
+ 588:	80 40       	sbci	r24, 0x00	; 0
+ 58a:	90 40       	sbci	r25, 0x00	; 0
+ 58c:	e1 f7       	brne	.-8      	; 0x586 <sendData+0x32>
+ 58e:	00 c0       	rjmp	.+0      	; 0x590 <sendData+0x3c>
+ 590:	00 00       	nop
     }
     
     _delay_ms(500);
     
     // Set data length at the first position of the TX FIFO
     writeReg(CC1101_TXFIFO,  packet.length);
- 504:	8e 01       	movw	r16, r28
- 506:	09 5f       	subi	r16, 0xF9	; 249
- 508:	1f 4f       	sbci	r17, 0xFF	; 255
- 50a:	f8 01       	movw	r30, r16
- 50c:	61 91       	ld	r22, Z+
- 50e:	8f 01       	movw	r16, r30
- 510:	8f e3       	ldi	r24, 0x3F	; 63
- 512:	6b de       	rcall	.-810    	; 0x1ea <writeReg>
+ 592:	8e 01       	movw	r16, r28
+ 594:	09 5f       	subi	r16, 0xF9	; 249
+ 596:	1f 4f       	sbci	r17, 0xFF	; 255
+ 598:	f8 01       	movw	r30, r16
+ 59a:	61 91       	ld	r22, Z+
+ 59c:	8f 01       	movw	r16, r30
+ 59e:	8f e3       	ldi	r24, 0x3F	; 63
+ 5a0:	61 de       	rcall	.-830    	; 0x264 <writeReg>
     // Write data into the TX FIFO
     writeBurstReg(CC1101_TXFIFO, packet.data, packet.length);
- 514:	4f 81       	ldd	r20, Y+7	; 0x07
- 516:	b8 01       	movw	r22, r16
- 518:	8f e3       	ldi	r24, 0x3F	; 63
- 51a:	99 df       	rcall	.-206    	; 0x44e <writeBurstReg>
+ 5a2:	4f 81       	ldd	r20, Y+7	; 0x07
+ 5a4:	b8 01       	movw	r22, r16
+ 5a6:	8f e3       	ldi	r24, 0x3F	; 63
+ 5a8:	99 df       	rcall	.-206    	; 0x4dc <writeBurstReg>
     
     // CCA enabled: will enter TX state only if the channel is clear
     setTxState();
- 51c:	85 e3       	ldi	r24, 0x35	; 53
- 51e:	c0 df       	rcall	.-128    	; 0x4a0 <cmdStrobe>
+ 5aa:	85 e3       	ldi	r24, 0x35	; 53
+ 5ac:	c0 df       	rcall	.-128    	; 0x52e <cmdStrobe>
     
     // Check that TX state is being entered (state = RXTX_SETTLING)
     marcState = readStatusReg(CC1101_MARCSTATE) & 0x1F;
- 520:	60 ec       	ldi	r22, 0xC0	; 192
- 522:	85 e3       	ldi	r24, 0x35	; 53
- 524:	c7 df       	rcall	.-114    	; 0x4b4 <readReg>
- 526:	8f 71       	andi	r24, 0x1F	; 31
+ 5ae:	60 ec       	ldi	r22, 0xC0	; 192
+ 5b0:	85 e3       	ldi	r24, 0x35	; 53
+ 5b2:	c7 df       	rcall	.-114    	; 0x542 <readReg>
+ 5b4:	8f 71       	andi	r24, 0x1F	; 31
     if((marcState != 0x13) && (marcState != 0x14) && (marcState != 0x15))
- 528:	83 51       	subi	r24, 0x13	; 19
- 52a:	83 30       	cpi	r24, 0x03	; 3
- 52c:	58 f0       	brcs	.+22     	; 0x544 <sendData+0x7e>
+ 5b6:	83 51       	subi	r24, 0x13	; 19
+ 5b8:	83 30       	cpi	r24, 0x03	; 3
+ 5ba:	58 f0       	brcs	.+22     	; 0x5d2 <sendData+0x7e>
     {
         setIdleState();       // Enter IDLE state
- 52e:	86 e3       	ldi	r24, 0x36	; 54
- 530:	b7 df       	rcall	.-146    	; 0x4a0 <cmdStrobe>
+ 5bc:	86 e3       	ldi	r24, 0x36	; 54
+ 5be:	b7 df       	rcall	.-146    	; 0x52e <cmdStrobe>
         flushTxFifo();        // Flush Tx FIFO
- 532:	8b e3       	ldi	r24, 0x3B	; 59
- 534:	b5 df       	rcall	.-150    	; 0x4a0 <cmdStrobe>
+ 5c0:	8b e3       	ldi	r24, 0x3B	; 59
+ 5c2:	b5 df       	rcall	.-150    	; 0x52e <cmdStrobe>
         setRxState();         // Back to RX state
- 536:	84 e3       	ldi	r24, 0x34	; 52
- 538:	b3 df       	rcall	.-154    	; 0x4a0 <cmdStrobe>
+ 5c4:	84 e3       	ldi	r24, 0x34	; 52
+ 5c6:	b3 df       	rcall	.-154    	; 0x52e <cmdStrobe>
         
         // Declare to be in Rx state
         rfState = RFSTATE_RX;
- 53a:	81 e0       	ldi	r24, 0x01	; 1
- 53c:	80 93 4d 01 	sts	0x014D, r24
+ 5c8:	81 e0       	ldi	r24, 0x01	; 1
+ 5ca:	80 93 7f 01 	sts	0x017F, r24
         return false;
- 540:	10 e0       	ldi	r17, 0x00	; 0
- 542:	14 c0       	rjmp	.+40     	; 0x56c <sendData+0xa6>
+ 5ce:	10 e0       	ldi	r17, 0x00	; 0
+ 5d0:	1d c0       	rjmp	.+58     	; 0x60c <sendData+0xb8>
     }
-    
+//
     // Wait for the sync word to be transmitted
     wait_GDO0_high();
- 544:	4a 9b       	sbis	0x09, 2	; 9
- 546:	fe cf       	rjmp	.-4      	; 0x544 <sendData+0x7e>
+ 5d2:	4d 9b       	sbis	0x09, 5	; 9
+ 5d4:	fe cf       	rjmp	.-4      	; 0x5d2 <sendData+0x7e>
     
     // Wait until the end of the packet transmission
     wait_GDO0_low();
- 548:	4a 99       	sbic	0x09, 2	; 9
- 54a:	fe cf       	rjmp	.-4      	; 0x548 <sendData+0x82>
-    
-    // Check that the TX FIFO is empty
+ 5d6:	4d 99       	sbic	0x09, 5	; 9
+ 5d8:	fe cf       	rjmp	.-4      	; 0x5d6 <sendData+0x82>
+//
+//    // Check that the TX FIFO is empty
     if((readStatusReg(CC1101_TXBYTES) & 0x7F) == 0)
- 54c:	60 ec       	ldi	r22, 0xC0	; 192
- 54e:	8a e3       	ldi	r24, 0x3A	; 58
- 550:	b1 df       	rcall	.-158    	; 0x4b4 <readReg>
- 552:	8f 77       	andi	r24, 0x7F	; 127
- 554:	11 e0       	ldi	r17, 0x01	; 1
- 556:	09 f0       	breq	.+2      	; 0x55a <sendData+0x94>
- 558:	10 e0       	ldi	r17, 0x00	; 0
+ 5da:	60 ec       	ldi	r22, 0xC0	; 192
+ 5dc:	8a e3       	ldi	r24, 0x3A	; 58
+ 5de:	b1 df       	rcall	.-158    	; 0x542 <readReg>
+ 5e0:	8f 77       	andi	r24, 0x7F	; 127
+ 5e2:	11 e0       	ldi	r17, 0x01	; 1
+ 5e4:	09 f0       	breq	.+2      	; 0x5e8 <sendData+0x94>
+ 5e6:	10 e0       	ldi	r17, 0x00	; 0
         res = true;
     
     setIdleState();       // Enter IDLE state
- 55a:	86 e3       	ldi	r24, 0x36	; 54
- 55c:	a1 df       	rcall	.-190    	; 0x4a0 <cmdStrobe>
+ 5e8:	86 e3       	ldi	r24, 0x36	; 54
+ 5ea:	a1 df       	rcall	.-190    	; 0x52e <cmdStrobe>
+ 5ec:	ff ef       	ldi	r31, 0xFF	; 255
+ 5ee:	29 e6       	ldi	r18, 0x69	; 105
+ 5f0:	88 e1       	ldi	r24, 0x18	; 24
+ 5f2:	f1 50       	subi	r31, 0x01	; 1
+ 5f4:	20 40       	sbci	r18, 0x00	; 0
+ 5f6:	80 40       	sbci	r24, 0x00	; 0
+ 5f8:	e1 f7       	brne	.-8      	; 0x5f2 <sendData+0x9e>
+ 5fa:	00 c0       	rjmp	.+0      	; 0x5fc <sendData+0xa8>
+ 5fc:	00 00       	nop
+    _delay_ms(2000);
     flushTxFifo();        // Flush Tx FIFO
- 55e:	8b e3       	ldi	r24, 0x3B	; 59
- 560:	9f df       	rcall	.-194    	; 0x4a0 <cmdStrobe>
+ 5fe:	8b e3       	ldi	r24, 0x3B	; 59
+ 600:	96 df       	rcall	.-212    	; 0x52e <cmdStrobe>
     
     // Enter back into RX state
     setRxState();
- 562:	84 e3       	ldi	r24, 0x34	; 52
- 564:	9d df       	rcall	.-198    	; 0x4a0 <cmdStrobe>
+ 602:	84 e3       	ldi	r24, 0x34	; 52
+ 604:	94 df       	rcall	.-216    	; 0x52e <cmdStrobe>
     
     // Declare to be in Rx state
     rfState = RFSTATE_RX;
- 566:	81 e0       	ldi	r24, 0x01	; 1
- 568:	80 93 4d 01 	sts	0x014D, r24
-    
+ 606:	81 e0       	ldi	r24, 0x01	; 1
+ 608:	80 93 7f 01 	sts	0x017F, r24
+//
     return res;
 }
- 56c:	81 2f       	mov	r24, r17
- 56e:	df 91       	pop	r29
- 570:	cf 91       	pop	r28
- 572:	1f 91       	pop	r17
- 574:	0f 91       	pop	r16
- 576:	08 95       	ret
+ 60c:	81 2f       	mov	r24, r17
+ 60e:	df 91       	pop	r29
+ 610:	cf 91       	pop	r28
+ 612:	1f 91       	pop	r17
+ 614:	0f 91       	pop	r16
+ 616:	08 95       	ret
 
-00000578 <readBurstReg>:
+00000618 <readBurstReg>:
  * 'buffer'	Buffer where to copy the result to
  * 'regAddr'	Register address
  * 'len'	Data length
  */
 void readBurstReg(byte * buffer, byte regAddr, byte len)
 {
- 578:	cf 92       	push	r12
- 57a:	df 92       	push	r13
- 57c:	ff 92       	push	r15
- 57e:	0f 93       	push	r16
- 580:	1f 93       	push	r17
- 582:	cf 93       	push	r28
- 584:	df 93       	push	r29
- 586:	1f 92       	push	r1
- 588:	cd b7       	in	r28, 0x3d	; 61
- 58a:	de b7       	in	r29, 0x3e	; 62
- 58c:	18 2f       	mov	r17, r24
- 58e:	04 2f       	mov	r16, r20
+ 618:	cf 92       	push	r12
+ 61a:	df 92       	push	r13
+ 61c:	ff 92       	push	r15
+ 61e:	0f 93       	push	r16
+ 620:	1f 93       	push	r17
+ 622:	cf 93       	push	r28
+ 624:	df 93       	push	r29
+ 626:	1f 92       	push	r1
+ 628:	cd b7       	in	r28, 0x3d	; 61
+ 62a:	de b7       	in	r29, 0x3e	; 62
+ 62c:	18 2f       	mov	r17, r24
+ 62e:	04 2f       	mov	r16, r20
     byte addr, i;
     
     addr = regAddr | READ_BURST;
- 590:	86 2f       	mov	r24, r22
- 592:	80 6c       	ori	r24, 0xC0	; 192
+ 630:	86 2f       	mov	r24, r22
+ 632:	80 6c       	ori	r24, 0xC0	; 192
     cc1101_Select();                      // Select CC1101
- 594:	2a 98       	cbi	0x05, 2	; 5
+ 634:	2a 98       	cbi	0x05, 2	; 5
     wait_Miso();                          // Wait until MISO goes low
- 596:	1c 99       	sbic	0x03, 4	; 3
- 598:	fe cf       	rjmp	.-4      	; 0x596 <readBurstReg+0x1e>
+ 636:	1c 99       	sbic	0x03, 4	; 3
+ 638:	fe cf       	rjmp	.-4      	; 0x636 <readBurstReg+0x1e>
     spisend(addr);                       // Send register address
- 59a:	99 83       	std	Y+1, r25	; 0x01
- 59c:	20 de       	rcall	.-960    	; 0x1de <spisend>
- 59e:	f1 2e       	mov	r15, r17
+ 63a:	99 83       	std	Y+1, r25	; 0x01
+ 63c:	0d de       	rcall	.-998    	; 0x258 <spisend>
+ 63e:	f1 2e       	mov	r15, r17
     for(i=0 ; i<len ; i++)
- 5a0:	c1 2e       	mov	r12, r17
- 5a2:	99 81       	ldd	r25, Y+1	; 0x01
- 5a4:	d9 2e       	mov	r13, r25
- 5a6:	8c 2d       	mov	r24, r12
- 5a8:	8f 19       	sub	r24, r15
- 5aa:	80 17       	cp	r24, r16
- 5ac:	30 f4       	brcc	.+12     	; 0x5ba <readBurstReg+0x42>
+ 640:	c1 2e       	mov	r12, r17
+ 642:	99 81       	ldd	r25, Y+1	; 0x01
+ 644:	d9 2e       	mov	r13, r25
+ 646:	8c 2d       	mov	r24, r12
+ 648:	8f 19       	sub	r24, r15
+ 64a:	80 17       	cp	r24, r16
+ 64c:	30 f4       	brcc	.+12     	; 0x65a <readBurstReg+0x42>
         buffer[i] = spisend(0x00);         // Read result byte by byte
- 5ae:	80 e0       	ldi	r24, 0x00	; 0
- 5b0:	16 de       	rcall	.-980    	; 0x1de <spisend>
- 5b2:	f6 01       	movw	r30, r12
- 5b4:	81 93       	st	Z+, r24
- 5b6:	6f 01       	movw	r12, r30
- 5b8:	f6 cf       	rjmp	.-20     	; 0x5a6 <readBurstReg+0x2e>
+ 64e:	80 e0       	ldi	r24, 0x00	; 0
+ 650:	03 de       	rcall	.-1018   	; 0x258 <spisend>
+ 652:	f6 01       	movw	r30, r12
+ 654:	81 93       	st	Z+, r24
+ 656:	6f 01       	movw	r12, r30
+ 658:	f6 cf       	rjmp	.-20     	; 0x646 <readBurstReg+0x2e>
     cc1101_Deselect();                    // Deselect CC1101
- 5ba:	2a 9a       	sbi	0x05, 2	; 5
+ 65a:	2a 9a       	sbi	0x05, 2	; 5
 }
- 5bc:	0f 90       	pop	r0
- 5be:	df 91       	pop	r29
- 5c0:	cf 91       	pop	r28
- 5c2:	1f 91       	pop	r17
- 5c4:	0f 91       	pop	r16
- 5c6:	ff 90       	pop	r15
- 5c8:	df 90       	pop	r13
- 5ca:	cf 90       	pop	r12
- 5cc:	08 95       	ret
+ 65c:	0f 90       	pop	r0
+ 65e:	df 91       	pop	r29
+ 660:	cf 91       	pop	r28
+ 662:	1f 91       	pop	r17
+ 664:	0f 91       	pop	r16
+ 666:	ff 90       	pop	r15
+ 668:	df 90       	pop	r13
+ 66a:	cf 90       	pop	r12
+ 66c:	08 95       	ret
 
-000005ce <receiveData>:
+0000066e <receiveData>:
  *
  * Return:
  * 	Amount of bytes received
  */
 byte receiveData(struct CCPACKET * packet)
 {
- 5ce:	cf 93       	push	r28
- 5d0:	df 93       	push	r29
- 5d2:	ec 01       	movw	r28, r24
+ 66e:	cf 93       	push	r28
+ 670:	df 93       	push	r29
+ 672:	ec 01       	movw	r28, r24
     byte val;
     byte rxBytes = readStatusReg(CC1101_RXBYTES);
- 5d4:	60 ec       	ldi	r22, 0xC0	; 192
- 5d6:	8b e3       	ldi	r24, 0x3B	; 59
- 5d8:	6d df       	rcall	.-294    	; 0x4b4 <readReg>
+ 674:	60 ec       	ldi	r22, 0xC0	; 192
+ 676:	8b e3       	ldi	r24, 0x3B	; 59
+ 678:	64 df       	rcall	.-312    	; 0x542 <readReg>
     
-    // Any byte waiting to be read and no overflow?
-    if (rxBytes & 0x7F && !(rxBytes & 0x80))
- 5da:	98 2f       	mov	r25, r24
- 5dc:	9f 77       	andi	r25, 0x7F	; 127
- 5de:	41 f0       	breq	.+16     	; 0x5f0 <receiveData+0x22>
- 5e0:	87 fd       	sbrc	r24, 7
- 5e2:	06 c0       	rjmp	.+12     	; 0x5f0 <receiveData+0x22>
+    // Rx FIFO overflow?
+    if ((readStatusReg(CC1101_MARCSTATE) & 0x1F) == 0x11)
+ 67a:	60 ec       	ldi	r22, 0xC0	; 192
+ 67c:	85 e3       	ldi	r24, 0x35	; 53
+ 67e:	61 df       	rcall	.-318    	; 0x542 <readReg>
+ 680:	8f 71       	andi	r24, 0x1F	; 31
+ 682:	81 31       	cpi	r24, 0x11	; 17
+ 684:	19 f4       	brne	.+6      	; 0x68c <receiveData+0x1e>
+    {
+        // Flush Rx FIFO
+        cmdStrobe(CC1101_SFRX);
+ 686:	8a e3       	ldi	r24, 0x3A	; 58
+ 688:	52 df       	rcall	.-348    	; 0x52e <cmdStrobe>
+ 68a:	0b c0       	rjmp	.+22     	; 0x6a2 <receiveData+0x34>
+        packet->length = 0;
+    }
+    // Any byte waiting to be read?
+    else if (readStatusReg(CC1101_RXBYTES) & 0x7F)
+ 68c:	60 ec       	ldi	r22, 0xC0	; 192
+ 68e:	8b e3       	ldi	r24, 0x3B	; 59
+ 690:	58 df       	rcall	.-336    	; 0x542 <readReg>
+ 692:	8f 77       	andi	r24, 0x7F	; 127
+ 694:	31 f0       	breq	.+12     	; 0x6a2 <receiveData+0x34>
     {
         // Read data length
         packet->length = readConfigReg(CC1101_RXFIFO);
- 5e4:	60 e8       	ldi	r22, 0x80	; 128
- 5e6:	8f e3       	ldi	r24, 0x3F	; 63
- 5e8:	65 df       	rcall	.-310    	; 0x4b4 <readReg>
- 5ea:	88 83       	st	Y, r24
+ 696:	60 e8       	ldi	r22, 0x80	; 128
+ 698:	8f e3       	ldi	r24, 0x3F	; 63
+ 69a:	53 df       	rcall	.-346    	; 0x542 <readReg>
+ 69c:	88 83       	st	Y, r24
         // If packet is too long
         if (packet->length > CC1101_DATA_LEN)
- 5ec:	8e 33       	cpi	r24, 0x3E	; 62
- 5ee:	10 f0       	brcs	.+4      	; 0x5f4 <receiveData+0x26>
+ 69e:	8e 33       	cpi	r24, 0x3E	; 62
+ 6a0:	10 f0       	brcs	.+4      	; 0x6a6 <receiveData+0x38>
             packet->length = 0;   // Discard packet
- 5f0:	18 82       	st	Y, r1
- 5f2:	17 c0       	rjmp	.+46     	; 0x622 <receiveData+0x54>
+ 6a2:	18 82       	st	Y, r1
+ 6a4:	17 c0       	rjmp	.+46     	; 0x6d4 <receiveData+0x66>
         else
         {
             // Read data packet
             readBurstReg(packet->data, CC1101_RXFIFO, packet->length);
- 5f4:	48 2f       	mov	r20, r24
- 5f6:	6f e3       	ldi	r22, 0x3F	; 63
- 5f8:	ce 01       	movw	r24, r28
- 5fa:	01 96       	adiw	r24, 0x01	; 1
- 5fc:	bd df       	rcall	.-134    	; 0x578 <readBurstReg>
+ 6a6:	48 2f       	mov	r20, r24
+ 6a8:	6f e3       	ldi	r22, 0x3F	; 63
+ 6aa:	ce 01       	movw	r24, r28
+ 6ac:	01 96       	adiw	r24, 0x01	; 1
+ 6ae:	b4 df       	rcall	.-152    	; 0x618 <readBurstReg>
             // Read RSSI
             packet->rssi = readConfigReg(CC1101_RXFIFO);
- 5fe:	60 e8       	ldi	r22, 0x80	; 128
- 600:	8f e3       	ldi	r24, 0x3F	; 63
- 602:	58 df       	rcall	.-336    	; 0x4b4 <readReg>
- 604:	8f af       	std	Y+63, r24	; 0x3f
+ 6b0:	60 e8       	ldi	r22, 0x80	; 128
+ 6b2:	8f e3       	ldi	r24, 0x3F	; 63
+ 6b4:	46 df       	rcall	.-372    	; 0x542 <readReg>
+ 6b6:	8f af       	std	Y+63, r24	; 0x3f
             // Read LQI and CRC_OK
             val = readConfigReg(CC1101_RXFIFO);
- 606:	60 e8       	ldi	r22, 0x80	; 128
- 608:	8f e3       	ldi	r24, 0x3F	; 63
- 60a:	54 df       	rcall	.-344    	; 0x4b4 <readReg>
+ 6b8:	60 e8       	ldi	r22, 0x80	; 128
+ 6ba:	8f e3       	ldi	r24, 0x3F	; 63
+ 6bc:	42 df       	rcall	.-380    	; 0x542 <readReg>
             packet->lqi = val & 0x7F;
- 60c:	fe 01       	movw	r30, r28
- 60e:	e0 5c       	subi	r30, 0xC0	; 192
- 610:	ff 4f       	sbci	r31, 0xFF	; 255
- 612:	98 2f       	mov	r25, r24
- 614:	9f 77       	andi	r25, 0x7F	; 127
- 616:	90 83       	st	Z, r25
+ 6be:	fe 01       	movw	r30, r28
+ 6c0:	e0 5c       	subi	r30, 0xC0	; 192
+ 6c2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6c4:	98 2f       	mov	r25, r24
+ 6c6:	9f 77       	andi	r25, 0x7F	; 127
+ 6c8:	90 83       	st	Z, r25
             packet->crc_ok = bitRead(val, 7);
- 618:	98 2f       	mov	r25, r24
- 61a:	99 1f       	adc	r25, r25
- 61c:	99 27       	eor	r25, r25
- 61e:	99 1f       	adc	r25, r25
- 620:	9e af       	std	Y+62, r25	; 0x3e
-        }
-    }
-    else
-        packet->length = 0;
+ 6ca:	98 2f       	mov	r25, r24
+ 6cc:	99 1f       	adc	r25, r25
+ 6ce:	99 27       	eor	r25, r25
+ 6d0:	99 1f       	adc	r25, r25
+ 6d2:	9e af       	std	Y+62, r25	; 0x3e
     
-    setIdleState();       // Enter IDLE state
- 622:	86 e3       	ldi	r24, 0x36	; 54
- 624:	3d df       	rcall	.-390    	; 0x4a0 <cmdStrobe>
-    flushRxFifo();        // Flush Rx FIFO
- 626:	8a e3       	ldi	r24, 0x3A	; 58
- 628:	3b df       	rcall	.-394    	; 0x4a0 <cmdStrobe>
-    //cmdStrobe(CC1101_SCAL);
+    // Flush RX FIFO. Don't uncomment
+    //cmdStrobe(CC1101_SFRX);
+    
+    // Enter back into RX state
+    setRxState();
+ 6d4:	84 e3       	ldi	r24, 0x34	; 52
+ 6d6:	2b df       	rcall	.-426    	; 0x52e <cmdStrobe>
     
     // Back to RX state
     setRxState();
- 62a:	84 e3       	ldi	r24, 0x34	; 52
- 62c:	39 df       	rcall	.-398    	; 0x4a0 <cmdStrobe>
     
     return packet->length;
 }
- 62e:	88 81       	ld	r24, Y
- 630:	df 91       	pop	r29
- 632:	cf 91       	pop	r28
- 634:	08 95       	ret
+ 6d8:	88 81       	ld	r24, Y
+ 6da:	df 91       	pop	r29
+ 6dc:	cf 91       	pop	r28
+ 6de:	08 95       	ret
 
-00000636 <reset>:
+000006e0 <reset>:
  *
  * Reset CC1101
  */
 void reset(void)
 {
     cc1101_Deselect();                    // Deselect CC1101
- 636:	2a 9a       	sbi	0x05, 2	; 5
- 638:	87 e8       	ldi	r24, 0x87	; 135
- 63a:	93 e1       	ldi	r25, 0x13	; 19
- 63c:	01 97       	sbiw	r24, 0x01	; 1
- 63e:	f1 f7       	brne	.-4      	; 0x63c <reset+0x6>
- 640:	00 c0       	rjmp	.+0      	; 0x642 <reset+0xc>
- 642:	00 00       	nop
+ 6e0:	2a 9a       	sbi	0x05, 2	; 5
+ 6e2:	87 e8       	ldi	r24, 0x87	; 135
+ 6e4:	93 e1       	ldi	r25, 0x13	; 19
+ 6e6:	01 97       	sbiw	r24, 0x01	; 1
+ 6e8:	f1 f7       	brne	.-4      	; 0x6e6 <reset+0x6>
+ 6ea:	00 c0       	rjmp	.+0      	; 0x6ec <reset+0xc>
+ 6ec:	00 00       	nop
     _delay_ms(5);
     cc1101_Select();                      // Select CC1101
- 644:	2a 98       	cbi	0x05, 2	; 5
- 646:	8f e0       	ldi	r24, 0x0F	; 15
- 648:	97 e2       	ldi	r25, 0x27	; 39
- 64a:	01 97       	sbiw	r24, 0x01	; 1
- 64c:	f1 f7       	brne	.-4      	; 0x64a <reset+0x14>
- 64e:	00 c0       	rjmp	.+0      	; 0x650 <reset+0x1a>
- 650:	00 00       	nop
+ 6ee:	2a 98       	cbi	0x05, 2	; 5
+ 6f0:	8f e0       	ldi	r24, 0x0F	; 15
+ 6f2:	97 e2       	ldi	r25, 0x27	; 39
+ 6f4:	01 97       	sbiw	r24, 0x01	; 1
+ 6f6:	f1 f7       	brne	.-4      	; 0x6f4 <reset+0x14>
+ 6f8:	00 c0       	rjmp	.+0      	; 0x6fa <reset+0x1a>
+ 6fa:	00 00       	nop
     _delay_ms(10);
     cc1101_Deselect();                    // Deselect CC1101
- 652:	2a 9a       	sbi	0x05, 2	; 5
- 654:	87 e2       	ldi	r24, 0x27	; 39
- 656:	90 ea       	ldi	r25, 0xA0	; 160
- 658:	01 97       	sbiw	r24, 0x01	; 1
- 65a:	f1 f7       	brne	.-4      	; 0x658 <reset+0x22>
- 65c:	00 c0       	rjmp	.+0      	; 0x65e <reset+0x28>
- 65e:	00 00       	nop
+ 6fc:	2a 9a       	sbi	0x05, 2	; 5
+ 6fe:	87 e2       	ldi	r24, 0x27	; 39
+ 700:	90 ea       	ldi	r25, 0xA0	; 160
+ 702:	01 97       	sbiw	r24, 0x01	; 1
+ 704:	f1 f7       	brne	.-4      	; 0x702 <reset+0x22>
+ 706:	00 c0       	rjmp	.+0      	; 0x708 <reset+0x28>
+ 708:	00 00       	nop
     _delay_ms(41);
     cc1101_Select();                      // Select CC1101
- 660:	2a 98       	cbi	0x05, 2	; 5
+ 70a:	2a 98       	cbi	0x05, 2	; 5
     
     wait_Miso();                          // Wait until MISO goes low
- 662:	1c 99       	sbic	0x03, 4	; 3
- 664:	fe cf       	rjmp	.-4      	; 0x662 <reset+0x2c>
+ 70c:	1c 99       	sbic	0x03, 4	; 3
+ 70e:	fe cf       	rjmp	.-4      	; 0x70c <reset+0x2c>
     spisend(CC1101_SRES);                // Send reset command strobe
- 666:	80 e3       	ldi	r24, 0x30	; 48
- 668:	ba dd       	rcall	.-1164   	; 0x1de <spisend>
+ 710:	80 e3       	ldi	r24, 0x30	; 48
+ 712:	a2 dd       	rcall	.-1212   	; 0x258 <spisend>
     wait_Miso();                          // Wait until MISO goes low
- 66a:	1c 99       	sbic	0x03, 4	; 3
- 66c:	fe cf       	rjmp	.-4      	; 0x66a <reset+0x34>
+ 714:	1c 99       	sbic	0x03, 4	; 3
+ 716:	fe cf       	rjmp	.-4      	; 0x714 <reset+0x34>
     
     cc1101_Deselect();                    // Deselect CC1101
- 66e:	2a 9a       	sbi	0x05, 2	; 5
+ 718:	2a 9a       	sbi	0x05, 2	; 5
     
     setDefaultRegs();                     // Reconfigure CC1101
- 670:	74 de       	rcall	.-792    	; 0x35a <setDefaultRegs>
+ 71a:	5c de       	rcall	.-840    	; 0x3d4 <setDefaultRegs>
     setRegsFromEeprom();                  // Take user settings from EEPROM
- 672:	2b ce       	rjmp	.-938    	; 0x2ca <setRegsFromEeprom>
+ 71c:	13 ce       	rjmp	.-986    	; 0x344 <setRegsFromEeprom>
 
-00000674 <init>:
+0000071e <init>:
  *
  * Initialize CC1101
  */
 void init(void)
 {
     spiinit();                           // Initialize SPI interface
- 674:	af dd       	rcall	.-1186   	; 0x1d4 <spiinit>
+ 71e:	8b dd       	rcall	.-1258   	; 0x236 <spiinit>
     //spi.setClockDivider(SPI_CLOCK_DIV16);
     //spi.setBitOrder(MSBFIRST);
     
     DDRD=(0<<5);//pinMode(GDO0, INPUT);                 // Config GDO0 as input
- 676:	1a b8       	out	0x0a, r1	; 10
+ 720:	1a b8       	out	0x0a, r1	; 10
     
     reset();                              // Reset CC1101
- 678:	de df       	rcall	.-68     	; 0x636 <reset>
+ 722:	de df       	rcall	.-68     	; 0x6e0 <reset>
     
     // Configure PATABLE
     //writeBurstReg(CC1101_PATABLE, (byte*)paTable, 8);
     writeReg(CC1101_PATABLE, paTableByte);
- 67a:	60 91 0b 01 	lds	r22, 0x010B
- 67e:	8e e3       	ldi	r24, 0x3E	; 62
- 680:	b4 cd       	rjmp	.-1176   	; 0x1ea <writeReg>
+ 724:	60 91 3d 01 	lds	r22, 0x013D
+ 728:	8e e3       	ldi	r24, 0x3E	; 62
+ 72a:	9c cd       	rjmp	.-1224   	; 0x264 <writeReg>
 
-00000682 <main>:
-#include <avr/interrupt.h>
-#include <util/delay.h>
-#include "TWI_Master.h"
-#include "cc.h"
-#define slaveaddress    0x04
-int main(void) {
- 682:	cf 93       	push	r28
- 684:	df 93       	push	r29
- 686:	1f 92       	push	r1
- 688:	cd b7       	in	r28, 0x3d	; 61
- 68a:	de b7       	in	r29, 0x3e	; 62
-    if (!TWIM_Init (100000))
- 68c:	60 ea       	ldi	r22, 0xA0	; 160
- 68e:	76 e8       	ldi	r23, 0x86	; 134
- 690:	81 e0       	ldi	r24, 0x01	; 1
- 692:	90 e0       	ldi	r25, 0x00	; 0
- 694:	e5 dc       	rcall	.-1590   	; 0x60 <TWIM_Init>
- 696:	81 11       	cpse	r24, r1
- 698:	01 c0       	rjmp	.+2      	; 0x69c <main+0x1a>
-    {
+0000072c <spiread>:
+    return SPDR;
+}
+byte spiread(void)
+{
+    byte data;
+    wait_Spi();
+ 72c:	0d b4       	in	r0, 0x2d	; 45
+ 72e:	07 fe       	sbrs	r0, 7
+ 730:	fd cf       	rjmp	.-6      	; 0x72c <spiread>
+    data = SPDR;
+ 732:	8e b5       	in	r24, 0x2e	; 46
+    return data;
+}
+ 734:	08 95       	ret
+
+00000736 <attachInterrupt>:
+
+
+//attachinterrupts
+void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode) {
+    if(interruptNum < EXTERNAL_NUM_INTERRUPTS) {
+ 736:	82 30       	cpi	r24, 0x02	; 2
+ 738:	e8 f4       	brcc	.+58     	; 0x774 <attachInterrupt+0x3e>
+        intFunc[interruptNum] = userFunc;
+ 73a:	e8 2f       	mov	r30, r24
+ 73c:	f0 e0       	ldi	r31, 0x00	; 0
+ 73e:	ee 0f       	add	r30, r30
+ 740:	ff 1f       	adc	r31, r31
+ 742:	e6 5f       	subi	r30, 0xF6	; 246
+ 744:	fe 4f       	sbci	r31, 0xFE	; 254
+ 746:	71 83       	std	Z+1, r23	; 0x01
+ 748:	60 83       	st	Z, r22
+        // to the configuration bits in the hardware register, so we simply shift
+        // the mode into place.
         
+        // Enable the interrupt.
+        
+        switch (interruptNum) {
+ 74a:	81 30       	cpi	r24, 0x01	; 1
+ 74c:	41 f0       	breq	.+16     	; 0x75e <attachInterrupt+0x28>
+                EIMSK |= (1 << INT7);
+                break;
+#else
+            case 0:
+#if defined(EICRA) && defined(ISC00) && defined(EIMSK)
+                EICRA = (EICRA & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+ 74e:	80 91 69 00 	lds	r24, 0x0069
+ 752:	8c 7f       	andi	r24, 0xFC	; 252
+ 754:	48 2b       	or	r20, r24
+ 756:	40 93 69 00 	sts	0x0069, r20
+                EIMSK |= (1 << INT0);
+ 75a:	e8 9a       	sbi	0x1d, 0	; 29
+                MCUCR = (MCUCR & ~((1 << ISC00) | (1 << ISC01))) | (mode << ISC00);
+                GIMSK |= (1 << INT0);
+#else
+#error attachInterrupt not finished for this CPU (case 0)
+#endif
+                break;
+ 75c:	08 95       	ret
+                
+            case 1:
+#if defined(EICRA) && defined(ISC10) && defined(ISC11) && defined(EIMSK)
+                EICRA = (EICRA & ~((1 << ISC10) | (1 << ISC11))) | (mode << ISC10);
+ 75e:	80 91 69 00 	lds	r24, 0x0069
+ 762:	44 0f       	add	r20, r20
+ 764:	55 1f       	adc	r21, r21
+ 766:	44 0f       	add	r20, r20
+ 768:	55 1f       	adc	r21, r21
+ 76a:	83 7f       	andi	r24, 0xF3	; 243
+ 76c:	48 2b       	or	r20, r24
+ 76e:	40 93 69 00 	sts	0x0069, r20
+                EIMSK |= (1 << INT1);
+ 772:	e9 9a       	sbi	0x1d, 1	; 29
+ 774:	08 95       	ret
+
+00000776 <Enable_Interrupt>:
+
+
+
+void Enable_Interrupt(uint8_t INT_NO)
+{
+    switch(INT_NO)
+ 776:	88 23       	and	r24, r24
+ 778:	19 f0       	breq	.+6      	; 0x780 <Enable_Interrupt+0xa>
+ 77a:	81 30       	cpi	r24, 0x01	; 1
+ 77c:	19 f0       	breq	.+6      	; 0x784 <Enable_Interrupt+0xe>
+ 77e:	08 95       	ret
+    {
+        case 0:EIMSK|=(1<<INT0);
+ 780:	e8 9a       	sbi	0x1d, 0	; 29
+            break;
+ 782:	08 95       	ret
+        case 1:EIMSK|=(1<<INT1);
+ 784:	e9 9a       	sbi	0x1d, 1	; 29
+ 786:	08 95       	ret
+
+00000788 <Enable_Pcinterrupt>:
+/*! \brief This function enables the external pin change interrupt.
+ *
+ *  \param PCINT_NO	The pin change interrupt which has to be enabled.
+ */
+void Enable_Pcinterrupt(uint8_t PCINT_NO,void (*userFunc)(void))
+{
+ 788:	e8 2f       	mov	r30, r24
+    intFunc[PCINT_NO] = userFunc;
+ 78a:	a8 2f       	mov	r26, r24
+ 78c:	b0 e0       	ldi	r27, 0x00	; 0
+ 78e:	aa 0f       	add	r26, r26
+ 790:	bb 1f       	adc	r27, r27
+ 792:	a6 5f       	subi	r26, 0xF6	; 246
+ 794:	be 4f       	sbci	r27, 0xFE	; 254
+ 796:	11 96       	adiw	r26, 0x01	; 1
+ 798:	7c 93       	st	X, r23
+ 79a:	6e 93       	st	-X, r22
+    if(PCINT_NO>=0 && PCINT_NO<=7)
+ 79c:	e8 30       	cpi	r30, 0x08	; 8
+ 79e:	28 f5       	brcc	.+74     	; 0x7ea <Enable_Pcinterrupt+0x62>
+    {
+        PCICR=(PCICR&(~(1<<PCIE0)))|(1<<PCIE0);
+ 7a0:	80 91 68 00 	lds	r24, 0x0068
+ 7a4:	81 60       	ori	r24, 0x01	; 1
+ 7a6:	80 93 68 00 	sts	0x0068, r24
+        
+        switch(PCINT_NO)
+ 7aa:	8e 2f       	mov	r24, r30
+ 7ac:	90 e0       	ldi	r25, 0x00	; 0
+ 7ae:	fc 01       	movw	r30, r24
+ 7b0:	31 97       	sbiw	r30, 0x01	; 1
+ 7b2:	e7 30       	cpi	r30, 0x07	; 7
+ 7b4:	f1 05       	cpc	r31, r1
+ 7b6:	28 f4       	brcc	.+10     	; 0x7c2 <Enable_Pcinterrupt+0x3a>
+ 7b8:	ec 5e       	subi	r30, 0xEC	; 236
+ 7ba:	ff 4f       	sbci	r31, 0xFF	; 255
+                break;
+            case 5:PCMSK0|=(1<<PCINT5);
+                break;
+            case 6:PCMSK0|=(1<<PCINT6);
+                break;
+            case 7:PCMSK0|=(1<<PCINT7);
+ 7bc:	80 91 6b 00 	lds	r24, 0x006B
+    intFunc[PCINT_NO] = userFunc;
+    if(PCINT_NO>=0 && PCINT_NO<=7)
+    {
+        PCICR=(PCICR&(~(1<<PCIE0)))|(1<<PCIE0);
+        
+        switch(PCINT_NO)
+ 7c0:	09 94       	ijmp
+        {
+            case 0:PCMSK0|=(1<<PCINT0);
+ 7c2:	80 91 6b 00 	lds	r24, 0x006B
+ 7c6:	81 60       	ori	r24, 0x01	; 1
+ 7c8:	01 c0       	rjmp	.+2      	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 1:PCMSK0|=(1<<PCINT1);
+ 7ca:	82 60       	ori	r24, 0x02	; 2
+ 7cc:	80 93 6b 00 	sts	0x006B, r24
+                break;
+ 7d0:	08 95       	ret
+            case 2:PCMSK0|=(1<<PCINT2);
+ 7d2:	84 60       	ori	r24, 0x04	; 4
+ 7d4:	fb cf       	rjmp	.-10     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 3:PCMSK0|=(1<<PCINT3);
+ 7d6:	88 60       	ori	r24, 0x08	; 8
+ 7d8:	f9 cf       	rjmp	.-14     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 4:PCMSK0|=(1<<PCINT4);
+ 7da:	80 61       	ori	r24, 0x10	; 16
+ 7dc:	f7 cf       	rjmp	.-18     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 5:PCMSK0|=(1<<PCINT5);
+ 7de:	80 62       	ori	r24, 0x20	; 32
+ 7e0:	f5 cf       	rjmp	.-22     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 6:PCMSK0|=(1<<PCINT6);
+ 7e2:	80 64       	ori	r24, 0x40	; 64
+ 7e4:	f3 cf       	rjmp	.-26     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            case 7:PCMSK0|=(1<<PCINT7);
+ 7e6:	80 68       	ori	r24, 0x80	; 128
+ 7e8:	f1 cf       	rjmp	.-30     	; 0x7cc <Enable_Pcinterrupt+0x44>
+                break;
+            default:break;
+        }
+    }
+    else if(PCINT_NO>=8 && PCINT_NO<=15)
+ 7ea:	88 ef       	ldi	r24, 0xF8	; 248
+ 7ec:	8e 0f       	add	r24, r30
+ 7ee:	88 30       	cpi	r24, 0x08	; 8
+ 7f0:	28 f5       	brcc	.+74     	; 0x83c <Enable_Pcinterrupt+0xb4>
+    {
+        PCICR=(PCICR&(~(1<<PCIE1)))|(1<<PCIE1);
+ 7f2:	80 91 68 00 	lds	r24, 0x0068
+ 7f6:	82 60       	ori	r24, 0x02	; 2
+ 7f8:	80 93 68 00 	sts	0x0068, r24
+        
+        switch(PCINT_NO)
+ 7fc:	8e 2f       	mov	r24, r30
+ 7fe:	90 e0       	ldi	r25, 0x00	; 0
+ 800:	fc 01       	movw	r30, r24
+ 802:	39 97       	sbiw	r30, 0x09	; 9
+ 804:	e7 30       	cpi	r30, 0x07	; 7
+ 806:	f1 05       	cpc	r31, r1
+ 808:	28 f4       	brcc	.+10     	; 0x814 <Enable_Pcinterrupt+0x8c>
+ 80a:	e5 5e       	subi	r30, 0xE5	; 229
+ 80c:	ff 4f       	sbci	r31, 0xFF	; 255
+                break;
+            case 13:PCMSK1|=(1<<PCINT13);
+                break;
+            case 14:PCMSK1|=(1<<PCINT14);
+                break;
+            case 15:PCMSK1|=(1<<PCINT15);
+ 80e:	80 91 6c 00 	lds	r24, 0x006C
+    }
+    else if(PCINT_NO>=8 && PCINT_NO<=15)
+    {
+        PCICR=(PCICR&(~(1<<PCIE1)))|(1<<PCIE1);
+        
+        switch(PCINT_NO)
+ 812:	09 94       	ijmp
+        {
+            case 8:PCMSK1|=(1<<PCINT8);
+ 814:	80 91 6c 00 	lds	r24, 0x006C
+ 818:	81 60       	ori	r24, 0x01	; 1
+ 81a:	0d c0       	rjmp	.+26     	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 9:PCMSK1|=(1<<PCINT9);
+ 81c:	82 60       	ori	r24, 0x02	; 2
+ 81e:	0b c0       	rjmp	.+22     	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 10:PCMSK1|=(1<<PCINT10);
+ 820:	84 60       	ori	r24, 0x04	; 4
+ 822:	09 c0       	rjmp	.+18     	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 11:PCMSK1|=(1<<PCINT11);
+ 824:	88 60       	ori	r24, 0x08	; 8
+ 826:	07 c0       	rjmp	.+14     	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 12:PCMSK1|=(1<<PCINT12);
+ 828:	80 61       	ori	r24, 0x10	; 16
+ 82a:	05 c0       	rjmp	.+10     	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 13:PCMSK1|=(1<<PCINT13);
+ 82c:	80 62       	ori	r24, 0x20	; 32
+ 82e:	03 c0       	rjmp	.+6      	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 14:PCMSK1|=(1<<PCINT14);
+ 830:	80 64       	ori	r24, 0x40	; 64
+ 832:	01 c0       	rjmp	.+2      	; 0x836 <Enable_Pcinterrupt+0xae>
+                break;
+            case 15:PCMSK1|=(1<<PCINT15);
+ 834:	80 68       	ori	r24, 0x80	; 128
+ 836:	80 93 6c 00 	sts	0x006C, r24
+                break;
+ 83a:	08 95       	ret
+            default:break;
+        }
+    }
+    else if(PCINT_NO>=16 && PCINT_NO<=23)
+ 83c:	80 ef       	ldi	r24, 0xF0	; 240
+ 83e:	8e 0f       	add	r24, r30
+ 840:	88 30       	cpi	r24, 0x08	; 8
+ 842:	28 f5       	brcc	.+74     	; 0x88e <Enable_Pcinterrupt+0x106>
+    {
+        PCICR=(PCICR&(~(1<<PCIE2)))|(1<<PCIE2);
+ 844:	80 91 68 00 	lds	r24, 0x0068
+ 848:	84 60       	ori	r24, 0x04	; 4
+ 84a:	80 93 68 00 	sts	0x0068, r24
+        
+        switch(PCINT_NO)
+ 84e:	8e 2f       	mov	r24, r30
+ 850:	90 e0       	ldi	r25, 0x00	; 0
+ 852:	fc 01       	movw	r30, r24
+ 854:	71 97       	sbiw	r30, 0x11	; 17
+ 856:	e7 30       	cpi	r30, 0x07	; 7
+ 858:	f1 05       	cpc	r31, r1
+ 85a:	28 f4       	brcc	.+10     	; 0x866 <Enable_Pcinterrupt+0xde>
+ 85c:	ee 5d       	subi	r30, 0xDE	; 222
+ 85e:	ff 4f       	sbci	r31, 0xFF	; 255
+                break;
+            case 21:PCMSK2|=(1<<PCINT21);
+                break;
+            case 22:PCMSK2|=(1<<PCINT22);
+                break;
+            case 23:PCMSK2|=(1<<PCINT23);
+ 860:	80 91 6d 00 	lds	r24, 0x006D
+    }
+    else if(PCINT_NO>=16 && PCINT_NO<=23)
+    {
+        PCICR=(PCICR&(~(1<<PCIE2)))|(1<<PCIE2);
+        
+        switch(PCINT_NO)
+ 864:	09 94       	ijmp
+        {
+            case 16:PCMSK2|=(1<<PCINT16);
+ 866:	80 91 6d 00 	lds	r24, 0x006D
+ 86a:	81 60       	ori	r24, 0x01	; 1
+ 86c:	0d c0       	rjmp	.+26     	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 17:PCMSK2|=(1<<PCINT17);
+ 86e:	82 60       	ori	r24, 0x02	; 2
+ 870:	0b c0       	rjmp	.+22     	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 18:PCMSK2|=(1<<PCINT18);
+ 872:	84 60       	ori	r24, 0x04	; 4
+ 874:	09 c0       	rjmp	.+18     	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 19:PCMSK2|=(1<<PCINT19);
+ 876:	88 60       	ori	r24, 0x08	; 8
+ 878:	07 c0       	rjmp	.+14     	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 20:PCMSK2|=(1<<PCINT20);
+ 87a:	80 61       	ori	r24, 0x10	; 16
+ 87c:	05 c0       	rjmp	.+10     	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 21:PCMSK2|=(1<<PCINT21);
+ 87e:	80 62       	ori	r24, 0x20	; 32
+ 880:	03 c0       	rjmp	.+6      	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 22:PCMSK2|=(1<<PCINT22);
+ 882:	80 64       	ori	r24, 0x40	; 64
+ 884:	01 c0       	rjmp	.+2      	; 0x888 <Enable_Pcinterrupt+0x100>
+                break;
+            case 23:PCMSK2|=(1<<PCINT23);
+ 886:	80 68       	ori	r24, 0x80	; 128
+ 888:	80 93 6d 00 	sts	0x006D, r24
+                break;
+ 88c:	08 95       	ret
+            default:break;
+        }
+    }
+    else
+    {
+        PCICR=(PCICR&(~(1<<PCIE3)))|(1<<PCIE3);
+ 88e:	80 91 68 00 	lds	r24, 0x0068
+ 892:	88 60       	ori	r24, 0x08	; 8
+ 894:	80 93 68 00 	sts	0x0068, r24
+        
+        switch(PCINT_NO)
+ 898:	e9 31       	cpi	r30, 0x19	; 25
+ 89a:	69 f0       	breq	.+26     	; 0x8b6 <Enable_Pcinterrupt+0x12e>
+ 89c:	18 f4       	brcc	.+6      	; 0x8a4 <Enable_Pcinterrupt+0x11c>
+ 89e:	e8 31       	cpi	r30, 0x18	; 24
+ 8a0:	31 f0       	breq	.+12     	; 0x8ae <Enable_Pcinterrupt+0x126>
+ 8a2:	08 95       	ret
+ 8a4:	ea 31       	cpi	r30, 0x1A	; 26
+ 8a6:	59 f0       	breq	.+22     	; 0x8be <Enable_Pcinterrupt+0x136>
+ 8a8:	eb 31       	cpi	r30, 0x1B	; 27
+ 8aa:	69 f0       	breq	.+26     	; 0x8c6 <Enable_Pcinterrupt+0x13e>
+ 8ac:	08 95       	ret
+        {
+            case 24:PCMSK3|=(1<<PCINT24);
+ 8ae:	80 91 6a 00 	lds	r24, 0x006A
+ 8b2:	81 60       	ori	r24, 0x01	; 1
+ 8b4:	0b c0       	rjmp	.+22     	; 0x8cc <Enable_Pcinterrupt+0x144>
+                break;
+            case 25:PCMSK3|=(1<<PCINT25);
+ 8b6:	80 91 6a 00 	lds	r24, 0x006A
+ 8ba:	82 60       	ori	r24, 0x02	; 2
+ 8bc:	07 c0       	rjmp	.+14     	; 0x8cc <Enable_Pcinterrupt+0x144>
+                break;
+            case 26:PCMSK3|=(1<<PCINT26);
+ 8be:	80 91 6a 00 	lds	r24, 0x006A
+ 8c2:	84 60       	ori	r24, 0x04	; 4
+ 8c4:	03 c0       	rjmp	.+6      	; 0x8cc <Enable_Pcinterrupt+0x144>
+                break;
+            case 27:PCMSK3|=(1<<PCINT27);
+ 8c6:	80 91 6a 00 	lds	r24, 0x006A
+ 8ca:	88 60       	ori	r24, 0x08	; 8
+ 8cc:	80 93 6a 00 	sts	0x006A, r24
+ 8d0:	08 95       	ret
+
+000008d2 <Disable_Interrupt>:
+ *
+ *  \param INT_NO	The interrupt which has to be disabled.
+ */
+void Disable_Interrupt(uint8_t INT_NO)
+{
+    switch(INT_NO)
+ 8d2:	88 23       	and	r24, r24
+ 8d4:	19 f0       	breq	.+6      	; 0x8dc <Disable_Interrupt+0xa>
+ 8d6:	81 30       	cpi	r24, 0x01	; 1
+ 8d8:	19 f0       	breq	.+6      	; 0x8e0 <Disable_Interrupt+0xe>
+ 8da:	08 95       	ret
+    {
+        case 0:EIMSK=(EIMSK&(~(1<<INT0)));
+ 8dc:	e8 98       	cbi	0x1d, 0	; 29
+            break;
+ 8de:	08 95       	ret
+        case 1:EIMSK=(EIMSK&(~(1<<INT1)));
+ 8e0:	e9 98       	cbi	0x1d, 1	; 29
+ 8e2:	08 95       	ret
+
+000008e4 <Disable_Pcinterrupt>:
+ *
+ *  \param PCINT_NO	The pin change interrupt which has to be disabled.
+ */
+void Disable_Pcinterrupt(uint8_t PCINT_NO)
+{
+    switch(PCINT_NO)
+ 8e4:	90 e0       	ldi	r25, 0x00	; 0
+ 8e6:	8c 31       	cpi	r24, 0x1C	; 28
+ 8e8:	91 05       	cpc	r25, r1
+ 8ea:	08 f0       	brcs	.+2      	; 0x8ee <Disable_Pcinterrupt+0xa>
+ 8ec:	7b c0       	rjmp	.+246    	; 0x9e4 <Disable_Pcinterrupt+0x100>
+ 8ee:	fc 01       	movw	r30, r24
+ 8f0:	e7 5d       	subi	r30, 0xD7	; 215
+ 8f2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 8f4:	09 94       	ijmp
+    {
+        case 0:PCMSK0=(PCMSK0&(~(1<<PCINT0)));
+ 8f6:	80 91 6b 00 	lds	r24, 0x006B
+ 8fa:	8e 7f       	andi	r24, 0xFE	; 254
+ 8fc:	03 c0       	rjmp	.+6      	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 1:PCMSK0=(PCMSK0&(~(1<<PCINT1)));
+ 8fe:	80 91 6b 00 	lds	r24, 0x006B
+ 902:	8d 7f       	andi	r24, 0xFD	; 253
+ 904:	80 93 6b 00 	sts	0x006B, r24
+            break;
+ 908:	6d c0       	rjmp	.+218    	; 0x9e4 <Disable_Pcinterrupt+0x100>
+        case 2:PCMSK0=(PCMSK0&(~(1<<PCINT2)));
+ 90a:	80 91 6b 00 	lds	r24, 0x006B
+ 90e:	8b 7f       	andi	r24, 0xFB	; 251
+ 910:	f9 cf       	rjmp	.-14     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 3:PCMSK0=(PCMSK0&(~(1<<PCINT3)));
+ 912:	80 91 6b 00 	lds	r24, 0x006B
+ 916:	87 7f       	andi	r24, 0xF7	; 247
+ 918:	f5 cf       	rjmp	.-22     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 4:PCMSK0=(PCMSK0&(~(1<<PCINT4)));
+ 91a:	80 91 6b 00 	lds	r24, 0x006B
+ 91e:	8f 7e       	andi	r24, 0xEF	; 239
+ 920:	f1 cf       	rjmp	.-30     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 5:PCMSK0=(PCMSK0&(~(1<<PCINT5)));
+ 922:	80 91 6b 00 	lds	r24, 0x006B
+ 926:	8f 7d       	andi	r24, 0xDF	; 223
+ 928:	ed cf       	rjmp	.-38     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 6:PCMSK0=(PCMSK0&(~(1<<PCINT6)));
+ 92a:	80 91 6b 00 	lds	r24, 0x006B
+ 92e:	8f 7b       	andi	r24, 0xBF	; 191
+ 930:	e9 cf       	rjmp	.-46     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 7:PCMSK0=(PCMSK0&(~(1<<PCINT7)));
+ 932:	80 91 6b 00 	lds	r24, 0x006B
+ 936:	8f 77       	andi	r24, 0x7F	; 127
+ 938:	e5 cf       	rjmp	.-54     	; 0x904 <Disable_Pcinterrupt+0x20>
+            break;
+        case 8:PCMSK1=(PCMSK1&(~(1<<PCINT8)));
+ 93a:	80 91 6c 00 	lds	r24, 0x006C
+ 93e:	8e 7f       	andi	r24, 0xFE	; 254
+ 940:	1b c0       	rjmp	.+54     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 9:PCMSK1=(PCMSK1&(~(1<<PCINT9)));
+ 942:	80 91 6c 00 	lds	r24, 0x006C
+ 946:	8d 7f       	andi	r24, 0xFD	; 253
+ 948:	17 c0       	rjmp	.+46     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 10:PCMSK1=(PCMSK1&(~(1<<PCINT10)));
+ 94a:	80 91 6c 00 	lds	r24, 0x006C
+ 94e:	8b 7f       	andi	r24, 0xFB	; 251
+ 950:	13 c0       	rjmp	.+38     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 11:PCMSK1=(PCMSK1&(~(1<<PCINT11)));
+ 952:	80 91 6c 00 	lds	r24, 0x006C
+ 956:	87 7f       	andi	r24, 0xF7	; 247
+ 958:	0f c0       	rjmp	.+30     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 12:PCMSK1=(PCMSK1&(~(1<<PCINT12)));
+ 95a:	80 91 6c 00 	lds	r24, 0x006C
+ 95e:	8f 7e       	andi	r24, 0xEF	; 239
+ 960:	0b c0       	rjmp	.+22     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 13:PCMSK1=(PCMSK1&(~(1<<PCINT13)));
+ 962:	80 91 6c 00 	lds	r24, 0x006C
+ 966:	8f 7d       	andi	r24, 0xDF	; 223
+ 968:	07 c0       	rjmp	.+14     	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 14:PCMSK1=(PCMSK1&(~(1<<PCINT14)));
+ 96a:	80 91 6c 00 	lds	r24, 0x006C
+ 96e:	8f 7b       	andi	r24, 0xBF	; 191
+ 970:	03 c0       	rjmp	.+6      	; 0x978 <Disable_Pcinterrupt+0x94>
+            break;
+        case 15:PCMSK1=(PCMSK1&(~(1<<PCINT15)));
+ 972:	80 91 6c 00 	lds	r24, 0x006C
+ 976:	8f 77       	andi	r24, 0x7F	; 127
+ 978:	80 93 6c 00 	sts	0x006C, r24
+            break;
+ 97c:	33 c0       	rjmp	.+102    	; 0x9e4 <Disable_Pcinterrupt+0x100>
+        case 16:PCMSK2=(PCMSK2&(~(1<<PCINT16)));
+ 97e:	80 91 6d 00 	lds	r24, 0x006D
+ 982:	8e 7f       	andi	r24, 0xFE	; 254
+ 984:	1b c0       	rjmp	.+54     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 17:PCMSK2=(PCMSK2&(~(1<<PCINT17)));
+ 986:	80 91 6d 00 	lds	r24, 0x006D
+ 98a:	8d 7f       	andi	r24, 0xFD	; 253
+ 98c:	17 c0       	rjmp	.+46     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 18:PCMSK2=(PCMSK2&(~(1<<PCINT18)));
+ 98e:	80 91 6d 00 	lds	r24, 0x006D
+ 992:	8b 7f       	andi	r24, 0xFB	; 251
+ 994:	13 c0       	rjmp	.+38     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 19:PCMSK2=(PCMSK2&(~(1<<PCINT19)));
+ 996:	80 91 6d 00 	lds	r24, 0x006D
+ 99a:	87 7f       	andi	r24, 0xF7	; 247
+ 99c:	0f c0       	rjmp	.+30     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 20:PCMSK2=(PCMSK2&(~(1<<PCINT20)));
+ 99e:	80 91 6d 00 	lds	r24, 0x006D
+ 9a2:	8f 7e       	andi	r24, 0xEF	; 239
+ 9a4:	0b c0       	rjmp	.+22     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 21:PCMSK2=(PCMSK2&(~(1<<PCINT21)));
+ 9a6:	80 91 6d 00 	lds	r24, 0x006D
+ 9aa:	8f 7d       	andi	r24, 0xDF	; 223
+ 9ac:	07 c0       	rjmp	.+14     	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 22:PCMSK2=(PCMSK2&(~(1<<PCINT22)));
+ 9ae:	80 91 6d 00 	lds	r24, 0x006D
+ 9b2:	8f 7b       	andi	r24, 0xBF	; 191
+ 9b4:	03 c0       	rjmp	.+6      	; 0x9bc <Disable_Pcinterrupt+0xd8>
+            break;
+        case 23:PCMSK2=(PCMSK2&(~(1<<PCINT23)));
+ 9b6:	80 91 6d 00 	lds	r24, 0x006D
+ 9ba:	8f 77       	andi	r24, 0x7F	; 127
+ 9bc:	80 93 6d 00 	sts	0x006D, r24
+            break;
+ 9c0:	11 c0       	rjmp	.+34     	; 0x9e4 <Disable_Pcinterrupt+0x100>
+        case 24:PCMSK3=(PCMSK3&(~(1<<PCINT24)));
+ 9c2:	80 91 6a 00 	lds	r24, 0x006A
+ 9c6:	8e 7f       	andi	r24, 0xFE	; 254
+ 9c8:	0b c0       	rjmp	.+22     	; 0x9e0 <Disable_Pcinterrupt+0xfc>
+            break;
+        case 25:PCMSK3=(PCMSK3&(~(1<<PCINT25)));
+ 9ca:	80 91 6a 00 	lds	r24, 0x006A
+ 9ce:	8d 7f       	andi	r24, 0xFD	; 253
+ 9d0:	07 c0       	rjmp	.+14     	; 0x9e0 <Disable_Pcinterrupt+0xfc>
+            break;
+        case 26:PCMSK3=(PCMSK3&(~(1<<PCINT26)));
+ 9d2:	80 91 6a 00 	lds	r24, 0x006A
+ 9d6:	8b 7f       	andi	r24, 0xFB	; 251
+ 9d8:	03 c0       	rjmp	.+6      	; 0x9e0 <Disable_Pcinterrupt+0xfc>
+            break;
+        case 27:PCMSK3=(PCMSK3&(~(1<<PCINT27)));
+ 9da:	80 91 6a 00 	lds	r24, 0x006A
+ 9de:	87 7f       	andi	r24, 0xF7	; 247
+ 9e0:	80 93 6a 00 	sts	0x006A, r24
+            break;
+        default:break;
+    }
+    
+    if(PCMSK0 == 0x00)
+ 9e4:	80 91 6b 00 	lds	r24, 0x006B
+ 9e8:	81 11       	cpse	r24, r1
+ 9ea:	04 c0       	rjmp	.+8      	; 0x9f4 <Disable_Pcinterrupt+0x110>
+    {
+        PCICR=(PCICR&(~(1<<PCIE0)));
+ 9ec:	80 91 68 00 	lds	r24, 0x0068
+ 9f0:	8e 7f       	andi	r24, 0xFE	; 254
+ 9f2:	17 c0       	rjmp	.+46     	; 0xa22 <Disable_Pcinterrupt+0x13e>
+    }
+    else if(PCMSK1 == 0x00)
+ 9f4:	80 91 6c 00 	lds	r24, 0x006C
+ 9f8:	81 11       	cpse	r24, r1
+ 9fa:	04 c0       	rjmp	.+8      	; 0xa04 <Disable_Pcinterrupt+0x120>
+    {
+        PCICR=(PCICR&(~(1<<PCIE1)));
+ 9fc:	80 91 68 00 	lds	r24, 0x0068
+ a00:	8d 7f       	andi	r24, 0xFD	; 253
+ a02:	0f c0       	rjmp	.+30     	; 0xa22 <Disable_Pcinterrupt+0x13e>
+    }
+    else if(PCMSK2 == 0x00)
+ a04:	80 91 6d 00 	lds	r24, 0x006D
+ a08:	81 11       	cpse	r24, r1
+ a0a:	04 c0       	rjmp	.+8      	; 0xa14 <Disable_Pcinterrupt+0x130>
+    {
+        PCICR=(PCICR&(~(1<<PCIE2)));
+ a0c:	80 91 68 00 	lds	r24, 0x0068
+ a10:	8b 7f       	andi	r24, 0xFB	; 251
+ a12:	07 c0       	rjmp	.+14     	; 0xa22 <Disable_Pcinterrupt+0x13e>
+    }
+    else if(PCMSK3 == 0x00)
+ a14:	80 91 6a 00 	lds	r24, 0x006A
+ a18:	81 11       	cpse	r24, r1
+ a1a:	05 c0       	rjmp	.+10     	; 0xa26 <Disable_Pcinterrupt+0x142>
+    {
+        PCICR=(PCICR&(~(1<<PCIE3)));
+ a1c:	80 91 68 00 	lds	r24, 0x0068
+ a20:	87 7f       	andi	r24, 0xF7	; 247
+ a22:	80 93 68 00 	sts	0x0068, r24
+ a26:	08 95       	ret
+
+00000a28 <cc1101signalsInterrupt>:
+
+    }
+}
+void cc1101signalsInterrupt(void){
+    // set the flag that a package is available
+    packetAvailable = 0x10;
+ a28:	80 e1       	ldi	r24, 0x10	; 16
+ a2a:	80 93 08 01 	sts	0x0108, r24
+ a2e:	08 95       	ret
+
+00000a30 <ReadLQI>:
+}
+void ReadLQI()
+{
+    byte val=0;
+    val=(readReg(CC1101_LQI, CC1101_STATUS_REGISTER));
+ a30:	60 ec       	ldi	r22, 0xC0	; 192
+ a32:	83 e3       	ldi	r24, 0x33	; 51
+ a34:	86 dd       	rcall	.-1268   	; 0x542 <readReg>
+    lqi = 0x3F - (val & 0x3F);
+ a36:	80 95       	com	r24
+ a38:	8f 73       	andi	r24, 0x3F	; 63
+ a3a:	80 93 83 01 	sts	0x0183, r24
+ a3e:	08 95       	ret
+
+00000a40 <ReadRSSI>:
+}
+void ReadRSSI()
+{
+    byte value=0;
+    
+    value=(readReg(CC1101_RSSI, CC1101_STATUS_REGISTER));
+ a40:	60 ec       	ldi	r22, 0xC0	; 192
+ a42:	84 e3       	ldi	r24, 0x34	; 52
+ a44:	7e dd       	rcall	.-1284   	; 0x542 <readReg>
+ a46:	90 91 82 01 	lds	r25, 0x0182
+    if (value >= 128)
+ a4a:	87 fd       	sbrc	r24, 7
+    {
+        rssi = 255 - rssi;
+ a4c:	90 95       	com	r25
+        rssi /= 2;
+        rssi += 74;
+    }
+    else
+    {
+        rssi = rssi/2;
+ a4e:	96 95       	lsr	r25
+        rssi += 74;
+ a50:	96 5b       	subi	r25, 0xB6	; 182
+ a52:	90 93 82 01 	sts	0x0182, r25
+ a56:	08 95       	ret
+
+00000a58 <main>:
+void cc1101signalsInterrupt(void);
+void ReadLQI(void);
+void ReadRSSI(void);
+byte lqi,rssi;
+byte packetAvailable = 0x01;
+int main(void) {
+ a58:	cf 93       	push	r28
+ a5a:	df 93       	push	r29
+ a5c:	1f 92       	push	r1
+ a5e:	cd b7       	in	r28, 0x3d	; 61
+ a60:	de b7       	in	r29, 0x3e	; 62
+    if (!TWIM_Init (100000))
+ a62:	60 ea       	ldi	r22, 0xA0	; 160
+ a64:	76 e8       	ldi	r23, 0x86	; 134
+ a66:	81 e0       	ldi	r24, 0x01	; 1
+ a68:	90 e0       	ldi	r25, 0x00	; 0
+ a6a:	2b db       	rcall	.-2474   	; 0xc2 <TWIM_Init>
+ a6c:	81 11       	cpse	r24, r1
+ a6e:	01 c0       	rjmp	.+2      	; 0xa72 <main+0x1a>
+    {
+
         while (1);
- 69a:	ff cf       	rjmp	.-2      	; 0x69a <main+0x18>
+ a70:	ff cf       	rjmp	.-2      	; 0xa70 <main+0x18>
      ** Endless loop
      */
     while (1)
     {
-//        CC1101 cc1101;
+        //        CC1101 cc1101;
         byte syncWord = 199;
- 69c:	87 ec       	ldi	r24, 0xC7	; 199
- 69e:	e8 2e       	mov	r14, r24
- 6a0:	e9 82       	std	Y+1, r14	; 0x01
-        byte partum, version,marcstate;
+ a72:	07 ec       	ldi	r16, 0xC7	; 199
+ a74:	09 83       	std	Y+1, r16	; 0x01
+        byte partum, version,marcstate,marcstate_after,sentdata;
+        struct CCPACKET packet;
+        byte spitx;
         init();
- 6a2:	e8 df       	rcall	.-48     	; 0x674 <init>
+ a76:	53 de       	rcall	.-858    	; 0x71e <init>
         setSyncWordbytes(&syncWord, false);
- 6a4:	60 e0       	ldi	r22, 0x00	; 0
- 6a6:	ce 01       	movw	r24, r28
- 6a8:	01 96       	adiw	r24, 0x01	; 1
- 6aa:	da dd       	rcall	.-1100   	; 0x260 <setSyncWordbytes>
+ a78:	60 e0       	ldi	r22, 0x00	; 0
+ a7a:	ce 01       	movw	r24, r28
+ a7c:	01 96       	adiw	r24, 0x01	; 1
+ a7e:	2d dc       	rcall	.-1958   	; 0x2da <setSyncWordbytes>
         setCarrierFreq(CFREQ_433);
- 6ac:	82 e0       	ldi	r24, 0x02	; 2
- 6ae:	32 de       	rcall	.-924    	; 0x314 <setCarrierFreq>
+ a80:	82 e0       	ldi	r24, 0x02	; 2
+ a82:	85 dc       	rcall	.-1782   	; 0x38e <setCarrierFreq>
         disableAddressCheck();
- 6b0:	64 e0       	ldi	r22, 0x04	; 4
- 6b2:	87 e0       	ldi	r24, 0x07	; 7
- 6b4:	9a dd       	rcall	.-1228   	; 0x1ea <writeReg>
-//        add = SpiReadStatus(CC1101_VERSION);
-        
+ a84:	64 e0       	ldi	r22, 0x04	; 4
+ a86:	87 e0       	ldi	r24, 0x07	; 7
+ a88:	ed db       	rcall	.-2086   	; 0x264 <writeReg>
         partum = readReg(CC1101_PARTNUM, CC1101_STATUS_REGISTER);
- 6b6:	60 ec       	ldi	r22, 0xC0	; 192
- 6b8:	80 e3       	ldi	r24, 0x30	; 48
- 6ba:	fc de       	rcall	.-520    	; 0x4b4 <readReg>
- 6bc:	08 2f       	mov	r16, r24
+ a8a:	60 ec       	ldi	r22, 0xC0	; 192
+ a8c:	80 e3       	ldi	r24, 0x30	; 48
+ a8e:	59 dd       	rcall	.-1358   	; 0x542 <readReg>
         version = readReg(CC1101_VERSION, CC1101_STATUS_REGISTER);
- 6be:	60 ec       	ldi	r22, 0xC0	; 192
- 6c0:	81 e3       	ldi	r24, 0x31	; 49
- 6c2:	f8 de       	rcall	.-528    	; 0x4b4 <readReg>
- 6c4:	f8 2e       	mov	r15, r24
+ a90:	60 ec       	ldi	r22, 0xC0	; 192
+ a92:	81 e3       	ldi	r24, 0x31	; 49
+ a94:	56 dd       	rcall	.-1364   	; 0x542 <readReg>
+ a96:	e8 2e       	mov	r14, r24
         marcstate = readReg(CC1101_MARCSTATE, CC1101_STATUS_REGISTER) & 0x1f;
- 6c6:	60 ec       	ldi	r22, 0xC0	; 192
- 6c8:	85 e3       	ldi	r24, 0x35	; 53
- 6ca:	f4 de       	rcall	.-536    	; 0x4b4 <readReg>
- 6cc:	18 2f       	mov	r17, r24
+ a98:	60 ec       	ldi	r22, 0xC0	; 192
+ a9a:	85 e3       	ldi	r24, 0x35	; 53
+ a9c:	52 dd       	rcall	.-1372   	; 0x542 <readReg>
+        
+        setRxState();
+ a9e:	84 e3       	ldi	r24, 0x34	; 52
+ aa0:	46 dd       	rcall	.-1396   	; 0x52e <cmdStrobe>
+        
+        //wait_GDO0_low();
+        //wait_GDO0_high();
+        Enable_Pcinterrupt(21, cc1101signalsInterrupt);
+ aa2:	64 e1       	ldi	r22, 0x14	; 20
+ aa4:	75 e0       	ldi	r23, 0x05	; 5
+ aa6:	85 e1       	ldi	r24, 0x15	; 21
+ aa8:	6f de       	rcall	.-802    	; 0x788 <Enable_Pcinterrupt>
+ aaa:	2f ef       	ldi	r18, 0xFF	; 255
+ aac:	84 e3       	ldi	r24, 0x34	; 52
+ aae:	9c e0       	ldi	r25, 0x0C	; 12
+ ab0:	21 50       	subi	r18, 0x01	; 1
+ ab2:	80 40       	sbci	r24, 0x00	; 0
+ ab4:	90 40       	sbci	r25, 0x00	; 0
+ ab6:	e1 f7       	brne	.-8      	; 0xab0 <main+0x58>
+ ab8:	00 c0       	rjmp	.+0      	; 0xaba <main+0x62>
+ aba:	00 00       	nop
+        _delay_ms(1000);
+        cc1101_Select();
+ abc:	2a 98       	cbi	0x05, 2	; 5
+        wait_Miso();
+ abe:	1c 99       	sbic	0x03, 4	; 3
+ ac0:	fe cf       	rjmp	.-4      	; 0xabe <main+0x66>
+        spitx = spisend(0x3D);
+ ac2:	8d e3       	ldi	r24, 0x3D	; 61
+ ac4:	c9 db       	rcall	.-2158   	; 0x258 <spisend>
+        wait_Miso();
+ ac6:	1c 99       	sbic	0x03, 4	; 3
+ ac8:	fe cf       	rjmp	.-4      	; 0xac6 <main+0x6e>
+        cc1101_Deselect();
+ aca:	2a 9a       	sbi	0x05, 2	; 5
+        marcstate = readReg(CC1101_MARCSTATE, CC1101_STATUS_REGISTER) & 0x1f;
+ acc:	60 ec       	ldi	r22, 0xC0	; 192
+ ace:	85 e3       	ldi	r24, 0x35	; 53
+ ad0:	38 dd       	rcall	.-1424   	; 0x542 <readReg>
+ ad2:	f8 2e       	mov	r15, r24
+        if(readStatusReg(CC1101_RXBYTES) & 0x7F)
+ ad4:	60 ec       	ldi	r22, 0xC0	; 192
+ ad6:	8b e3       	ldi	r24, 0x3B	; 59
+ ad8:	34 dd       	rcall	.-1432   	; 0x542 <readReg>
+ ada:	8f 77       	andi	r24, 0x7F	; 127
+ adc:	11 f4       	brne	.+4      	; 0xae2 <main+0x8a>
+            sentdata = 0x40;
+        else
+            sentdata = 0x00;
+ ade:	10 e0       	ldi	r17, 0x00	; 0
+ ae0:	01 c0       	rjmp	.+2      	; 0xae4 <main+0x8c>
+        spitx = spisend(0x3D);
+        wait_Miso();
+        cc1101_Deselect();
+        marcstate = readReg(CC1101_MARCSTATE, CC1101_STATUS_REGISTER) & 0x1f;
+        if(readStatusReg(CC1101_RXBYTES) & 0x7F)
+            sentdata = 0x40;
+ ae2:	10 e4       	ldi	r17, 0x40	; 64
+//                    sentdata = 0x40;
+//                else
+//                    sentdata=0x00;
+
         
         if (!TWIM_Start (slaveaddress, TWIM_WRITE))
- 6ce:	60 e0       	ldi	r22, 0x00	; 0
- 6d0:	84 e0       	ldi	r24, 0x04	; 4
- 6d2:	df dc       	rcall	.-1602   	; 0x92 <TWIM_Start>
- 6d4:	81 11       	cpse	r24, r1
- 6d6:	02 c0       	rjmp	.+4      	; 0x6dc <main+0x5a>
+ ae4:	60 e0       	ldi	r22, 0x00	; 0
+ ae6:	84 e0       	ldi	r24, 0x04	; 4
+ ae8:	05 db       	rcall	.-2550   	; 0xf4 <TWIM_Start>
+ aea:	81 11       	cpse	r24, r1
+ aec:	02 c0       	rjmp	.+4      	; 0xaf2 <main+0x9a>
         {
-            TWIM_Stop ();            
- 6d8:	00 dd       	rcall	.-1536   	; 0xda <TWIM_Stop>
- 6da:	e2 cf       	rjmp	.-60     	; 0x6a0 <main+0x1e>
+            TWIM_Stop ();
+ aee:	26 db       	rcall	.-2484   	; 0x13c <TWIM_Stop>
+ af0:	16 c0       	rjmp	.+44     	; 0xb1e <main+0xc6>
         }
         else
         {
             TWIM_Write(30);
- 6dc:	8e e1       	ldi	r24, 0x1E	; 30
- 6de:	05 dd       	rcall	.-1526   	; 0xea <TWIM_Write>
+ af2:	8e e1       	ldi	r24, 0x1E	; 30
+ af4:	2b db       	rcall	.-2474   	; 0x14c <TWIM_Write>
             TWIM_Write(version);
- 6e0:	8f 2d       	mov	r24, r15
- 6e2:	03 dd       	rcall	.-1530   	; 0xea <TWIM_Write>
-            TWIM_Write(partum);
- 6e4:	80 2f       	mov	r24, r16
- 6e6:	01 dd       	rcall	.-1534   	; 0xea <TWIM_Write>
+ af6:	8e 2d       	mov	r24, r14
+ af8:	29 db       	rcall	.-2478   	; 0x14c <TWIM_Write>
             TWIM_Write(marcstate);
- 6e8:	81 2f       	mov	r24, r17
- 6ea:	8f 71       	andi	r24, 0x1F	; 31
- 6ec:	fe dc       	rcall	.-1540   	; 0xea <TWIM_Write>
+ afa:	8f 2d       	mov	r24, r15
+ afc:	8f 71       	andi	r24, 0x1F	; 31
+ afe:	26 db       	rcall	.-2484   	; 0x14c <TWIM_Write>
+            TWIM_Write(sentdata);
+ b00:	81 2f       	mov	r24, r17
+ b02:	24 db       	rcall	.-2488   	; 0x14c <TWIM_Write>
+            TWIM_Write(packetAvailable);
+ b04:	80 91 08 01 	lds	r24, 0x0108
+ b08:	21 db       	rcall	.-2494   	; 0x14c <TWIM_Write>
+//            TWIM_Write();
+//            TWIM_Write(crc);
             TWIM_Stop ();
- 6ee:	f5 dc       	rcall	.-1558   	; 0xda <TWIM_Stop>
- 6f0:	2f e7       	ldi	r18, 0x7F	; 127
- 6f2:	88 e3       	ldi	r24, 0x38	; 56
- 6f4:	91 e0       	ldi	r25, 0x01	; 1
- 6f6:	21 50       	subi	r18, 0x01	; 1
- 6f8:	80 40       	sbci	r24, 0x00	; 0
- 6fa:	90 40       	sbci	r25, 0x00	; 0
- 6fc:	e1 f7       	brne	.-8      	; 0x6f6 <main+0x74>
- 6fe:	00 c0       	rjmp	.+0      	; 0x700 <main+0x7e>
- 700:	00 00       	nop
-            _delay_ms (100);
+ b0a:	18 db       	rcall	.-2512   	; 0x13c <TWIM_Stop>
+ b0c:	2f e7       	ldi	r18, 0x7F	; 127
+ b0e:	89 ea       	ldi	r24, 0xA9	; 169
+ b10:	93 e0       	ldi	r25, 0x03	; 3
+ b12:	21 50       	subi	r18, 0x01	; 1
+ b14:	80 40       	sbci	r24, 0x00	; 0
+ b16:	90 40       	sbci	r25, 0x00	; 0
+ b18:	e1 f7       	brne	.-8      	; 0xb12 <main+0xba>
+ b1a:	00 c0       	rjmp	.+0      	; 0xb1c <main+0xc4>
+ b1c:	00 00       	nop
+ b1e:	2f ef       	ldi	r18, 0xFF	; 255
+ b20:	83 ed       	ldi	r24, 0xD3	; 211
+ b22:	90 e3       	ldi	r25, 0x30	; 48
+ b24:	21 50       	subi	r18, 0x01	; 1
+ b26:	80 40       	sbci	r24, 0x00	; 0
+ b28:	90 40       	sbci	r25, 0x00	; 0
+ b2a:	e1 f7       	brne	.-8      	; 0xb24 <main+0xcc>
+ b2c:	00 c0       	rjmp	.+0      	; 0xb2e <main+0xd6>
+ b2e:	00 00       	nop
+            _delay_ms (300);
         }
-        
+        _delay_ms(4000);
+
     }
- 702:	ce cf       	rjmp	.-100    	; 0x6a0 <main+0x1e>
+ b30:	a1 cf       	rjmp	.-190    	; 0xa74 <main+0x1c>
 
-00000704 <__udivmodsi4>:
- 704:	a1 e2       	ldi	r26, 0x21	; 33
- 706:	1a 2e       	mov	r1, r26
- 708:	aa 1b       	sub	r26, r26
- 70a:	bb 1b       	sub	r27, r27
- 70c:	fd 01       	movw	r30, r26
- 70e:	0d c0       	rjmp	.+26     	; 0x72a <__udivmodsi4_ep>
+00000b32 <__udivmodsi4>:
+ b32:	a1 e2       	ldi	r26, 0x21	; 33
+ b34:	1a 2e       	mov	r1, r26
+ b36:	aa 1b       	sub	r26, r26
+ b38:	bb 1b       	sub	r27, r27
+ b3a:	fd 01       	movw	r30, r26
+ b3c:	0d c0       	rjmp	.+26     	; 0xb58 <__udivmodsi4_ep>
 
-00000710 <__udivmodsi4_loop>:
- 710:	aa 1f       	adc	r26, r26
- 712:	bb 1f       	adc	r27, r27
- 714:	ee 1f       	adc	r30, r30
- 716:	ff 1f       	adc	r31, r31
- 718:	a2 17       	cp	r26, r18
- 71a:	b3 07       	cpc	r27, r19
- 71c:	e4 07       	cpc	r30, r20
- 71e:	f5 07       	cpc	r31, r21
- 720:	20 f0       	brcs	.+8      	; 0x72a <__udivmodsi4_ep>
- 722:	a2 1b       	sub	r26, r18
- 724:	b3 0b       	sbc	r27, r19
- 726:	e4 0b       	sbc	r30, r20
- 728:	f5 0b       	sbc	r31, r21
+00000b3e <__udivmodsi4_loop>:
+ b3e:	aa 1f       	adc	r26, r26
+ b40:	bb 1f       	adc	r27, r27
+ b42:	ee 1f       	adc	r30, r30
+ b44:	ff 1f       	adc	r31, r31
+ b46:	a2 17       	cp	r26, r18
+ b48:	b3 07       	cpc	r27, r19
+ b4a:	e4 07       	cpc	r30, r20
+ b4c:	f5 07       	cpc	r31, r21
+ b4e:	20 f0       	brcs	.+8      	; 0xb58 <__udivmodsi4_ep>
+ b50:	a2 1b       	sub	r26, r18
+ b52:	b3 0b       	sbc	r27, r19
+ b54:	e4 0b       	sbc	r30, r20
+ b56:	f5 0b       	sbc	r31, r21
 
-0000072a <__udivmodsi4_ep>:
- 72a:	66 1f       	adc	r22, r22
- 72c:	77 1f       	adc	r23, r23
- 72e:	88 1f       	adc	r24, r24
- 730:	99 1f       	adc	r25, r25
- 732:	1a 94       	dec	r1
- 734:	69 f7       	brne	.-38     	; 0x710 <__udivmodsi4_loop>
- 736:	60 95       	com	r22
- 738:	70 95       	com	r23
- 73a:	80 95       	com	r24
- 73c:	90 95       	com	r25
- 73e:	9b 01       	movw	r18, r22
- 740:	ac 01       	movw	r20, r24
- 742:	bd 01       	movw	r22, r26
- 744:	cf 01       	movw	r24, r30
- 746:	08 95       	ret
+00000b58 <__udivmodsi4_ep>:
+ b58:	66 1f       	adc	r22, r22
+ b5a:	77 1f       	adc	r23, r23
+ b5c:	88 1f       	adc	r24, r24
+ b5e:	99 1f       	adc	r25, r25
+ b60:	1a 94       	dec	r1
+ b62:	69 f7       	brne	.-38     	; 0xb3e <__udivmodsi4_loop>
+ b64:	60 95       	com	r22
+ b66:	70 95       	com	r23
+ b68:	80 95       	com	r24
+ b6a:	90 95       	com	r25
+ b6c:	9b 01       	movw	r18, r22
+ b6e:	ac 01       	movw	r20, r24
+ b70:	bd 01       	movw	r22, r26
+ b72:	cf 01       	movw	r24, r30
+ b74:	08 95       	ret
 
-00000748 <__eerd_byte_tn48>:
- 748:	f9 99       	sbic	0x1f, 1	; 31
- 74a:	fe cf       	rjmp	.-4      	; 0x748 <__eerd_byte_tn48>
- 74c:	1f ba       	out	0x1f, r1	; 31
- 74e:	81 bd       	out	0x21, r24	; 33
- 750:	f8 9a       	sbi	0x1f, 0	; 31
- 752:	99 27       	eor	r25, r25
- 754:	80 b5       	in	r24, 0x20	; 32
- 756:	08 95       	ret
+00000b76 <__eerd_byte_tn48>:
+ b76:	f9 99       	sbic	0x1f, 1	; 31
+ b78:	fe cf       	rjmp	.-4      	; 0xb76 <__eerd_byte_tn48>
+ b7a:	1f ba       	out	0x1f, r1	; 31
+ b7c:	81 bd       	out	0x21, r24	; 33
+ b7e:	f8 9a       	sbi	0x1f, 0	; 31
+ b80:	99 27       	eor	r25, r25
+ b82:	80 b5       	in	r24, 0x20	; 32
+ b84:	08 95       	ret
 
-00000758 <__eewr_byte_tn48>:
- 758:	26 2f       	mov	r18, r22
+00000b86 <__eewr_byte_tn48>:
+ b86:	26 2f       	mov	r18, r22
 
-0000075a <__eewr_r18_tn48>:
- 75a:	f9 99       	sbic	0x1f, 1	; 31
- 75c:	fe cf       	rjmp	.-4      	; 0x75a <__eewr_r18_tn48>
- 75e:	1f ba       	out	0x1f, r1	; 31
- 760:	1f ba       	out	0x1f, r1	; 31
- 762:	81 bd       	out	0x21, r24	; 33
- 764:	20 bd       	out	0x20, r18	; 32
- 766:	0f b6       	in	r0, 0x3f	; 63
- 768:	f8 94       	cli
- 76a:	fa 9a       	sbi	0x1f, 2	; 31
- 76c:	f9 9a       	sbi	0x1f, 1	; 31
- 76e:	0f be       	out	0x3f, r0	; 63
- 770:	01 96       	adiw	r24, 0x01	; 1
- 772:	08 95       	ret
+00000b88 <__eewr_r18_tn48>:
+ b88:	f9 99       	sbic	0x1f, 1	; 31
+ b8a:	fe cf       	rjmp	.-4      	; 0xb88 <__eewr_r18_tn48>
+ b8c:	1f ba       	out	0x1f, r1	; 31
+ b8e:	1f ba       	out	0x1f, r1	; 31
+ b90:	81 bd       	out	0x21, r24	; 33
+ b92:	20 bd       	out	0x20, r18	; 32
+ b94:	0f b6       	in	r0, 0x3f	; 63
+ b96:	f8 94       	cli
+ b98:	fa 9a       	sbi	0x1f, 2	; 31
+ b9a:	f9 9a       	sbi	0x1f, 1	; 31
+ b9c:	0f be       	out	0x3f, r0	; 63
+ b9e:	01 96       	adiw	r24, 0x01	; 1
+ ba0:	08 95       	ret
 
-00000774 <_exit>:
- 774:	f8 94       	cli
+00000ba2 <_exit>:
+ ba2:	f8 94       	cli
 
-00000776 <__stop_program>:
- 776:	ff cf       	rjmp	.-2      	; 0x776 <__stop_program>
+00000ba4 <__stop_program>:
+ ba4:	ff cf       	rjmp	.-2      	; 0xba4 <__stop_program>

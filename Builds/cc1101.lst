@@ -740,28 +740,28 @@
  571               	.global __do_clear_bss
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 cc1101.c
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:2      *ABS*:000000000000003e __SP_H__
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:3      *ABS*:000000000000003d __SP_L__
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:4      *ABS*:000000000000003f __SREG__
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:5      *ABS*:0000000000000000 __tmp_reg__
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:6      *ABS*:0000000000000001 __zero_reg__
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:122    .text:0000000000000000 SpiInit
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:144    .text:000000000000000a GDO_Set
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:161    .text:000000000000000e RegConfigSettings
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:184    .text:0000000000000012 SpiTransfer
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:212    .text:000000000000001e Reset
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:297    .text:0000000000000058 Init
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:336    .text:0000000000000068 SpiWriteReg
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:359    .text:000000000000006c SpiWriteBurstReg
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:380    .text:0000000000000070 SpiStrobe
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:401    .text:0000000000000074 SpiReadReg
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:424    .text:0000000000000078 SpiReadBurstReg
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:445    .text:000000000000007c SpiReadStatus
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:467    .text:0000000000000080 SendData
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:489    .text:0000000000000084 SetReceive
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:511    .text:0000000000000088 CheckReceiveFlag
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:529    .text:000000000000008a ReceiveData
-/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//cctqAekY.s:552    .data:0000000000000000 PaTable
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:122    .text:0000000000000000 SpiInit
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:144    .text:000000000000000a GDO_Set
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:161    .text:000000000000000e RegConfigSettings
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:184    .text:0000000000000012 SpiTransfer
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:212    .text:000000000000001e Reset
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:297    .text:0000000000000058 Init
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:336    .text:0000000000000068 SpiWriteReg
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:359    .text:000000000000006c SpiWriteBurstReg
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:380    .text:0000000000000070 SpiStrobe
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:401    .text:0000000000000074 SpiReadReg
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:424    .text:0000000000000078 SpiReadBurstReg
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:445    .text:000000000000007c SpiReadStatus
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:467    .text:0000000000000080 SendData
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:489    .text:0000000000000084 SetReceive
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:511    .text:0000000000000088 CheckReceiveFlag
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:529    .text:000000000000008a ReceiveData
+/var/folders/fc/8p1lqrrj7p3f4bt9djyny4yh0000gn/T//ccltWLAr.s:552    .data:0000000000000000 PaTable
                             *COM*:0000000000000001 carrierFreq
                             *COM*:0000000000000002 syncWord
 
